@@ -1,4 +1,6 @@
-# Building a real time ticker app with node.js
+# Building a blog engine on node.js
+
+This will soon be my personal blog.
 
 ## License
 
