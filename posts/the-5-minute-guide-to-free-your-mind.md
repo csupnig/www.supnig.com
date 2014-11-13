@@ -1,29 +1,21 @@
-{"title":"","date":"", "teaser":"As we live now, we have to deal with vast variety of thoughts throughout our daily routine. It does not really matter if those are thoughts about how to solve a problem in your job or private life, the list of items you are putting on your imaginary shopping list, or just random thoughts that come to your mind and take down your productivity or even your wellbeing. Read on to find out how I try to cope with this mind clutter and go about to clean my mind."}
+{{{
+  "title": "THE 5 MINUTE GUIDE TO FREE YOUR MIND",
+  "tags": ["tavel", "stress", "sports"],
+  "category": "custom",
+  "date": "Sat, 28 Sep 2013 18:11:06 GMT"
+}}}
 
-In the past
-years I often came to the point where my head was so full with different
-thoughts, which made it impossible to concentrate on a single one. I knew that
-I had to change something.
+As we live now, we have to deal with vast variety of thoughts throughout our daily routine. It does not really matter if those are thoughts about how to solve a problem in your job or private life, the list of items you are putting on your imaginary shopping list, or just random thoughts that come to your mind and take down your productivity or even your wellbeing. Read on to find out how I try to cope with this mind clutter and go about to clean my mind.
+<!--more-->
+In the past years I often came to the point where my head was so full with different thoughts, which made it impossible to concentrate on a single one. I knew that I had to change something.
 
-As I began
-my research, I found a ton of information of how people were dealing with their
-stressful environment. Things like making a time table to plan your day, or
-divide your day into chunks where you deal with different problems. I tested
-these methods and found that they made my day even more stressful as I now not
-only had to think about the thoughts in my head but also about the time slots
-and chunks that I divided my day into.
+As I began my research, I found a ton of information of how people were dealing with their stressful environment. Things like making a time table to plan your day, or divide your day into chunks where you deal with different problems. I tested these methods and found that they made my day even more stressful as I now not only had to think about the thoughts in my head but also about the time slots and chunks that I divided my day into.
 
-This is why
-I wanted to get down to the basics of avoiding and relieving stress and a
-cluttered mind.
+This is why I wanted to get down to the basics of avoiding and relieving stress and a cluttered mind.
 
 ## Deal with distractions
 
-In my daily
-work I am being approached by different people throughout the day. People that
-need information about the current status of my work, asking for help or just
-want to chat. However little these distractions might be, they disrupt the flow
-of thought and therefore cripple your productivity.
+In my daily work I am being approached by different people throughout the day. People that need information about the current status of my work, asking for help or just want to chat. However little these distractions might be, they disrupt the flow of thought and therefore cripple your productivity.
 
 Here are a few tips how you can avoid those distractions:
 

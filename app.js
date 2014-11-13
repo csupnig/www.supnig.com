@@ -3,14 +3,19 @@
  */
 
 var express = require('express'),
-  fs = require('fs'),
-  http = require('http'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  passport = require("passport"),
-  flash = require("connect-flash"),
-  MongoStore = require('connect-mongo')(express),
-    cons = require('consolidate');
+    fs = require('fs'),
+    port     = process.env.PORT || 8080,
+    http = require('http'),
+    path = require('path'),
+    mongoose = require('mongoose'),
+    passport = require("passport"),
+    flash = require("connect-flash"),
+    cons = require('consolidate'),
+    morgan = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    session = require('express-session');
+    Poet = require('poet');;
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -25,72 +30,99 @@ fs.readdirSync(models_dir).forEach(function (file) {
   require(models_dir+'/'+ file);
 });
 
-
 require('./config/passport')(passport, config)
 
 var app = express();
+app.set('views', __dirname + '/app/views');
+app.engine('html', cons.swig);
+app.set('view engine', 'html');
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json()); // get information from html forms
+app.use(bodyParser.urlencoded({ extended: true }));
 
-var server = http.createServer(app);
 
-app.configure(function () {
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/app/views');
-  app.engine('html', cons.swig);
-  app.set('view engine', 'html');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.cookieParser());
-  app.use(express.bodyParser());
-  app.use(express.session({
-	    secret:'cointelligence secret cat',
-	    maxAge: new Date(Date.now() + (3600000 * 24)),
-	    store: new MongoStore(
-	        {db:'cointelligencesessions',
-	    		clear_interval: (3600000 * 24)
-			},
-	        function(err){
-	            console.log(err || 'connect-mongodb setup ok');
-	        })
-	}));
-  app.use(passport.initialize());
-  app.use(passport.session());
-  app.use(express.methodOverride());
-  app.use(express.errorHandler())
-  app.use(flash());
-  app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(express.static(path.join(__dirname, 'public')));
+/**
+ * Instantiate and hook Poet into express; no defaults defined
+ */
+var poet = Poet(app,{
+    posts: './posts/',
+    postsPerPage: config.postperpage,
+    metaFormat: 'json',
+    readMoreLink:function(post){
+        return '';
+    }
 });
 
-app.configure('development', function () {
-  app.use(express.errorHandler());
+/**
+ * In this example, upon initialization, we can modify the posts,
+ * like format the dates using a library, or modify titles.
+ * We'll add some asterisks to the titles of all posts for fun.
+ */
+poet.init().then(function () {
+  /*poet.clearCache();
+  Object.keys(poet.posts).map(function (title) {
+    var post = poet.posts[title];
+    post.title = '***' + post.title;
+  });*/
 });
 
-require('./config/routes')(app, passport,config);
+/**
+ * Now we set up custom routes; based on the route (ex: '/post/:post'),
+ * it'll override the default route for the same type and update
+ * all appropriate helper methods
+ */
 
-app.use(function(err, req, res, next){
-  res.status(err.status || 500);
-  res.render('500', { error: err });
-});
-
-app.use(function(req, res, next){
-  res.status(404);
-  if (req.accepts('html')) {
-    res.render('404', { url: req.url });
-    return;
+poet.addRoute('/blog/:post', function (req, res) {
+  var post = poet.helpers.getPost(req.params.post);
+  if (post) {
+    res.render('post', { post: post });
+  } else {
+    res.send(404);
   }
-  if (req.accepts('json')) {
-    res.send({ error: 'Not found' });
-    return;
+});
+
+poet.addRoute('/tags/:tag', function (req, res) {
+  var taggedPosts = poet.helpers.postsWithTag(req.params.tag);
+  if (taggedPosts.length) {
+    res.render('tag', {
+      posts: taggedPosts,
+      tag: req.params.tag
+    });
   }
-  res.type('txt').send('Not found');
 });
 
-process.on('uncaughtException', function(err) {
-    // handle the error safely
-    console.log(err);
-    process.exit(1);
+poet.addRoute('/category/:category', function (req, res) {
+  var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
+  if (categorizedPosts.length) {
+    res.render('category', {
+      posts: categorizedPosts,
+      category: req.params.category
+    });
+  }
 });
 
-server.listen(app.get('port'), function () {
-    console.log("Express server listening on port " + app.get('port'));
+poet.addRoute('/pages/:page', function (req, res) {
+  var page = req.params.page,
+      lastPost = page * 3;
+  res.render('index', {
+    posts: poet.helpers.getPosts(lastPost - 3, lastPost),
+    page: page
+  });
 });
+
+app.get('/', function (req, res) {
+    res.render('index', {
+        posts: poet.helpers.getPosts()
+    });
+});
+
+app.listen(port);
+console.log('Finished setting up server on port ' + port);

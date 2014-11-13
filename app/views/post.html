@@ -14,7 +14,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title> Christopher Supnig - My Blog</title>
+    <title> The 5 minute guide to free your mind</title>
     <link href="http://styles.supnig.com/styles/webfonts/RV_WBF_helveticaneueltstd.css" rel="stylesheet" type="text/css" />
     <link href="http://styles.supnig.com/styles/RV_STS_structure.css" rel="stylesheet" type="text/css" />
     <link href="http://styles.supnig.com/styles/RV_STS_fonts.css" rel="stylesheet" type="text/css" />
@@ -23,7 +23,13 @@
     <link rel="author" href="/humans.txt" />
     <meta name="robots" content="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!)"/>
+    <meta name="description" content="As we live
+now, we have to deal with vast variety of thoughts throughout our daily
+routine. It does not really matter if those are thoughts about how to solve a
+problem in your job or private life, the list of items you are putting on your
+imaginary shopping list, or just random thoughts that come to your mind and take
+down your productivity or even your wellbeing. Read on to find out how I try to
+cope with this mind clutter and go about to clean my mind."/>
     <!-- ENABLE HTML5 FOR DUMB BROWSER -->
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -68,23 +74,64 @@
     </header>
     <section id="revereContent" class="content">
         <div class="clear">&nbsp;</div>
+
         <ul class="container container_12">
-            {% for post in posts %}
             <li class="post blue">
                 <article class="container container_12">
                     <div class="grid_1">&nbsp;</div>
                     <div class="grid_10 post">
                         <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
                         <div class="infos"><span class="time">1 year ago</span></div>
-                        <div class="content">{{post.preview|safe}}
-                            <p class="morelink"><a href="{{post.url}}" title="{{post.title}}">continue reading &raquo;</a></p>
+                        <div class="content">
+                            {{post.content|safe}}
                         </div>
                     </div>
                 </article>
                 <div class="clear"></div>
+                <div class="grid_1">&nbsp;</div>
+                <div class="grid_3 backlink">
+                    <a href="/" title="back to overview">&laquo; overview</a>
+                </div>
+                <div class="clear"></div>
             </li>
-            {% endfor %}
         </ul>
+        <div class="container container_12">
+            <section class="container container_12">
+                <div class="grid_1">&nbsp;</div>
+                <div class="grid_10 comments blue">
+                    <form id="newcomment" method="POST" action="?rva.portlet=Comments&amp;p.post=the-5-minute-guide-to-free-your-mind&amp;p.action=addcomment">
+                        <h3>Leave a comment</h3>
+                        <div><h4><label for="commentname">Your name *</label></h4><input type="text" id="commentname" name="p.name" value=""/></div>
+                        <div><h4><label for="commentmail">Your email *</label></h4><input type="text" id="commentmail" name="p.email" value=""/></div>
+                        <p>* Required (your email address will never be published)</p>
+                        <textarea name="p.comment"></textarea>
+                        <div class="hidden">
+                            <input type="text" name="p.e2h19mb6mpg9nm7loo9ku7aqs" class="e2h19mb6mpg9nm7loo9ku7aqs" value=""/>
+                            <input type="text" name="p.p9sqvsla55i339a5l4mk1s3jru" class="p9sqvsla55i339a5l4mk1s3jru" value=""/>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function(){jQuery('.e2h19mb6mpg9nm7loo9ku7aqs').val('fgv5tklob5kmof5sbtm88b6gcq');});
+                        </script>
+                        <div class="button"><input type="submit" value="Submit Comment"/></div>
+                    </form>
+                    <ul class="container container_12">
+                        <li>
+                            <div class="grid_1 avatar">
+                                <img src="http://www.gravatar.com/avatar/a016691d699e701a67603737a37c9641" alt="Dimmy"/>
+                            </div>
+                            <div class="grid_10">
+                                <h3>Dimmy</h3>
+                                <span class="date">1 year ago</span>
+                                <p>Distractions are evil, that's for sure. If I'd work in the office I'd probably end up jumping out of the window already :D
+                                    But don't you find playing/reading/watching something to be a good recharge too? When I have too much thoughts of different topics mixed up in a way that I'm starting to get brain cancer gaming really helps. Often times I just need 1-2 hours and working feels way better, kinda refreshed. Especially when I play with 3 of us (including you, I mean), but you're never there! Ass!</p>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="clear"></div>
+        </div>
         <div class="clearfix"></div>
     </section>
     <footer class="footer container container_12">
@@ -101,6 +148,23 @@
             </ul>
         </div>
     </footer>
+    <div id="revereHeaderToggle" class="RV_CNT_header_toggle"></div>
+    <div id="revereHeaderBackground" class="RV_CNT_header_background">
+        <div id="revereHeader" class="RV_CNT_header">
+            <div class="RV_CNT_header_language">
+            </div>
+            <div class="RV_CNT_header_authentication RV_TXT_navigation">
+                <form method="post" action="?rva.portlet=RevereMenu">
+                    <fieldset>
+                        <label for="username">Username:</label><input type="text" id="username" name="user"/>
+                        <label for="password">Password:</label><input type="password" id="password" name="pwd"/>
+                        <input type="hidden" name="login" value="true"/>
+                        <input type="submit" value="Log in"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 

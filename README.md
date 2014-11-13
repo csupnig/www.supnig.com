@@ -1,4 +1,4 @@
-# Building a blog engine on node.js
+# Building my blog on node.js
 
 This will soon be my personal blog.
 
