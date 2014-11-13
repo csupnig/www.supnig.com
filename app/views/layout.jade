@@ -1,0 +1,25 @@
+doctype 5
+html(lang='en', ng-app='cointelligence')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+        meta(name='keywords' content='bitcoin litecoin trading bot strategies market data candle stick chart')
+        meta(name='robots' content='all')
+        meta(name='description' content='Cointelligence is a market analysing software that pulls the current market data from the platform servers (currently BTC-E and MtGox are supported) and feeds the data into a candle chart. Furthermore it provides the possibility to use and create strategies. These strategies can be tested on past and on the current market data. You can play around with different indicators and settings to find the strategy that best fits your needs. The strategies can also be used in the live trade feature.')
+        title Cointelligence
+        link(rel='stylesheet' href='/css/main-#{version}.css')
+        if dev
+            script(src='/javascripts/dev/bundle-#{version}.js')
+        else
+            script(src='/javascripts/bundle-#{version}.js')
+        block scripts
+    body(class='background-dark')
+        block content
+    script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-46852819-1', 'cointelligence.net');
+        ga('send', 'pageview');

@@ -1,0 +1,9 @@
+extends layout
+
+block scripts
+	
+
+block content
+	header(class='page-header' ng-include src="'partials/header.html'")
+	nav(id='sidebar' class='sidebar nav-collapse collapse' ng-include src="'partials/nav.html'")
+	div(class='wrap' ng-view)
