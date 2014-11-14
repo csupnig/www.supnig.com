@@ -1,8 +1,9 @@
 {{{
-  "title": "THE 5 MINUTE GUIDE TO FREE YOUR MIND",
+  "title": "The 5 minute guide to free your mind",
   "tags": ["tavel", "stress", "sports"],
   "category": "custom",
-  "date": "Sat, 28 Sep 2013 18:11:06 GMT"
+  "date": "Sat, 28 Sep 2013 18:11:06 GMT",
+  "color":"blue"
 }}}
 
 As we live now, we have to deal with vast variety of thoughts throughout our daily routine. It does not really matter if those are thoughts about how to solve a problem in your job or private life, the list of items you are putting on your imaginary shopping list, or just random thoughts that come to your mind and take down your productivity or even your wellbeing. Read on to find out how I try to cope with this mind clutter and go about to clean my mind.
@@ -46,8 +47,8 @@ is no universal recipe to regain your energy and you will have to find out what
 works best for yourself. I can just give you pointers what works for me:
 
 *   **Sports**
-A few months ago I stumbled across&nbsp;[an
-article](http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/?smid=fb-share)&nbsp;on the so called 7 minute workout. Since I did not have a lot of
+A few months ago I stumbled across [an
+article](http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/?smid=fb-share) on the so called 7 minute workout. Since I did not have a lot of
 time to spare and still wanted to get some exercise, I included those 7 painful
 minutes into my schedule for every other day. It turned out to be a very good
 compensation to my work in front of the computer and I felt better and better
@@ -75,7 +76,7 @@ now feeling rejuvenated after every yoga session.
 
 It is also very important to keep your recharging schedule. Do not become sloppy and find
 excuses to not do your exercise or your run. Now you can go out and find the
-perfect source of relaxation and energy for yourself. &nbsp;
+perfect source of relaxation and energy for yourself.  
 
 I would love to hear what you do to get a free
 mind and regain your energy. Describe your way in the comments below!

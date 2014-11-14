@@ -66,7 +66,9 @@ var poet = Poet(app,{
  * like format the dates using a library, or modify titles.
  * We'll add some asterisks to the titles of all posts for fun.
  */
-poet.init().then(function () {
+poet.watch(function () {
+    // watcher reloaded
+}).init().then(function () {
   /*poet.clearCache();
   Object.keys(poet.posts).map(function (title) {
     var post = poet.posts[title];
