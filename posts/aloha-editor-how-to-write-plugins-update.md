@@ -3,7 +3,8 @@
   "tags": ["Aloha Editor", "contenteditable", "JavaScript", "plugins"],
   "category": "work",
   "date": "Sat, 21 Apr 2012 18:01:51 GMT",
-  "color":"darkorange"
+  "color":"darkorange",
+  "slug":"aloha-editor-how-to-write-plugins-update"
 }}}
 
 Since I wrote my last article about this topic there have been numerous improvements made to aloha editor that made it one of the most successful newcommers on the web. Some of those changes were made to the way you write plugins and therefore I decided that it is time to give you a little heads up on what has changed and how plugins are written for the aloha editor.

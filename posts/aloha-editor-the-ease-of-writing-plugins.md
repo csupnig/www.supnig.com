@@ -3,7 +3,8 @@
   "tags": ["Aloha Editor", "contenteditable", "JavaScript"],
   "category": "work",
   "date": "Mon, 11 Jul 2011 18:46:30 GMT",
-  "color":"yellow"
+  "color":"yellow",
+  "slug":"aloha-editor-the-ease-of-writing-plugins"
 }}}
 
 Aloha Editor is the new and shiny web based HTML5 Editor that enables you to edit your content right in place?without the need for iframes or other ugly hacks. It is very easy to use and lets you instantaneously see all?the changes you make. And since we all want a piece of that cake and often need to add custom functionality, I'm going to tell you how to write your first Aloha Editor plug-in.

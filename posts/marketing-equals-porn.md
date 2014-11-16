@@ -3,7 +3,8 @@
   "tags": ["Marketing", "Design", "Meshed3"],
   "category": "conference",
   "date": "Sun, 26 Jun 2011 12:48:09 GMT",
-  "color":"lightblue"
+  "color":"lightblue",
+   "slug":"marketing-equals-porn"
 }}}
 
 So what do these two have in common? To answer this question I first have to talk about the nature of the every day love story. In those movies you always?get some kind of introduction where the characters get to know each other and build up tension to finally reach the climax of the movie. Then there is just the end and the?story is over. With porn, and I'm sure you have seen one, it is a bit different. Read more about this close relationship and find out what happened at the "meshed3" in Linz.

@@ -3,7 +3,8 @@
   "tags": ["aloha", "technology", "jquery"],
   "category": "work",
   "date": "Sat, 28 Jul 2012 16:04:41 GMT",
-  "color":"darkyellow"
+  "color":"darkyellow",
+  "slug":"aloha-editor-and-jqueryui"
 }}}
 
 This week a new Aloha Editor version has been released, containing the long awaited switch from ExtJS to jQueryUI. With this change not only the looks changed but also the distribution size was dramatically reduced and Aloha Editor will now be available under GPLv2. In this article I'll give a short update on how developing plugins changed explaining the metaview plugin that I already talked about in my other Aloha Editor articles.

@@ -27,6 +27,8 @@
     "method-override": "~1.0.0",
     "express-session": "~1.0.0",
     "poet":"~2.x.x",
+    "feed":"*",
+    "sitemap":"*",
     "swig":"*"
   }
 }

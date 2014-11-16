@@ -3,7 +3,8 @@
   "tags": ["aloha", "technology", "barcamp"],
   "category": "work",
   "date": "Sun, 19 May 2013 17:26:15 GMT",
-  "color":"violet"
+  "color":"violet",
+  "slug":"aloha-editor-barcamp-2013"
 }}}
 
 You are interested in JavaScript, love to code for the web or are just the kind of geek that likes to build pretty applications?

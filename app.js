@@ -7,6 +7,7 @@ var express = require('express'),
     port     = process.env.PORT || 8080,
     http = require('http'),
     path = require('path'),
+    Feed = require('feed'),
     mongoose = require('mongoose'),
     passport = require("passport"),
     flash = require("connect-flash"),
@@ -14,8 +15,9 @@ var express = require('express'),
     morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    session = require('express-session');
-    Poet = require('poet');;
+    session = require('express-session'),
+    sm = require('sitemap'),
+    Poet = require('poet');
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -61,19 +63,39 @@ var poet = Poet(app,{
     }
 });
 
+
+var sitemap = null;
+
+var generateSitemap = function(){
+    var urls = [];
+    var posts = poet.helpers.getPosts();
+    for(var key in posts) {
+        urls.push({
+            url:           posts[key].url,
+            changefreq:'monthly',
+            priority:0.5
+        });
+    }
+    urls.push({
+        url:           "http://www.supnig.com/about",
+        changefreq:'monthly',
+        priority:0.7
+    });
+    sitemap = sm.createSitemap ({
+        hostname: 'http://www.supnig.com',
+        cacheTime: 600000,        // 600 sec - cache purge period
+        urls: urls
+    });
+};
 /**
  * In this example, upon initialization, we can modify the posts,
  * like format the dates using a library, or modify titles.
  * We'll add some asterisks to the titles of all posts for fun.
  */
 poet.watch(function () {
-    // watcher reloaded
+    generateSitemap();
 }).init().then(function () {
-  /*poet.clearCache();
-  Object.keys(poet.posts).map(function (title) {
-    var post = poet.posts[title];
-    post.title = '***' + post.title;
-  });*/
+    generateSitemap();
 });
 
 /**
@@ -123,6 +145,52 @@ poet.addRoute('/pages/:page', function (req, res) {
 app.get('/', function (req, res) {
     res.render('index', {
         posts: poet.helpers.getPosts()
+    });
+});
+
+app.get('/about', function (req, res) {
+    res.render('about');
+});
+
+app.get('/rss', function (req, res) {
+    var feed = new Feed({
+        title:          'Christopher Supnig - Blog',
+        description:    'This is the RSS feed to my blog!',
+        link:           'http://www.supnig.com/',
+        copyright:      'Copyright © 2014 Christopher Supnig. All rights reserved',
+
+        author: {
+            name:       'Christopher Supnig',
+            email:      'contact@supnig.com',
+            link:       'https://www.supnig.com'
+        }
+    });
+
+    var posts = poet.helpers.getPosts();
+
+        if(typeof posts == 'undefined' || posts.length <=0)
+            res.send('404 Not found', 404);
+        else {
+            for(var key in posts) {
+                feed.addItem({
+                    title:          posts[key].title,
+                    link:           posts[key].url,
+                    description:    posts[key].preview,
+                    date:           posts[key].date
+                });
+            }
+            // Setting the appropriate Content-Type
+            res.set('Content-Type', 'text/xml');
+
+            // Sending the feed as a response
+            res.send(feed.render('rss-2.0'));
+        }
+});
+
+app.get('/sitemap', function (req, res) {
+    sitemap.toXML( function (xml) {
+        res.header('Content-Type', 'application/xml');
+        res.send( xml );
     });
 });
 

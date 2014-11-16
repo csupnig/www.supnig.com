@@ -14,10 +14,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> Christopher Supnig - My Blog</title>
-    <link href="http://styles.supnig.com/styles/webfonts/RV_WBF_helveticaneueltstd.css" rel="stylesheet" type="text/css" />
-    <link href="http://styles.supnig.com/styles/RV_STS_structure.css" rel="stylesheet" type="text/css" />
-    <link href="http://styles.supnig.com/styles/RV_STS_fonts.css" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+   <link href="/styles/RV_STS_structure.css" rel="stylesheet" type="text/css" />
     <meta name="keywords" content="christopher supnig, supnig, christopher, web, design, blog, portal, web application, enterprise search" />
     <link rel="author" href="/humans.txt" />
     <meta name="robots" content="all" />
@@ -29,17 +26,15 @@
     <![endif]-->
     <link rel="icon" type="image/vnd.microsoft.icon" href="http://images.supnig.com/media/icons/favicon.png" />
     <link rel="shortcut icon" href="http://images.supnig.com/media/icons/favicon.png">
-    <script type="text/javascript">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-8861708-2']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        ga('create', 'UA-8861708-2', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
 
     </script>
 </head>
@@ -49,7 +44,7 @@
         <div class="grid_1">&nbsp;</div>
         <div class="grid_11">
             <h1>
-                <a href="http://www.supnig.com" title="///SUPNIG - Home">
+                <a href="/" title="///SUPNIG - Home">
                     <span class="blue">/</span>
                     <span class="lightblue">/</span>
                     <span class="green">/</span>
@@ -74,7 +69,7 @@
         <div class="grid_1">&nbsp;</div>
         <div class="grid_11">
             <div class="floatleft email">
-                <a href="http://www.supnig.com/about" title="About">&copy; Christopher Supnig</a>
+                <a href="/about" title="About">&copy; Christopher Supnig</a>
             </div>
             <ul class="contact" role="menu">
                 <li class="github" role="menuitem"><a title="github" href="http://www.github.com/csupnig">@github</a></li>
@@ -84,10 +79,6 @@
             </ul>
         </div>
     </footer>
-
-
-
 </div>
-<script src="http://scripts.supnig.com/scripts/custom/SCT_layout.js"></script>
 </body>
 </html>

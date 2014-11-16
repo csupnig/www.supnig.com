@@ -3,7 +3,8 @@
   "tags": ["Speaking", "WDC 2012", "Conference"],
   "category": "conference",
   "date": "Sat, 21 Apr 2012 17:01:28 GMT",
-  "color":"orange"
+  "color":"orange",
+  "slug":"wdc-2012-speaker"
 }}}
 
 Seems like the guys from Web Developer Conference picked my topic for their headline and so I'm going to talk on the 17th of september from 5pm to 6pm in Hamburg.
