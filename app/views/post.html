@@ -30,34 +30,37 @@
         <section class="container container_12">
             <div class="grid_1">&nbsp;</div>
             <div class="grid_10 comments blue">
-                <form id="newcomment" method="POST" action="?rva.portlet=Comments&amp;p.post=the-5-minute-guide-to-free-your-mind&amp;p.action=addcomment">
+                <form id="newcomment" method="POST" action="/comment/{{post.slug}}">
                     <h3>Leave a comment</h3>
-                    <div><h4><label for="commentname">Your name *</label></h4><input type="text" id="commentname" name="p.name" value=""/></div>
-                    <div><h4><label for="commentmail">Your email *</label></h4><input type="text" id="commentmail" name="p.email" value=""/></div>
+                    <div><h4><label for="commentname">Your name *</label></h4><input type="text" id="commentname" name="name" value="" required/></div>
+                    <div><h4><label for="commentmail">Your email *</label></h4><input type="text" id="commentmail" name="email" value="" required/></div>
                     <p>* Required (your email address will never be published)</p>
-                    <textarea name="p.comment"></textarea>
+                    <textarea name="comment"></textarea>
                     <div class="hidden">
-                        <input type="text" name="p.e2h19mb6mpg9nm7loo9ku7aqs" class="e2h19mb6mpg9nm7loo9ku7aqs" value=""/>
-                        <input type="text" name="p.p9sqvsla55i339a5l4mk1s3jru" class="p9sqvsla55i339a5l4mk1s3jru" value=""/>
+                        <input type="text" name="e2h19mb6mpg9nm7loo9ku7aqs" id="e2h19mb6mpg9nm7loo9ku7aqs" value=""/>
+                        <input type="text" name="p9sqvsla55i339a5l4mk1s3jru" id="p9sqvsla55i339a5l4mk1s3jru" value=""/>
                     </div>
                     <script type="text/javascript">
-                        jQuery(document).ready(function(){jQuery('.e2h19mb6mpg9nm7loo9ku7aqs').val('fgv5tklob5kmof5sbtm88b6gcq');});
+                        document.getElementById('e2h19mb6mpg9nm7loo9ku7aqs').value = 'fgv5tklob5kmof5sbtm88b6gcq';
                     </script>
                     <div class="button"><input type="submit" value="Submit Comment"/></div>
                 </form>
                 <ul class="container container_12">
+                    {% for comment in comments %}
                     <li>
                         <div class="grid_1 avatar">
-                            <img src="http://www.gravatar.com/avatar/a016691d699e701a67603737a37c9641" alt="Dimmy"/>
+                            <img src="http://www.gravatar.com/avatar/a016691d699e701a67603737a37c9641" alt="{{comment.name}}"/>
                         </div>
                         <div class="grid_10">
-                            <h3>Dimmy</h3>
-                            <span class="date">1 year ago</span>
-                            <p>Distractions are evil, that's for sure. If I'd work in the office I'd probably end up jumping out of the window already :D
-                                But don't you find playing/reading/watching something to be a good recharge too? When I have too much thoughts of different topics mixed up in a way that I'm starting to get brain cancer gaming really helps. Often times I just need 1-2 hours and working feels way better, kinda refreshed. Especially when I play with 3 of us (including you, I mean), but you're never there! Ass!</p>
+                            <h3>{{comment.name}}</h3>
+                            <span class="date">{{ comment.date|date('d.m.Y') }}</span>
+                            <p>
+                                {{comment.comment}}
+                            </p>
                         </div>
                         <div class="clear"></div>
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>

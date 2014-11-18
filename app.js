@@ -17,7 +17,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
     sm = require('sitemap'),
-    Poet = require('poet');
+    Poet = require('poet'),
+    Comment = require("./app/models/Comment");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -46,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'ilovewebdevelopmentandiamcrazyabouttechnology' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -87,6 +88,21 @@ var generateSitemap = function(){
         urls: urls
     });
 };
+
+var renderPostWithComments = function(postslug, res) {
+    var post = poet.helpers.getPost(postslug);
+    Comment.find({"post":postslug}).sort('-date').exec(function(err,comments){
+        if (err) {
+            console.error(err);
+        }
+        if (post) {
+            res.render('post', { post: post,
+                                comments:comments});
+        } else {
+            res.send(404);
+        }
+    });
+};
 /**
  * In this example, upon initialization, we can modify the posts,
  * like format the dates using a library, or modify titles.
@@ -105,12 +121,23 @@ poet.watch(function () {
  */
 
 poet.addRoute('/blog/:post', function (req, res) {
-  var post = poet.helpers.getPost(req.params.post);
-  if (post) {
-    res.render('post', { post: post });
-  } else {
-    res.send(404);
-  }
+    renderPostWithComments(req.params.post, res);
+});
+
+app.post('/comment/:post', function (req, res) {
+    var comment = Comment.createComment({
+        name:req.body.name,
+        email:req.body.email,
+        comment:req.body.comment,
+        post:req.params.post,
+        date:new Date()
+    }).then(function(){
+        renderPostWithComments(req.params.post,res);
+    }, function(err){
+        console.error("Error while saving comment for ", req.params.post,err);
+        //in case of error we render the thing anyway
+        renderPostWithComments(req.params.post,res);
+    });
 });
 
 poet.addRoute('/tags/:tag', function (req, res) {
