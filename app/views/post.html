@@ -37,11 +37,11 @@
                     <p>* Required (your email address will never be published)</p>
                     <textarea name="comment"></textarea>
                     <div class="hidden">
-                        <input type="text" name="e2h19mb6mpg9nm7loo9ku7aqs" id="e2h19mb6mpg9nm7loo9ku7aqs" value=""/>
-                        <input type="text" name="p9sqvsla55i339a5l4mk1s3jru" id="p9sqvsla55i339a5l4mk1s3jru" value=""/>
+                        <input type="text" name="{{name1}}" id="{{name1}}" value=""/>
+                        <input type="text" name="{{name2}}" id="{{name2}}" value=""/>
                     </div>
                     <script type="text/javascript">
-                        document.getElementById('e2h19mb6mpg9nm7loo9ku7aqs').value = 'fgv5tklob5kmof5sbtm88b6gcq';
+                        document.getElementById('{{captcha}}').value = '{{captchavalue}}';
                     </script>
                     <div class="button"><input type="submit" value="Submit Comment"/></div>
                 </form>
@@ -49,7 +49,7 @@
                     {% for comment in comments %}
                     <li>
                         <div class="grid_1 avatar">
-                            <img src="http://www.gravatar.com/avatar/a016691d699e701a67603737a37c9641" alt="{{comment.name}}"/>
+                            <img src="http://www.gravatar.com/avatar/{{comment.md5mail}}" alt="{{comment.name}}"/>
                         </div>
                         <div class="grid_10">
                             <h3>{{comment.name}}</h3>

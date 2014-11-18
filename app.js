@@ -18,7 +18,8 @@ var express = require('express'),
     session = require('express-session'),
     sm = require('sitemap'),
     Poet = require('poet'),
-    Comment = require("./app/models/Comment");
+    Comment = require("./app/models/Comment"),
+    crypto = require("crypto");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -89,15 +90,31 @@ var generateSitemap = function(){
     });
 };
 
-var renderPostWithComments = function(postslug, res) {
+var renderPostWithComments = function(postslug, req, res) {
     var post = poet.helpers.getPost(postslug);
     Comment.find({"post":postslug}).sort('-date').exec(function(err,comments){
         if (err) {
             console.error(err);
         }
         if (post) {
+            var session = req.session;
+            var captchaValue = crypto.randomBytes(64).toString('hex');
+            session.capchaValue = captchaValue;
+            var field1 = crypto.randomBytes(64).toString('hex');
+            var field2 = crypto.randomBytes(64).toString('hex');
+            if (Math.random() > 0.5) {
+                session.empty = field1;
+                session.captcha = field2;
+            } else {
+                session.empty = field2;
+                session.captcha = field1;
+            }
             res.render('post', { post: post,
-                                comments:comments});
+                                comments:comments,
+                                capchavalue:captchaValue,
+                                captcha:session.captcha,
+                                name1:field1,
+                                name2:field2});
         } else {
             res.send(404);
         }
@@ -132,11 +149,11 @@ app.post('/comment/:post', function (req, res) {
         post:req.params.post,
         date:new Date()
     }).then(function(){
-        renderPostWithComments(req.params.post,res);
+        renderPostWithComments(req.params.post,req,res);
     }, function(err){
         console.error("Error while saving comment for ", req.params.post,err);
         //in case of error we render the thing anyway
-        renderPostWithComments(req.params.post,res);
+        renderPostWithComments(req.params.post,req,res);
     });
 });
 
