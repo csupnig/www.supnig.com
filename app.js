@@ -97,24 +97,23 @@ var renderPostWithComments = function(postslug, req, res) {
             console.error(err);
         }
         if (post) {
-            var session = req.session;
             var captchaValue = crypto.randomBytes(64).toString('hex');
-            session.capchaValue = captchaValue;
+            req.session.capchaValue = captchaValue;
             var field1 = crypto.randomBytes(64).toString('hex');
             var field2 = crypto.randomBytes(64).toString('hex');
             if (Math.random() > 0.5) {
-                session.empty = field1;
-                session.captcha = field2;
+                req.session.empty = field1;
+                req.session.captcha = field2;
             } else {
-                session.empty = field2;
-                session.captcha = field1;
+                req.session.empty = field2;
+                req.session.captcha = field1;
             }
-            res.render('post', { post: post,
-                                comments:comments,
-                                capchavalue:captchaValue,
-                                captcha:session.captcha,
-                                name1:field1,
-                                name2:field2});
+            res.render('post', { "post": post,
+                                "comments":comments,
+                                "captchaValue":captchaValue,
+                                "captcha":req.session.captcha,
+                                "name1":field1,
+                                "name2":field2});
         } else {
             res.send(404);
         }
@@ -138,7 +137,7 @@ poet.watch(function () {
  */
 
 poet.addRoute('/blog/:post', function (req, res) {
-    renderPostWithComments(req.params.post, res);
+    renderPostWithComments(req.params.post,req, res);
 });
 
 app.post('/comment/:post', function (req, res) {
