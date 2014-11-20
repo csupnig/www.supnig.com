@@ -4,7 +4,7 @@
 
 var express = require('express'),
     fs = require('fs'),
-    port     = process.env.PORT || 8080,
+    port     = process.env.PORT || 8081,
     http = require('http'),
     path = require('path'),
     Feed = require('feed'),
