@@ -60,7 +60,7 @@ When I read up more about stock markets and financial mathematics, I
 came across some functions that could give some informative indicators
 on currency graphs. I quickly implemented a few of these functions and
 added them to my graph. The graph now looked somewhat like the final
-product.
+product. ![Graph on canvas](/media/pictures/coingraph.png)
 
 Spaking a whole new firework of ideas in my mind, these indicators
 quickly led to me trying to implement a prediction algorithm. Miserably

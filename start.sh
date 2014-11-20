@@ -59,13 +59,13 @@
 # Log file path.
 # LOGFILE=/var/log/my-application.log
 #
-NAME="Cointelligence"
+NAME="Nodeblog"
 #NODE_BIN_DIR=
 #NODE_PATH=
-APPLICATION_DIRECTORY=/www/ticker
+APPLICATION_DIRECTORY=/www/supnig.com
 APPLICATION_START=app.js
-PIDFILE=/var/run/cointelligence.pid
-LOGFILE=/var/log/cointelligence.log
+PIDFILE=/var/run/nodeblog.pid
+LOGFILE=/var/log/nodeblog.log
  
 # Add node to the path for situations in which the environment is passed.
 #PATH=$NODE_BIN_DIR:$PATH

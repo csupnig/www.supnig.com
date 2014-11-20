@@ -11,7 +11,7 @@
                     <div class="grid_1">&nbsp;</div>
                     <div class="grid_10 post">
                         <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
-                        <div class="infos"><span class="time">{{ post.date|date('d.m.Y') }}</span></div>
+                        <div class="infos"><span class="time">{{ prettydate(post.date) }}</span></div>
                         <div class="content">{{post.preview|safe}}
                             <p class="morelink"><a href="{{post.url}}" title="{{post.title}}">continue reading &raquo;</a></p>
                         </div>

@@ -528,7 +528,7 @@ a:hover, a:active { color:#999; }
 
 li.post { border-right-width: 10px; border-right-style: solid; list-style-type:none; }
 li.post ul { margin-left: 2em; }
-pre, code { display: block; border: 1px dashed #D8D8D8; background: #EFEFEF; padding: 10px;  margin-top: 10px; margin-bottom: 10px; }
+code { display: block; border: 1px dashed #D8D8D8; background: #EFEFEF; padding: 10px;  margin-top: 10px; margin-bottom: 10px; }
 .post h2 { text-transform: uppercase;  font-family: 'HelveticaNeueLTStd45Light',Helvetica,Arial,sans-serif; font-size: 4em; line-height: 1em; margin-top: 20px; margin-bottom: 10px; }
 .post .post { background:#ffffff; padding:0px 0px 30px; margin-bottom:2em; }
 .post .infos .time { font-family: 'HelveticaNeueLTStd45Light',Helvetica,Arial,sans-serif; text-transform: uppercase; font-size: 0.9em; font-weight: bold; color: #666; border-bottom: 1px solid #EEE; }
@@ -542,6 +542,7 @@ pre, code { display: block; border: 1px dashed #D8D8D8; background: #EFEFEF; pad
 .post h2 a { text-decoration:none; color:#000; -webkit-transition: all .2s; }
 .post .post h2 a:hover { color:#000; }
 p.morelink { margin-top: 30px; }
+.post img {float:right;}
 .post img, .comments img { padding: 10px; border-width: 1px; border-style: solid; margin: 15px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
 .comments input, .comments textarea {  padding: 10px; border-width: 1px; border-style: solid; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
 
@@ -552,6 +553,7 @@ p.morelink { margin-top: 30px; }
 div.comments .error input { border-color: #eb2828; }
 div.comments textarea.error { border-color: #eb2828; }
 h4.error { color: #eb2828; }
+.error { color: #eb2828; }
 
 .comments { margin-top: 4em; }
 .comments li {list-style-type:none; margin-top: 2em; }

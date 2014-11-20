@@ -12,7 +12,7 @@
                 <div class="grid_1">&nbsp;</div>
                 <div class="grid_10 post">
                     <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
-                    <div class="infos"><span class="time">{{ post.date|date('d.m.Y') }}</span></div>
+                    <div class="infos"><span class="time">{{ prettydate(post.date) }}</span></div>
                     <div class="content">
                         {{post.content|safe}}
                     </div>
@@ -30,8 +30,14 @@
         <section class="container container_12">
             <div class="grid_1">&nbsp;</div>
             <div class="grid_10 comments blue">
-                <form id="newcomment" method="POST" action="/comment/{{post.slug}}">
+                <form id="newcomment" method="POST" action="/comment/{{post.slug}}#newcomment">
                     <h3>Leave a comment</h3>
+                    {% if commenterror %}
+                    <span class="error">Your comment could not be saved!</span>
+                    {% endif %}
+                    {% if captchaerror %}
+                    <span class="error">Your comment could not be saved! Not sure if human =.= please enable JavaScript!</span>
+                    {% endif %}
                     <div><h4><label for="commentname">Your name *</label></h4><input type="text" id="commentname" name="name" value="" required/></div>
                     <div><h4><label for="commentmail">Your email *</label></h4><input type="text" id="commentmail" name="email" value="" required/></div>
                     <p>* Required (your email address will never be published)</p>
@@ -53,7 +59,7 @@
                         </div>
                         <div class="grid_10">
                             <h3>{{comment.name}}</h3>
-                            <span class="date">{{ comment.date|date('d.m.Y') }}</span>
+                            <span class="date">{{ prettydate(comment.date) }}</span>
                             <p>
                                 {{comment.comment}}
                             </p>

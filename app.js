@@ -19,7 +19,8 @@ var express = require('express'),
     sm = require('sitemap'),
     Poet = require('poet'),
     Comment = require("./app/models/Comment"),
-    crypto = require("crypto");
+    crypto = require("crypto"),
+    moment = require("moment");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -90,7 +91,11 @@ var generateSitemap = function(){
     });
 };
 
-var renderPostWithComments = function(postslug, req, res) {
+var prettydate = function(date) {
+  return moment(date).fromNow();
+};
+
+var renderPostWithComments = function(postslug, req, res,captchaerror,commenterror) {
     var post = poet.helpers.getPost(postslug);
     Comment.find({"post":postslug}).sort('-date').exec(function(err,comments){
         if (err) {
@@ -113,7 +118,11 @@ var renderPostWithComments = function(postslug, req, res) {
                                 "captchaValue":captchaValue,
                                 "captcha":req.session.captcha,
                                 "name1":field1,
-                                "name2":field2});
+                                "name2":field2,
+                                "captchaerror":captchaerror,
+                                "commenterror":commenterror,
+                                "prettydate":prettydate
+                                });
         } else {
             res.send(404);
         }
@@ -137,23 +146,27 @@ poet.watch(function () {
  */
 
 poet.addRoute('/blog/:post', function (req, res) {
-    renderPostWithComments(req.params.post,req, res);
+    renderPostWithComments(req.params.post,req, res,false,false);
 });
 
 app.post('/comment/:post', function (req, res) {
-    var comment = Comment.createComment({
-        name:req.body.name,
-        email:req.body.email,
-        comment:req.body.comment,
-        post:req.params.post,
-        date:new Date()
-    }).then(function(){
-        renderPostWithComments(req.params.post,req,res);
-    }, function(err){
-        console.error("Error while saving comment for ", req.params.post,err);
-        //in case of error we render the thing anyway
-        renderPostWithComments(req.params.post,req,res);
-    });
+    if (req.body[req.session.captcha] != req.session.capchaValue) {
+        renderPostWithComments(req.params.post, req, res,true,false);
+    } else {
+        var comment = Comment.createComment({
+            name: req.body.name,
+            email: req.body.email,
+            comment: req.body.comment,
+            post: req.params.post,
+            date: new Date()
+        }).then(function () {
+            renderPostWithComments(req.params.post, req, res,false,false);
+        }, function (err) {
+            console.error("Error while saving comment for ", req.params.post, err);
+            //in case of error we render the thing anyway
+            renderPostWithComments(req.params.post, req, res,false,true);
+        });
+    }
 });
 
 poet.addRoute('/tags/:tag', function (req, res) {
@@ -187,7 +200,8 @@ poet.addRoute('/pages/:page', function (req, res) {
 
 app.get('/', function (req, res) {
     res.render('index', {
-        posts: poet.helpers.getPosts()
+        "posts": poet.helpers.getPosts(),
+        "prettydate":prettydate
     });
 });
 

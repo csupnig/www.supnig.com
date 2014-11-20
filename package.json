@@ -23,6 +23,7 @@
     "consolidate":"*",
     "q":"*",
     "MD5":"*",
+    "moment":"*",
     "morgan": "~1.0.0",
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.0",
