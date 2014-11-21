@@ -20,7 +20,8 @@ var express = require('express'),
     Poet = require('poet'),
     Comment = require("./app/models/Comment"),
     crypto = require("crypto"),
-    moment = require("moment");
+    moment = require("moment"),
+    swig = require("swig");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -91,6 +92,33 @@ var generateSitemap = function(){
     });
 };
 
+var generateGalleries = function() {
+    var re = /<!--gallery:(.*?)-->/g,
+        match,gpath,images,gallerytemplate=__dirname + '/app/views/gallery.html';
+    poet.clearCache();
+    Object.keys(poet.posts).map(function (title) {
+        var post = poet.posts[title];
+
+        while (match = re.exec(post.content)) {
+            images = [];
+            gpath = __dirname + '/public/'+match[1];
+            if (fs.existsSync(gpath)) {
+                fs.readdirSync(gpath).forEach(function (file) {
+                    images.push("/"+match[1]+"/"+file);
+                });
+                var needle = "<!--gallery:" + match[1] + "-->";
+                swig.renderFile(gallerytemplate,{"images":images},function(err,result){
+                    if (err) {
+                        return;
+                    }
+                    post.content = post.content.replace(needle, result);
+                });
+            }
+        }
+
+    });
+};
+
 var prettydate = function(date) {
   return moment(date).fromNow();
 };
@@ -124,7 +152,7 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                                 "prettydate":prettydate
                                 });
         } else {
-            res.send(404);
+            res.sendStatus(404);
         }
     });
 };
@@ -134,8 +162,10 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
  * We'll add some asterisks to the titles of all posts for fun.
  */
 poet.watch(function () {
+    generateGalleries();
     generateSitemap();
 }).init().then(function () {
+    generateGalleries();
     generateSitemap();
 });
 

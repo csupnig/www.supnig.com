@@ -701,3 +701,6 @@ li.post.violet { border-right-color: #c806f0; }
 	body { font-size: 90%; }
 }*/
 
+.gallery img {
+	max-width:250px;
+}
