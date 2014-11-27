@@ -29,7 +29,7 @@
     <div class="container container_12">
         <section class="container container_12">
             <div class="grid_1">&nbsp;</div>
-            <div class="grid_10 comments blue">
+            <div class="grid_10 comments {{post.color}}">
                 <form id="newcomment" method="POST" action="/comment/{{post.slug}}#newcomment">
                     <h3>Leave a comment</h3>
                     {% if commenterror %}
