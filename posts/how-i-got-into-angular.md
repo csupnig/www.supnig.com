@@ -11,14 +11,14 @@ When I had a few days off over last year’s Christmas holidays, I really
 caught on to the whole Bitcoin hype that was going on during that time.
 I spent hours watching the markets and trying to figure out how I could
 make a few bucks on the side with this interesting thing. Now what has
-that to do with AngularJS? Now that I finally hat the time to write
+that to do with AngularJS? Now that I finally had the time to write
 another blog post, I will try to fill you in.
 <!--more-->
 When I had a few days off over last year’s Christmas holidays, I really
 caught on to the whole Bitcoin hype that was going on during that time.
 I spent hours watching the markets and trying to figure out how I could
 make a few bucks on the side with this interesting thing. Now what has
-that to do with AngularJS? Now that I finally hat the time to write
+that to do with AngularJS? Now that I finally had the time to write
 another blog post, I will try to fill you in.
 
 The first thing I figured out was that it seemed to be a really unstable
