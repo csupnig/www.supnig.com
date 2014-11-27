@@ -1,6 +1,6 @@
 # Building my blog on node.js
 
-This will soon be my personal blog. I use Poet (http://jsantell.github.io/poet/)[http://jsantell.github.io/poet/] as a post engine
+This will soon be my personal blog. I use Poet (http://jsantell.github.io/poet/) as a post engine
 and I extended the functionality a bit.
 
 ## Additional features
