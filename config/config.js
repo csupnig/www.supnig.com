@@ -5,9 +5,9 @@ module.exports = {
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
 		facebook: {
-			clientID: "277291162395670",
-			clientSecret: "f42eb8c82b962f02d3b67ea0e5e09200",
-			callbackURL: "http://www.supnig.com/auth/facebook/callback"
+			clientID: "194935747224798",
+			clientSecret: "356f4c3d963cce5585c420e82e195671",
+			callbackURL: "http://localhost:8081/auth/facebook/callback"
 		},
 
 		google: {

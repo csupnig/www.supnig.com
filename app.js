@@ -21,13 +21,16 @@ var express = require('express'),
     Comment = require("./app/models/Comment"),
     crypto = require("crypto"),
     moment = require("moment"),
-    swig = require("swig");
+    swig = require("swig"),
+    routes = require("./config/routes");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
 
 
 mongoose.connect(config.db);
+
+var Auth = require('./config/middlewares/authorization.js')(config);
 
 var models_dir = __dirname + '/app/models';
 
@@ -55,6 +58,8 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
+
+require("./config/routes")(app,passport,config);
 /**
  * Instantiate and hook Poet into express; no defaults defined
  */
@@ -149,7 +154,8 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                                 "name2":field2,
                                 "captchaerror":captchaerror,
                                 "commenterror":commenterror,
-                                "prettydate":prettydate
+                                "prettydate":prettydate,
+                                "isadmin":req.user && req.user.email == config.adminemail
                                 });
         } else {
             res.sendStatus(404);
@@ -198,6 +204,18 @@ app.post('/comment/:post', function (req, res) {
         });
     }
 });
+
+app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){
+    console.log("deleting comment " + req.params.comment + " of post " + req.params.post);
+    Comment.deleteComment(req.params.comment).then(function(){
+        console.log("finished deleting");
+        renderPostWithComments(req.params.post, req, res,false,false);
+    }, function(){
+        console.error("Error while saving comment for ", req.params.post, err);
+        //in case of error we render the thing anyway
+        renderPostWithComments(req.params.post, req, res,false,true);
+    });
+})
 
 poet.addRoute('/tags/:tag', function (req, res) {
   var taggedPosts = poet.helpers.postsWithTag(req.params.tag);

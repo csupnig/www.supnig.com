@@ -12,6 +12,19 @@ CommentSchema = mongoose.Schema({
     date:    Date
 });
 
+CommentSchema.statics.deleteComment = function(commentid) {
+    var deferred = q.defer();
+   Comment.find({ _id: commentid }).remove(function(err) {
+        if (!err) {
+            deferred.resolve();
+        }
+        else {
+            deferred.reject();
+        }
+    });
+    return deferred.promise;
+};
+
 
 
 // Create a new user given a profile
@@ -30,7 +43,7 @@ CommentSchema.statics.createComment = function(comment){
     );
 
     return deferred.promise;
-}
+};
 
 var Comment = mongoose.model("Comment", CommentSchema);
 module.exports = Comment;
