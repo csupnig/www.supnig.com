@@ -22,7 +22,8 @@ var express = require('express'),
     crypto = require("crypto"),
     moment = require("moment"),
     swig = require("swig"),
-    routes = require("./config/routes");
+    routes = require("./config/routes"),
+    nodemailer = require("nodemailer");
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];

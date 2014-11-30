@@ -32,6 +32,7 @@
     "poet":"~2.x.x",
     "feed":"*",
     "sitemap":"*",
-    "swig":"*"
+    "swig":"*",
+    "nodemailer":"*"
   }
 }

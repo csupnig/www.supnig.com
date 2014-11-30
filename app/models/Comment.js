@@ -1,7 +1,9 @@
 var mongoose = require('mongoose'),
     q = require('q'),
-    md5 = require('MD5');
-
+    md5 = require('MD5'),
+    nodemailer = require('nodemailer');
+var env = process.env.NODE_ENV || 'development',
+    config = require('../../config/config')[env];
 
 CommentSchema = mongoose.Schema({
     name:    String,
@@ -37,6 +39,27 @@ CommentSchema.statics.createComment = function(comment){
             if(err) {
                 deferred.reject(err);
             } else {
+                var transport = nodemailer.createTransport("sendmail", {
+                    path: config.sendmail,
+                    args: ["-t", "-f", config.adminemail]
+                });
+                // setup e-mail data with unicode symbols
+                var mailOptions = {
+                    from: "Supnig Blog ["+config.adminemail+"]", // sender address
+                    to: config.adminemail, // list of receivers
+                    subject: "New Post on your blog - "+comment.post, // Subject line
+                    text: "New Post on your blog - " + comment.post + " Text: " + comment.comment + " - by "+comment.email, // plaintext body
+                    html: "New Post on your blog - " + comment.post + " Text: " + comment.comment + " - by "+comment.email // html body
+                }
+
+                // send mail with defined transport object
+                transport.sendMail(mailOptions, function(error, response){
+                    if(error){
+                        console.log(error);
+                    }else{
+                        console.log("Message sent: " + response.message);
+                    }
+                });
                 deferred.resolve(c);
             }
         }
