@@ -3,7 +3,8 @@ var mongoose = require('mongoose'),
     md5 = require('MD5'),
     nodemailer = require('nodemailer');
 var env = process.env.NODE_ENV || 'development',
-    config = require('../../config/config')[env];
+    config = require('../../config/config')[env],
+    sendmailTransport = require('nodemailer-sendmail-transport');
 
 CommentSchema = mongoose.Schema({
     name:    String,
@@ -39,10 +40,10 @@ CommentSchema.statics.createComment = function(comment){
             if(err) {
                 deferred.reject(err);
             } else {
-                var transport = nodemailer.createTransport("sendmail", {
+                var transport = nodemailer.createTransport(sendmailTransport( {
                     path: config.sendmail,
                     args: ["-t", "-f", config.adminemail]
-                });
+                }));
                 // setup e-mail data with unicode symbols
                 var mailOptions = {
                     from: "Supnig Blog ["+config.adminemail+"]", // sender address

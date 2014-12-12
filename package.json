@@ -33,6 +33,7 @@
     "feed":"*",
     "sitemap":"*",
     "swig":"*",
-    "nodemailer":"*"
+    "nodemailer":"*",
+    "nodemailer-sendmail-transport":"*"
   }
 }
