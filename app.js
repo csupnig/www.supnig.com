@@ -221,9 +221,10 @@ app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){
 poet.addRoute('/tags/:tag', function (req, res) {
   var taggedPosts = poet.helpers.postsWithTag(req.params.tag);
   if (taggedPosts.length) {
-    res.render('tag', {
-      posts: taggedPosts,
-      tag: req.params.tag
+    res.render('index', {
+        "posts": taggedPosts,
+        "tag": req.params.tag,
+        "prettydate":prettydate
     });
   }
 });
@@ -231,9 +232,10 @@ poet.addRoute('/tags/:tag', function (req, res) {
 poet.addRoute('/category/:category', function (req, res) {
   var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
   if (categorizedPosts.length) {
-    res.render('category', {
-      posts: categorizedPosts,
-      category: req.params.category
+    res.render('index', {
+        "posts": categorizedPosts,
+        "category": req.params.category,
+        "prettydate":prettydate
     });
   }
 });
@@ -245,6 +247,14 @@ poet.addRoute('/pages/:page', function (req, res) {
     posts: poet.helpers.getPosts(lastPost - 3, lastPost),
     page: page
   });
+});
+
+poet.addRoute('/overview', function (req, res) {
+
+    res.render('overview', {
+        "categories": poet.helpers.getCategories(),
+        "tags": poet.helpers.getTags()
+    });
 });
 
 app.get('/', function (req, res) {

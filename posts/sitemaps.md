@@ -1,7 +1,7 @@
 {{{
   "title": "Sitemaps",
   "tags": ["sitemap", "google", "SEO"],
-  "category": "work",
+  "category": "technology",
   "date": "Tue, 29 May 2012 16:44:16 GMT",
   "color":"lightblue"
 }}}

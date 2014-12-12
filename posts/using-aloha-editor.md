@@ -1,7 +1,7 @@
 {{{
   "title": "Using Aloha Editor",
   "tags": ["JavaScript", "Aloha Editor", "contenteditable"],
-  "category": "work",
+  "category": "technology",
   "date": "Wed, 02 May 2012 17:03:24 GMT",
   "color":"violet"
 }}}

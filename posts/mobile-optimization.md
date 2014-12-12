@@ -1,7 +1,7 @@
 {{{
   "title": "Mobile optimization",
   "tags": ["mobile", "CSS", "responsive"],
-  "category": "work",
+  "category": "technology",
   "date": "Thu, 10 May 2012 20:21:19 GMT",
   "color":"blue"
 }}}

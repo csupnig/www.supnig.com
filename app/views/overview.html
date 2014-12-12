@@ -1,0 +1,26 @@
+{% extends "./layout.html" %}
+
+{% block content %}
+
+
+<section id="revereContent" class="content">
+    <div class="clear">&nbsp;</div>
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+        <li><a href="/category/{{category}}">{{category}}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Tags</h2>
+    <ul>
+        {% for tag in tags %}
+        <li><a href="/tags/{{tag}}">{{tag}}</a></li>
+        {% endfor %}
+    </ul>
+
+
+    <div class="clearfix"></div>
+</section>
+
+{% endblock %}
+
