@@ -1,104 +1,174 @@
-/* global require */
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var minifyHTML = require('gulp-minify-html');
-var minifyCSS = require('gulp-minify-css');
-var imagemin = require('gulp-imagemin');
-var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
-var clean = require('gulp-clean');
-var bump = require('gulp-bump');
-var fs = require('fs');
-var ngmin = require('gulp-ngmin');
+/**
+ * Define dependencies
+ */
+var Q = require("q"),
+    gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    less = require('gulp-less'),
+    path = require('path'),
+    bowerFiles = require('gulp-bower-files'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    jshintStylish = require('jshint-stylish-ex'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    clean = require('gulp-clean'),
+    concat = require('gulp-concat'),
+    cache = require('gulp-cache'),
+    livereload = require('gulp-livereload'),
+    inject = require("gulp-inject"),
+    gulpFilter = require("gulp-filter"),
+    autoprefixer = require('gulp-autoprefixer'),
+    htmlmin = require('gulp-htmlmin'),
+    typescript = require('gulp-tsc'),
+    tslint = require('gulp-tslint'),
+    ngHtml2Js = require("gulp-ng-html2js"),
+    runSequence = require('run-sequence'),
+    coffee = require('gulp-coffee'),
+    print = require('gulp-print'),
+    ts = require('gulp-type'),
+    cliArgs = require('yargs').argv,
+    moment = require('moment');
 
+/**
+ * Load config files
+ */
+var pkg = require('./package.json');
+var cfg = require('./build.config.js');
+// ----------------------------------------------------------------------------
+// COMMON TASKS
+// ----------------------------------------------------------------------------
+/**
+ * Clean build (bin) and compile (compile) directories
+ */
+    gulp.task('clean', function () {
+        return gulp.src(['public/assets/*'], {read: false})
+            .pipe(clean());
+    });
+var builddate = moment().format("YYYYMMDD_HHmm");
 
-var getVersion = function(callback) {
-  var file = './version.json';
-  var data = fs.readFileSync(file).toString();
-  data = JSON.parse(data);
-  console.dir('Version: ' + data.version);
-  callback(data.version);
-};
+// ----------------------------------------------------------------------------
+// COMPILE TASKS
+// ----------------------------------------------------------------------------
 
-gulp.task('lint',['browserify'], function() {
-  getVersion(function(v){
-    gulp.src('./public/javascripts/dev/bundle-'+v+'.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter('default'));
-  });
+/**
+ * Merge vendor js files to a single minifed file
+ */
+gulp.task('vendor:compile', function () {
+    var destDir = path.join(cfg.dir.compile, cfg.dir.assets, 'js', 'vendorfiles');
+    var jsFilter = gulpFilter('**/*.js');
+    return bowerFiles()
+        .pipe(jsFilter)
+        .pipe(concat('vendor.js'))
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min.' + pkg.version+'-'+builddate}))
+        .pipe(gulp.dest(destDir));
 });
 
-gulp.task('clean', function() {
-  getVersion(function(v){
-    gulp.src('./public/javascripts/*.js', {read: false})
-        .pipe(clean());
-    gulp.src('./public/javascripts/dev/*.js', {read: false})
-        .pipe(clean());
-    gulp.src('./public/css/*.css', {read: false})
-        .pipe(clean());
-  });
+
+/**
+ * LESS: compile
+ */
+gulp.task('less:compile', function () {
+    var destDir = path.join(cfg.dir.compile, cfg.dir.assets, 'css');
+    return gulp.src(cfg.src.less)
+        .pipe(less({
+            cleancss: true,
+            compress: true
+        }))
+        .pipe(rename({suffix: '.min.' + pkg.version}))
+        .pipe(gulp.dest(destDir));
 });
 
-gulp.task('browserify',['versionbump'], function() {
-    getVersion(function(v){
-      gulp.src(['./frontend/main.js'])
-          .pipe(browserify({
-            insertGlobals : true,
-            debug : true
-          }))
-          //.pipe(ngmin())
-          .pipe(concat('bundle-'+v+'.js'))
-          .pipe(gulp.dest('./public/javascripts/dev/'))
-          //.pipe(uglify({mangle: false}))
-          .pipe(uglify())
-          .pipe(gulp.dest('./public/javascripts/'));
+
+/**
+ * Typescript / JS: ts lint and compile
+ */
+gulp.task('app:ts:compile', function () {
+    var destDir = path.join(cfg.dir.compile, cfg.dir.assets, 'js','app');
+    logHighlight("Compiling Typescript files to js files to dir: " + destDir);
+    var src = cfg.src.ts;
+    src.push(cfg.src.tslibs);
+    src.push('!' + cfg.src.assets);
+    var tsResult = gulp.src(src)
+        .pipe(ts({
+            declarationFiles: true,
+            noExternalResolve: true,
+            sortOutput:true
+        }));
+
+    //tsResult.dts.pipe(gulp.dest('release/definitions'));
+    return tsResult.js.pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min.' + pkg.version + '-' +builddate}))
+        .pipe(gulp.dest(destDir));
+});
+
+/**
+ * posts.html: inject css and js files
+ */
+gulp.task('html:compile', function () {
+    var src = {
+        css: path.join(cfg.dir.compile, cfg.dir.assets, 'css', '**', '*.css'),
+        js: path.join(cfg.dir.compile, cfg.dir.assets, 'js', 'app','**', '*.js'),
+        vendor: path.join(cfg.dir.compile, cfg.dir.assets, 'js', 'vendorfiles','**', '*.js')
+    };
+    var destDir = path.join(cfg.dir.views);
+    var ignorePath = path.join(cfg.dir.compile);
+
+    return gulp.src(cfg.src.index)
+        .pipe(inject(gulp.src(src.vendor, {read: false}), {ignorePath: ignorePath, starttag: '<!-- inject:vendor:{{ext}} -->'}))
+        .pipe(inject(gulp.src(src.js, {read: false}), {ignorePath: ignorePath, starttag: '<!-- inject:app:{{ext}} -->'}))
+        .pipe(inject(gulp.src(src.css, {read: false}), {ignorePath: ignorePath}))
+        .pipe(gulp.dest(destDir));
+});
+
+/**
+ *
+ */
+gulp.task('app:compile', function () {
+    var deferred = Q.defer();
+
+    runSequence(
+        'clean',
+        'less:compile',
+        'vendor:compile',
+        'app:ts:compile',
+        'html:compile',
+        function () {
+            deferred.resolve();
+        });
+
+    return deferred.promise;
+});
+
+
+gulp.task('watch', ['app:compile'], function () {
+    var server = livereload();
+
+    // .less files
+    gulp.watch('app/src/less/**/*.less', ['less:compile']);
+    // .js files
+    gulp.watch('app/src/**/*.ts', ['app:ts:compile']);
+    // Languages
+    gulp.watch('app/src/html/**/*.html', ['html:compile']);
+
+    var buildDir = path.join(cfg.dir.compile, '**');
+    gulp.watch(buildDir).on('change', function (file) {
+        console.log("File changed ", file.path);
+        server.changed(file.path);
     });
 });
 
-gulp.task('example', function(){
-    gulp.src(['./frontend/examples.js'])
-      .pipe(browserify({
-          insertGlobals : true,
-          debug : false,
-          ignore:['msgpack']
-        }))
-      .pipe(concat('example_build.js'))
-      .pipe(uglify({}))
-      .pipe(gulp.dest('./public/javascripts/'));
-    gulp.src(['./frontend/examples.js'])
-      .pipe(gulp.dest('./public/javascripts/'));
-});
 
-gulp.task('minify-css',['versionbump'], function() {
-  getVersion(function(v){
-    gulp.src(['./frontend/lib/nvd3/src/nv.d3.css','./frontend/css/fontello/css/fontello.css','./frontend/css/*.css'])
-      .pipe(minifyCSS({}))
-      .pipe(concat('main-'+v+'.css'))
-      .pipe(gulp.dest('./public/css/'));
-  });
-});
+// ----------------------------------------------------------------------------
+// HELPER FUNCTIONS
+// ----------------------------------------------------------------------------
 
-gulp.task('copytemplate',['versionbump'], function() {
-  gulp.src('./frontend/strategies/StrategyTemplate.js')
-    .pipe(gulp.dest('./public/javascripts/'));
-});
-
-// Defined method of updating:
-// Semantic
-gulp.task('versionbump', function(){
-  return gulp.src('./version.json')
-  .pipe(bump())
-  .pipe(gulp.dest('./'));
-});
-
-gulp.task('release', function() {
-  return gulp.src('./version.json')
-    .pipe(bump({type:'minor'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('default', function(){
-  gulp.run('versionbump','clean', 'browserify', 'lint', 'minify-css', 'copytemplate', 'example');
-});
+/**
+ * Highlight debug messages in log
+ * @param message
+ */
+function logHighlight(message) {
+    gutil.log(gutil.colors.black.bgWhite(message));
+};

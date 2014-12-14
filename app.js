@@ -221,7 +221,7 @@ app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){
 poet.addRoute('/tags/:tag', function (req, res) {
   var taggedPosts = poet.helpers.postsWithTag(req.params.tag);
   if (taggedPosts.length) {
-    res.render('index', {
+    res.render('posts', {
         "posts": taggedPosts,
         "tag": req.params.tag,
         "prettydate":prettydate
@@ -232,7 +232,7 @@ poet.addRoute('/tags/:tag', function (req, res) {
 poet.addRoute('/category/:category', function (req, res) {
   var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
   if (categorizedPosts.length) {
-    res.render('index', {
+    res.render('posts', {
         "posts": categorizedPosts,
         "category": req.params.category,
         "prettydate":prettydate
@@ -243,7 +243,7 @@ poet.addRoute('/category/:category', function (req, res) {
 poet.addRoute('/pages/:page', function (req, res) {
   var page = req.params.page,
       lastPost = page * 3;
-  res.render('index', {
+  res.render('posts', {
     posts: poet.helpers.getPosts(lastPost - 3, lastPost),
     page: page
   });
