@@ -1,7 +1,7 @@
 {{{
   "title": "Make it shiny again!",
   "tags": ["aloha", "technology", "html"],
-  "category": "technology",
+  "category":"blog",
   "date": "Thu, 14 Feb 2013 22:54:58 GMT",
   "color":"pink"
 }}}

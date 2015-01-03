@@ -1,7 +1,7 @@
 {{{
   "title": "The 5 minute guide to free your mind",
   "tags": ["tavel", "stress", "sports"],
-  "category": "life",
+  "category":"blog",
   "date": "Sat, 28 Sep 2013 18:11:06 GMT",
   "color":"blue"
 }}}

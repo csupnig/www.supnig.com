@@ -1,7 +1,7 @@
 {{{
   "title": "You cannot not communicate",
   "tags": ["Usability", "UXCamp", "Usability"],
-  "category": "conference",
+  "category":"blog",
   "date": "Sat, 18 Jun 2011 17:31:35 GMT",
   "color":"blue"
 }}}

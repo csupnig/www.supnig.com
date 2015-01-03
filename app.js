@@ -23,7 +23,9 @@ var express = require('express'),
     moment = require("moment"),
     swig = require("swig"),
     routes = require("./config/routes"),
-    nodemailer = require("nodemailer");
+    nodemailer = require("nodemailer"),
+    q = require('q'),
+    sendmailTransport = require('nodemailer-sendmail-transport');
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -127,6 +129,59 @@ var generateGalleries = function() {
 
 var prettydate = function(date) {
   return moment(date).fromNow();
+};
+
+var renderIndexWithMessageCapcha = function(req, res, messagesuccess) {
+    var captchaValue = crypto.randomBytes(64).toString('hex');
+    req.session.capchaValue = captchaValue;
+    var field1 = crypto.randomBytes(64).toString('hex');
+    var field2 = crypto.randomBytes(64).toString('hex');
+    if (Math.random() > 0.5) {
+        req.session.empty = field1;
+        req.session.captcha = field2;
+    } else {
+        req.session.empty = field2;
+        req.session.captcha = field1;
+    }
+    res.render('index', {
+        "portfolios":poet.helpers.postsWithCategory("portfolio"),
+        "worldtrip":poet.helpers.postsWithCategory("worldtrip").sort(function(a,b){
+            return a.date.getTime() - b.date.getTime();
+        }),
+        "captchaValue":captchaValue,
+        "captcha":req.session.captcha,
+        "name1":field1,
+        "name2":field2,
+        "messagesuccess":messagesuccess,
+        "prettydate":prettydate
+    });
+};
+
+var sendMail = function(frommail,name,message,phone) {
+    var deferred = q.defer();
+    var transport = nodemailer.createTransport(sendmailTransport( {
+        path: config.sendmail,
+        args: ["-t", "-f", config.adminemail]
+    }));
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+        from: "Supnig Blog ["+config.adminemail+"]", // sender address
+        to: config.adminemail, // list of receivers
+        subject: "New Message your blog", // Subject line
+        text: "New Message blog - From: "+name+" Email: "+frommail+" Phone: "+phone+"  Text: " + message + " - by "+frommail, // plaintext body
+        html: "New Message blog - From: "+name+" Email: "+frommail+" Phone: "+phone+"  Text: " + message + " - by "+frommail // html body
+    }
+
+    // send mail with defined transport object
+    transport.sendMail(mailOptions, function(error, response){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Message sent: " + response.message);
+        }
+    });
+    deferred.resolve(true);
+    return deferred.promise;
 };
 
 var renderPostWithComments = function(postslug, req, res,captchaerror,commenterror) {
@@ -258,10 +313,16 @@ poet.addRoute('/overview', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.render('index', {
-        "posts": poet.helpers.getPosts(),
-        "prettydate":prettydate
-    });
+    renderIndexWithMessageCapcha(req,res,false);
+});
+app.post('/message', function (req, res) {
+    if (req.body[req.session.captcha] != req.session.capchaValue) {
+        renderIndexWithMessageCapcha(req,res,false);
+    } else {
+        sendMail(req.body.email, req.body.name, req.body.message, req.body.phone).then(function(){
+            renderIndexWithMessageCapcha(req,res,true);
+        });
+    }
 });
 
 app.get('/about', function (req, res) {

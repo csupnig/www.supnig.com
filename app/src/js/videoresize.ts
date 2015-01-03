@@ -42,10 +42,8 @@
             var diffW = $outer.width() - $inner.width();
             var diffH = $outer.height() - $inner.height();
             if (diffW > diffH) {
-                console.log("fittowidth");
                 fitToWidth($inner, $outer);
             } else {
-                console.log("fittoheight");
                 fitToHeight($inner, $outer);
             }
             $pagetop.css('padding-top',$outer.height());

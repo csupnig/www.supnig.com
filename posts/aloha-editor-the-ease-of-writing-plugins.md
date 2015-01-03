@@ -1,7 +1,7 @@
 {{{
   "title": "Aloha Editor - The ease of writing plugins",
   "tags": ["Aloha Editor", "contenteditable", "JavaScript"],
-  "category": "technology",
+  "category":"blog",
   "date": "Mon, 11 Jul 2011 18:46:30 GMT",
   "color":"yellow",
   "slug":"aloha-editor-the-ease-of-writing-plugins"

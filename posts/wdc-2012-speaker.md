@@ -1,7 +1,7 @@
 {{{
   "title": "WDC 2012 - Speaker",
   "tags": ["Speaking", "WDC 2012", "Conference"],
-  "category": "conference",
+  "category":"blog",
   "date": "Sat, 21 Apr 2012 17:01:28 GMT",
   "color":"orange",
   "slug":"wdc-2012-speaker"

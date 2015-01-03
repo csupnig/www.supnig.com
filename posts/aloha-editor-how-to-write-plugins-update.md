@@ -1,7 +1,7 @@
 {{{
   "title": "Aloha Editor - How to write plugins update",
   "tags": ["Aloha Editor", "contenteditable", "JavaScript", "plugins"],
-  "category": "technology",
+  "category":"blog",
   "date": "Sat, 21 Apr 2012 18:01:51 GMT",
   "color":"darkorange",
   "slug":"aloha-editor-how-to-write-plugins-update"
