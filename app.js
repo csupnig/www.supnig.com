@@ -312,9 +312,19 @@ poet.addRoute('/overview', function (req, res) {
     });
 });
 
+poet.addRoute('/blog', function (req, res) {
+
+    res.render('posts', {
+        "posts": poet.helpers.postsWithCategory("blog"),
+        "tags": poet.helpers.getTags(),
+        "prettydate":prettydate
+    });
+});
+
 app.get('/', function (req, res) {
     renderIndexWithMessageCapcha(req,res,false);
 });
+
 app.post('/message', function (req, res) {
     if (req.body[req.session.captcha] != req.session.capchaValue) {
         renderIndexWithMessageCapcha(req,res,false);

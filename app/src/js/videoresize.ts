@@ -4,9 +4,11 @@
 
     function fitToWidth($inner, $outer) {
         var size = $outer.width();
+        var ratio = $inner.width() / $inner.height();
+        console.log("fit to width",size, ratio);
         $inner.css({
             width  : size,
-            height : size * ($inner.height() / $inner.width())
+            height : 'auto'
         });
         $inner.css({
             top  : ($outer.height() - $inner.height()) / 2,
@@ -17,8 +19,9 @@
     function fitToHeight($inner, $outer) {
         var size = $outer.height();
         var ratio = $inner.width() / $inner.height();
+        console.log("fit to height",size,ratio);
         $inner.css({
-            width  : size * ($inner.width() / $inner.height()),
+            width  : 'auto',
             height : size
         });
         $inner.css({

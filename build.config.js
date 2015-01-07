@@ -12,6 +12,6 @@ module.exports = {
        ts: ['app/src/**/*.ts'],
         tslibs:'libs/**/*.ts',
         js: ['app/src/**/*.js'],
-        index: 'app/src/html/index.html'
+        index: 'app/src/html/layout.html'
     }
 };
