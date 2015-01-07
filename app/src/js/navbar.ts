@@ -36,11 +36,13 @@ var cbpAnimatedHeader = (function() {
 
     function scrollPage() {
         var sy = scrollY();
-        if ( sy >= changeHeaderOn ) {
-            $header.addClass('navbar-shrink');
-        }
-        else {
-            $header.removeClass('navbar-shrink');
+        if (!$header.hasClass('navbar-always')) {
+            if (sy >= changeHeaderOn) {
+                $header.addClass('navbar-shrink');
+            }
+            else {
+                $header.removeClass('navbar-shrink');
+            }
         }
         didScroll = false;
     }

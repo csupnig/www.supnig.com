@@ -55,6 +55,53 @@
 </head>
 
 <body class="index">
+{% macro navigation(blog) %}
+{% set basepath = "" %}
+{% if blog %}
+{% set basepath = "/" %}
+{% endif %}
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top{% if blog %} navbar-shrink navbar-always{% endif %}">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Christopher Supnig</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{{basepath}}#passion">Passion</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{{basepath}}#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{{basepath}}#worldtrip">World Trip 2015</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/blog">Blog</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{{basepath}}#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{% endmacro %}
 
 {% block content %}
 NO TEMPLATE FOUND
@@ -85,11 +132,11 @@ NO TEMPLATE FOUND
 </footer>
 
 <!-- inject:vendor:js -->
-<script src="/assets/js/vendorfiles/vendor.min.0.8.0-20150107_1639.js"></script>
+<script src="/assets/js/vendorfiles/vendor.min.0.8.0-20150107_1737.js"></script>
 <!-- endinject -->
 
 <!-- inject:app:js -->
-<script src="/assets/js/app/main.min.0.8.0-20150107_1639.js"></script>
+<script src="/assets/js/app/main.min.0.8.0-20150107_1737.js"></script>
 <!-- endinject -->
 
 </body>
