@@ -4,13 +4,12 @@
 {{ navigation(true) }}
 
     <section class="content blog">
-        <div class="clear">&nbsp;</div>
         <ul class="container container_12 posts">
             {% for post in posts %}
-            <li class="post {{post.color}}">
-                <article class="container container_12">
-                    <div class="grid_1">&nbsp;</div>
-                    <div class="grid_10 post">
+            <li class="post {{post.color}} container">
+                <article class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 post">
                         <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
                         <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }}</span></div>
                         <div class="content">{{post.preview|safe}}
@@ -18,11 +17,9 @@
                         </div>
                     </div>
                 </article>
-                <div class="clear"></div>
             </li>
             {% endfor %}
         </ul>
-        <div class="clearfix"></div>
     </section>
 
     {% endblock %}

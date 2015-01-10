@@ -90,10 +90,10 @@
                     <a class="page-scroll" href="{{basepath}}#worldtrip">World Trip 2015</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/blog">Blog</a>
-                </li>
-                <li>
                     <a class="page-scroll" href="{{basepath}}#contact">Contact</a>
+                </li>
+                <li{% if blog %} class="active"{% endif %}>
+                    <a class="page-scroll" href="/blog">Blog</a>
                 </li>
             </ul>
         </div>
@@ -132,11 +132,11 @@ NO TEMPLATE FOUND
 </footer>
 
 <!-- inject:vendor:js -->
-<script src="/assets/js/vendorfiles/vendor.min.0.8.0-20150107_1737.js"></script>
+<script src="/assets/js/vendorfiles/vendor.min.0.8.0-20150109_1548.js"></script>
 <!-- endinject -->
 
 <!-- inject:app:js -->
-<script src="/assets/js/app/main.min.0.8.0-20150107_1737.js"></script>
+<script src="/assets/js/app/main.min.0.8.0-20150109_1548.js"></script>
 <!-- endinject -->
 
 </body>
