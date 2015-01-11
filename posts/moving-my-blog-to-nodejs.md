@@ -4,7 +4,8 @@
     "category":"blog",
     "date": "Thu, 27 Nov 2014 09:31:35 GMT",
     "color":"green",
-    "slug":"moving-my-blog-to-nodejs"
+    "slug":"moving-my-blog-to-nodejs",
+    "picture":"/media/pictures/nodejs-dark1.jpg"
 }}}
 
 Up to now my blog was running on a self made implementation of the JSR-286

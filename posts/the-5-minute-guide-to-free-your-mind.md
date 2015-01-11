@@ -3,7 +3,8 @@
   "tags": ["tavel", "stress", "sports"],
   "category":"blog",
   "date": "Sat, 28 Sep 2013 18:11:06 GMT",
-  "color":"blue"
+  "color":"blue",
+  "picture":"/media/pictures/sailing.jpg"
 }}}
 
 As we live now, we have to deal with vast variety of thoughts throughout our daily routine. It does not really matter if those are thoughts about how to solve a problem in your job or private life, the list of items you are putting on your imaginary shopping list, or just random thoughts that come to your mind and take down your productivity or even your wellbeing. Read on to find out how I try to cope with this mind clutter and go about to clean my mind.

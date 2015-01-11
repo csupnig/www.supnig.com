@@ -4,7 +4,8 @@
   "category":"blog",
   "date": "Sat, 11 Nov 2014 17:31:35 GMT",
   "color":"lightblue",
-  "slug":"how-i-got-into-angularjs"
+  "slug":"how-i-got-into-angularjs",
+  "picture":"/media/pictures/angularjs.png"
 }}}
 
 When I had a few days off over last year’s Christmas holidays, I really

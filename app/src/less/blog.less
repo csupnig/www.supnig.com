@@ -5,10 +5,25 @@ section.blog {
   section#contact {
     background: none;
   }
-  .post .titleimage {
+  .post {
     img {
-      margin-left: auto;
-      margin-right: auto;
+      float:right;
+      .rounded(5px);
+      margin:10px;
+      padding:10px;
+      border:1px solid;
+      border-color:@brand-primary;
+      background-color:lighten(@brand-primary, 30%);
+    }
+    .titleimage {
+      img {
+        border:none;
+        padding: 0px;
+        float:none;
+        margin-left: auto;
+        margin-right: auto;
+        .rounded(0px);
+      }
     }
   }
 }

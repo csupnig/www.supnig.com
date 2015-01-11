@@ -2,8 +2,36 @@
 
     {% block content %}
 {{ navigation(true) }}
-
+<header class="navbar-shrink">
+    <div class="container">
+        <div class="intro-text">
+            <!--div class="intro-lead-in">Welcome To My Page!</div-->
+            <div class="avatar">
+                <a href="/"><img class="img-circle img-responsive" src="/media/pictures/avatar.jpg" alt="Christopher Supnig"></a>
+            </div>
+        </div>
+    </div>
+</header>
     <section class="content blog">
+        <div class="row" id="firstposts">
+            {% for post in firstposts %}
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="{{post.url}}" class="portfolio-link">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="{{post.picture}}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>{{post.title}}</h4>
+                    <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }}</span></div>
+                    <p class="text-muted">{{post.preview|safe}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
         <ul class="container container_12 posts">
             {% for post in posts %}
             <li class="post {{post.color}} container">

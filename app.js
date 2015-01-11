@@ -313,9 +313,19 @@ poet.addRoute('/overview', function (req, res) {
 });
 
 poet.addRoute('/blog', function (req, res) {
-
+    var posts = poet.helpers.postsWithCategory("blog");
+    var first = [], rest = [], count = 0;
+    posts.forEach(function(post){
+        if (count > 2) {
+            rest.push(post);
+        } else {
+            first.push(post);
+        }
+        count++;
+    });
     res.render('posts', {
-        "posts": poet.helpers.postsWithCategory("blog"),
+        "firstposts" : first,
+        "posts": rest,
         "tags": poet.helpers.getTags(),
         "prettydate":prettydate
     });
