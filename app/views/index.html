@@ -15,98 +15,32 @@
             <div class="avatar">
                 <img class="img-circle img-responsive" src="/media/pictures/avatar.jpg" alt="Christopher Supnig">
             </div>
-            <div class="intro-heading">It's Nice To Meet You</div>
-            <a href="#worldtrip" class="page-scroll btn btn-xl">Sail with me</a>
+            <div class="intro-heading">Christopher Supnig</div>
+
+
+            <ul class="list-inline social-buttons top">
+                <li><a href="https://github.com/csupnig"><i class="fa fa-github"></i></a>
+                </li>
+                <li><a href="https://twitter.com/csupnig"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li><a href="http://stackoverflow.com/users/694426/csupnig"><i class="fa fa-stack-overflow"></i></a>
+                </li>
+                <li><a href="https://www.facebook.com/supnig"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li><a href="https://www.xing.com/profile/Christopher_Supnig"><i class="fa fa-xing"></i></a>
+                </li>
+            </ul>
+            <a href="#worldtrip" class="page-scroll btn btn-xl">Follow Me</a><div class="row">
+
+        </div>
         </div>
     </div>
 </header>
 <section id="page-top">
 
 </section>
-<!-- Profession Section -->
-<section id="passion">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Passion</h2>
-                <h3 class="section-subheading text-muted">These are my few cents on web development, sofware and generally the things I love.</h3>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Travelling</h4>
-                <p class="text-muted">I love the feeling of getting to know new places especially when this means getting lost in a new city or fleeing the european winter in exchange for sunshine.</p>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Web Development</h4>
-                <p class="text-muted">Being a passionate web developer, working on web back-ends as well as front-ends and making the web a better and more interesting place exites me and keeps me striving to perfection on big as well as small projects.</p>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Optimization</h4>
-                <p class="text-muted">Immersing myself in the task of making an application more efficient and blazing fast satisfies my hunger for perfection.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-subheading text-muted">You can swing by on one of my other web profiles</h3>
-                <ul class="list-inline social-buttons">
-                    <li><a href="https://github.com/csupnig"><i class="fa fa-github"></i></a>
-                    </li>
-                    <li><a href="https://twitter.com/csupnig"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="http://stackoverflow.com/users/694426/csupnig"><i class="fa fa-stack-overflow"></i></a>
-                    </li>
-                    <li><a href="https://www.facebook.com/supnig"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="https://www.xing.com/profile/Christopher_Supnig"><i class="fa fa-xing"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Portfolio Grid Section -->
-<section id="portfolio" class="bg-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Portfolio</h2>
-                <h3 class="section-subheading text-muted">These are some of my recent projects.</h3>
-            </div>
-        </div>
-        <div class="row">
-            {% for post in portfolios %}
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal{{post.slug}}" class="portfolio-link" data-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{post.picture}}" class="img-responsive" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>{{post.title}}</h4>
-                    <p class="text-muted">{{post.preview|safe}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+
 
 <!-- About Section -->
 <section id="worldtrip">
@@ -155,6 +89,75 @@
                 </ul>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Portfolio</h2>
+                <h3 class="section-subheading text-muted">These are some of my recent projects.</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for post in portfolios %}
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal{{post.slug}}" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="{{post.picture}}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>{{post.title}}</h4>
+                    <p class="text-muted">{{post.preview|safe}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Profession Section -->
+<section id="passion">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">About Me</h2>
+                <h3 class="section-subheading text-muted">These are my few cents on web development, sofware and generally the things I love.</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                    </span>
+                <h4 class="service-heading">Travelling</h4>
+                <p class="text-muted">I love the feeling of getting to know new places especially when this means getting lost in a new city or fleeing the european winter in exchange for sunshine.</p>
+            </div>
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                <h4 class="service-heading">Web Development</h4>
+                <p class="text-muted">Being a passionate web developer, working on web back-ends as well as front-ends and making the web a better and more interesting place exites me and keeps me striving to perfection on big as well as small projects.</p>
+            </div>
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                    </span>
+                <h4 class="service-heading">Optimization</h4>
+                <p class="text-muted">Immersing myself in the task of making an application more efficient and blazing fast satisfies my hunger for perfection.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 

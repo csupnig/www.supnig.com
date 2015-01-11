@@ -99,14 +99,14 @@ h1, h2, h3, h4, h5, h6 {
 		border-color: fade(white, 2%);
 	}
 	.navbar-toggle {
-		background-color: @brand-primary;
-		border-color: @brand-primary;
+		background-color: @gray-darkest;
+		border-color: @gray-darkest;
 		.icon-bar {
-			background-color: white;
+			background-color: @brand-primary;
 		}
 		&:hover,
 		&:focus {
-			background-color: @brand-primary;
+			background-color: @gray-darkest;
 		}
 	}
     .nav {
@@ -391,7 +391,21 @@ ul.social-buttons {
 				background-color: @brand-primary;
 	        }
 		}
+
 	}
+}
+ul.social-buttons.top {
+  margin-bottom: 30px;
+  li {
+	a {
+	  background-color: @brand-primary;
+	  &:hover,
+	  &:focus,
+	  &:active {
+		background-color: @gray-darkest;
+	  }
+	}
+  }
 }
 
 .btn:focus,
@@ -474,7 +488,7 @@ ul.social-buttons {
 }
 
 // Highlight Color Customization
-
+/*
 ::-moz-selection {
     text-shadow: none;
     background: @brand-primary;
@@ -484,7 +498,7 @@ ul.social-buttons {
     text-shadow: none;
     background: @brand-primary;
 }
-
+*/
 img::selection {
     background: transparent;
 }

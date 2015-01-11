@@ -85,6 +85,32 @@ header {
   }
 }
 
+header.navbar-shrink {
+  .container {
+    .intro-text {
+      .avatar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+        margin: 10px;
+
+        animation: move 3s ease infinite;
+        @keyframes move {
+          50% {
+            transform: translate(100px, 100px);
+            transform: scale (2.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 video.cover {
   /*height:100%;

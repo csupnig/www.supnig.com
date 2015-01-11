@@ -22,8 +22,9 @@ var cbpAnimatedHeader = (function() {
 
     var docElem = document.documentElement,
         $header = $( '.navbar-default' ),
+        $headersection = $('header'),
         didScroll = false,
-        changeHeaderOn = 300;
+        changeHeaderOn = 100;
 
     function init() {
         window.addEventListener( 'scroll', function( event ) {
@@ -39,9 +40,11 @@ var cbpAnimatedHeader = (function() {
         if (!$header.hasClass('navbar-always')) {
             if (sy >= changeHeaderOn) {
                 $header.addClass('navbar-shrink');
+                $headersection.addClass('navbar-shrink');
             }
             else {
                 $header.removeClass('navbar-shrink');
+                $headersection.removeClass('navbar-shrink');
             }
         }
         didScroll = false;
