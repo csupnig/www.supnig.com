@@ -2,6 +2,7 @@
  * Define dependencies
  */
 var Q = require("q"),
+    glob = require("glob"),
     gulp = require('gulp'),
     gutil = require('gulp-util'),
     less = require('gulp-less'),
@@ -27,6 +28,7 @@ var Q = require("q"),
     coffee = require('gulp-coffee'),
     print = require('gulp-print'),
     ts = require('gulp-type'),
+    uncss = require('gulp-uncss'),
     cliArgs = require('yargs').argv,
     moment = require('moment');
 
@@ -76,6 +78,9 @@ gulp.task('less:compile', function () {
             cleancss: true,
             compress: true
         }))
+        //.pipe(uncss({
+        //    html: glob.sync('app/**/*.html')
+        //}))
         .pipe(rename({suffix: '.min.' + pkg.version}))
         .pipe(gulp.dest(destDir));
 });

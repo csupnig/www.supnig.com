@@ -16,6 +16,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
+    expressCompression = require('compression'),
     sm = require('sitemap'),
     Poet = require('poet'),
     Comment = require("./app/models/Comment"),
@@ -50,6 +51,7 @@ app.engine('html', cons.swig);
 app.set('view engine', 'html');
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
+app.use(expressCompression());
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));

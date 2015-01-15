@@ -44,10 +44,16 @@
         function cover() {
             var diffW = $outer.width() - $inner.width();
             var diffH = $outer.height() - $inner.height();
-            if (diffW > diffH) {
-                fitToWidth($inner, $outer);
+            if (diffW < 0 && diffH < 0) {
+                /*if ($outer.height() > $outer.width()) {
+                    fitToHeight($inner, $outer);
+                }*/
             } else {
-                fitToHeight($inner, $outer);
+                if (Math.abs(diffW) > Math.abs(diffH)) {
+                    fitToWidth($inner, $outer);
+                } else {
+                    fitToHeight($inner, $outer);
+                }
             }
             $pagetop.css('padding-top',$outer.height());
         }
