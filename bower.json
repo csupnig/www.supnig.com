@@ -6,7 +6,8 @@
     "jquery.easing":"*",
     "bootstrap": "~3.0.3",
     "font-awesome": "~4.2",
-    "lesshat": "~2.0.13"
+    "lesshat": "~2.0.13",
+    "jquery-masonry":"*"
   },
   "overrides": {
     "bootstrap": {

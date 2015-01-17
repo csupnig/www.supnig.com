@@ -327,7 +327,8 @@ poet.addRoute('/blog', function (req, res) {
     });
     res.render('posts', {
         "firstposts" : first,
-        "posts": rest,
+        "rest":rest,
+        "posts": posts,
         "tags": poet.helpers.getTags(),
         "prettydate":prettydate
     });
