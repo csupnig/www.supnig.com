@@ -7,7 +7,7 @@
     "bootstrap": "~3.0.3",
     "font-awesome": "~4.2",
     "lesshat": "~2.0.13",
-    "jquery-masonry":"*"
+    "jquery-masonry":"3.2.2"
   },
   "overrides": {
     "bootstrap": {

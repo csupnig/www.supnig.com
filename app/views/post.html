@@ -34,7 +34,11 @@
                 <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10 backlink">
+                        {% if post.category=='worldtrip' %}
+                        <a href="/#worldtrip" title="back to overview">&laquo; overview</a>
+                        {% else %}
                         <a href="/blog" title="back to overview">&laquo; overview</a>
+                        {% endif %}
                     </div>
                 </div>
             </li>

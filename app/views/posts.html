@@ -15,7 +15,8 @@
     <section class="content blog bg-light-gray">
         <div class="row" id="firstposts">
             {% for post in posts %}
-            <div class="portfolio-item">
+            <div class="portfolio-item item">
+                {% if post.picture %}
                 <a href="{{post.url}}" class="portfolio-link">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
@@ -24,30 +25,15 @@
                     </div>
                     <img src="{{post.picture}}" class="img-responsive" alt="">
                 </a>
+                {% endif %}
                 <div class="portfolio-caption">
-                    <h4>{{post.title}}</h4>
+                    <h4><a href="{{post.url}}">{{post.title}}</a></h4>
                     <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }}</span></div>
                     <p class="text-muted">{{post.preview|safe}}</p>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <ul class="container container_12 posts">
-            {% for post in nothing %}
-            <li class="post {{post.color}} container">
-                <article class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 post">
-                        <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
-                        <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }}</span></div>
-                        <div class="content">{{post.preview|safe}}
-                            <p class="morelink"><a href="{{post.url}}" title="{{post.title}}">continue reading &raquo;</a></p>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            {% endfor %}
-        </ul>
     </section>
 
     {% endblock %}

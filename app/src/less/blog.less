@@ -7,10 +7,16 @@ section.blog {
   }
 
   #firstposts {
-    width: 1000px;
+    width: 100%;
     /*.columns(auto, 3, 10px);*/
     margin-right: auto;
     margin-left: auto;
+  }
+
+  @media(min-width:1000px) {
+    #firstposts {
+      width:1000px;
+    }
   }
   .post {
     img {

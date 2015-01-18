@@ -136,6 +136,15 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+.collapse {
+  visibility: hidden;
+  display: none;
+}
+
+.collapsing {
+  overflow: hidden;
+}
+
 @media(min-width:768px) {
     .navbar-default {
     	background-color: transparent;
@@ -197,11 +206,37 @@ section {
 }
 
 // Portfolio Section
+#portfolio {
+  .portfolio-item {
+	right: 0;
+	margin: 0 0 15px;
+	.portfolio-caption {
+	  max-width: 400px;
+	  margin: 0 auto;
+	  background-color: white;
+	  text-align: center;
+	  padding: 25px;
+	  h4 {
+		text-transform: none;
+		margin: 0;
+	  }
+	  p {
+		.serif-font;
+		font-style: italic;
+		font-size: 16px;
+		margin: 0;
+	  }
+	}
+  }
+}
 
 #portfolio, #firstposts {
     .portfolio-item {
-        margin: 0 0 15px;
-        right: 0;
+	    h4{
+		  a {
+			color:@gray-darkest;
+		  }
+		}
         .portfolio-link {
             display: block;
             position: relative;
@@ -234,31 +269,27 @@ section {
                     h3,
                     h4 {
                         margin: 0;
+
                     }
                 }                
             }            
         }
-        .portfolio-caption {
-        	max-width: 400px;
-        	margin: 0 auto;
-        	background-color: white;
-        	text-align: center;
-        	padding: 25px;
-        	h4 {
-        		text-transform: none;
-        		margin: 0;
-        	}
-        	p {
-        		.serif-font;
-        		font-style: italic;
-        		font-size: 16px;
-        		margin: 0;
-        	}
-        }
+
     }
     * {
         z-index: 2;
     }
+}
+
+#firstposts {
+  .portfolio-item {
+	/*width:33%;*/
+	width:200px;
+	padding:20px;
+	margin:10px;
+	margin-bottom:20px;
+	background: #fff;
+  }
 }
 
 @media(min-width:767px) {
