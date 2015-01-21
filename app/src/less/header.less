@@ -66,6 +66,9 @@ header {
     padding:0px;
     .intro-text {
       position: relative;
+      .avatarcontainer {
+        height: 150px;
+      }
       .avatar {
         width: 150px;
         height: 150px;
@@ -76,6 +79,7 @@ header {
         text-align: center;
         margin-left:auto;
         margin-right:auto;
+
       }
       .intro-heading {
         color:@brand-primary;
@@ -90,26 +94,78 @@ header.navbar-shrink {
     .intro-text {
       .avatar {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0px;
+        left: 100px;
         z-index: 1050;
         width: 50px;
         height: 50px;
         border-width: 3px;
         margin: 10px;
 
-        animation: move 3s ease infinite;
-        @keyframes move {
-          50% {
-            transform: translate(100px, 100px);
-            transform: scale (2.4);
-          }
+        -webkit-transition: width 0.5s ease, height 0.5s ease, -webkit-transform 0.5s ease;
+        -moz-transition: width 0.5s ease, height 0.5s ease, -webkit-transform 0.5s ease;
+        -o-transition: width 0.5s ease, height 0.5s ease, -webkit-transform 0.5s ease;
+        -ms-transition: width 0.5s ease, height 0.5s ease, -webkit-transform 0.5s ease;
+        transition: width 0.5s ease, height 0.5s ease, -webkit-transform 0.5s ease;
+
+        .translate(-100px, 0px);
+        transform: scale (2);
+      }
+    }
+  }
+}
+
+@media(min-width:401px) {
+  header.navbar-shrink {
+    .container {
+      .intro-text {
+        .avatar {
+          left: 150px;
+          .translate(-150px, 0px);
         }
       }
     }
   }
 }
 
+@media(min-width:768px) {
+  header.navbar-shrink {
+    .container {
+      .intro-text {
+        .avatar {
+          left: 300px;
+          .translate(-300px, 0px);
+        }
+      }
+    }
+  }
+}
+
+@media(min-width:1000px) {
+  header.navbar-shrink {
+    .container {
+      .intro-text {
+        .avatar {
+          left: 400px;
+          .translate(-400px, 0px);
+        }
+      }
+    }
+  }
+}
+
+@media(min-width:1200px) {
+  header.navbar-shrink {
+    .container {
+      .intro-text {
+        .avatar {
+          left: 500px;
+          .translate(-500px, 0px);
+        }
+      }
+    }
+  }
+}
 
 
 video.cover, img.cover {
