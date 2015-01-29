@@ -27,9 +27,9 @@ interesting people who taught me how to listen to myself and be myself in order 
 I think that for me this world trip is the ultimate test for my new found confidence and I am absolutely looking forward to experience
 many different cultures, cities and people.
 
-## The Plan
+## First destination
 My first plane tickets are booked to Salvador, Brasil, where I will meet up with my dad, cousins and my uncle to spend an awesome
 time in my uncles cafe [Café Ba-Cana](https://www.facebook.com/pages/Caf%C3%A9-Ba-Cana-Bar-e-Restaurante/257241011024106?pnref=lhc).
-From there on I will continue alone northwards to find the adventures I am so craving for.
+From there on I will continue alone northwards to find the adventures that are to come.
 
 Title picture by Siegfried Schlögl. Check out his other awesome pictures on Instagram [@labraquebleu](http://instagram.com/labraquebleu/)
