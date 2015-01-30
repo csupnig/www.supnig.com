@@ -7,7 +7,6 @@ declare var skrollr:any;
 
 $(function(){
     if ($('#blog').length<=0) {
-        console.log('init scrollr');
         var s = skrollr.init();
     }
 });
