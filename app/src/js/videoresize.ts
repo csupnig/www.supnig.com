@@ -9,10 +9,12 @@
             width  : size,
             height : 'auto'
         });
-        $inner.css({
-            top  : ($outer.height() - $inner.height()) / 2,
-            left : 0
-        });
+        if (($outer.height() - $inner.height()) / 2 < 0) {
+            $inner.css({
+                top: ($outer.height() - $inner.height()) / 2,
+                left: 0
+            });
+        }
     }
 
     function fitToHeight($inner, $outer) {
