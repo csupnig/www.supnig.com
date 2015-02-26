@@ -6,6 +6,9 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+
+    $('.colorbox').colorbox({rel:"colorbox", scale:true, maxWidth:"100%", maxHeight:"100%"});
 });
 
 // Highlight the top nav as scrolling occurs

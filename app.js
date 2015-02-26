@@ -117,7 +117,7 @@ var generateGalleries = function() {
                     images.push("/"+match[1]+"/"+file);
                 });
                 var needle = "<!--gallery:" + match[1] + "-->";
-                swig.renderFile(gallerytemplate,{"images":images},function(err,result){
+                swig.renderFile(gallerytemplate,{"images":images, "rel":post.slug},function(err,result){
                     if (err) {
                         return;
                     }

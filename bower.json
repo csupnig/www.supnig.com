@@ -8,7 +8,8 @@
     "font-awesome": "~4.2",
     "lesshat": "~2.0.13",
     "jquery-masonry":"3.2.2",
-    "skrollr":"*"
+    "skrollr":"*",
+    "jquery-colorbox":"*"
   },
   "overrides": {
     "bootstrap": {

@@ -19,9 +19,9 @@
     <meta name="keywords" content="christopher supnig, supnig, christopher, web, design, blog, portal, web application, enterprise search" />
     <link rel="author" href="/humans.txt" />
     <meta name="robots" content="all" />
-    <meta name="description" content="Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!)"/>
+    <meta name="description" content="{% if post.preview %}{{post.preview|striptags|safe}}{% else %}Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!){% endif %}"/>
 
-    <title> Christopher Supnig - My Blog</title>
+    <title>{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}</title>
 
     <!-- inject:css -->
     <!-- endinject -->
