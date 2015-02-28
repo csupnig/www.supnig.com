@@ -17,7 +17,7 @@ went with one of the mini buses instead of taking the 2.5 hour hiking trip. At t
 a mistake. I am not too fond of all those "must see" tourist places and time and time again it seems that this feeling is being strengthened
 by new evidence. Also on this day. The first stop was not the start of a 15 minutes walk to the statue as we expected, it was rather a place
 to queue up for the second mini bus that would take us to the top. The place was already packed with people and the sun was burning down
-relentlessly with is purifying beauty. A fleshy snake of sweaty tourists slowly ground its way towards the endless stream of buses that
+relentlessly with its purifying beauty. A fleshy snake of sweaty tourists slowly ground its way towards the endless stream of buses that
 just stopped to take on a new load of people. Finally we arrived at the statue and there we found another queue of people that wanted to
 take one of the cars down again but this did not concern us at that moment and we were happy to be there. The place was so prepared for
 tourists that we did not even have to walk up any stairs, we could just take the escalator directly to the statue almost without moving our
