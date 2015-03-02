@@ -2,7 +2,7 @@
   "title": "Penedo",
   "tags": ["World Trip", "Penedo", "beach"],
   "category":"worldtrip",
-  "date": "Fri, 27 Feb 2015 17:31:35 GMT",
+  "date": "Mon, 02 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_penedo.jpg",
   "picturecapt":"Friendly people in Penedo"
