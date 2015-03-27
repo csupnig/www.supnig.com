@@ -11,7 +11,7 @@
 We decided to rent a car and go all the way from Miami to Key West.
 <!--more-->
 ## Gettin' the 'stang ready
-Patrick and I reserved our car on the day before and got up early to take it out right when the Avis shop opened on Monday. Preparing with
+Patrik and I reserved our car on the day before and got up early to take it out right when the Avis shop opened on Monday. Preparing with
 sunscreen and some breakfast, we set off from Miami to our 200 miles drive that should take us down to the southern most part of Florida.
 It was my first drive in a convertible that took more then an hour and this was the perfect road for this car. The sun was shining down
 on us and we had the ocean to both our left and our right side of the road. It took us about 4 hours to get to Key West and the first
