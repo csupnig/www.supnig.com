@@ -1,7 +1,7 @@
 {{{
   "title": "He who seeks shall find",
   "tags": ["Search", "Lucene"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sun, 01 Jan 2012 16:09:25 GMT",
   "color":"darkyellow"
 }}}

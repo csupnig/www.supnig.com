@@ -1,7 +1,7 @@
 {{{
   "title": "On top of Rio",
   "tags": ["World Trip", "Rio", "not leaving brazil", "climbing", "hiking"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Wed, 18 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_ontopofrio.jpg",

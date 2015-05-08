@@ -1,7 +1,7 @@
 {{{
   "title": "Why are you storing your passwords wrong?",
   "tags": ["security", "passwords", "bcrypt"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sun, 24 Jun 2012 00:44:01 GMT",
   "color":"green"
 }}}

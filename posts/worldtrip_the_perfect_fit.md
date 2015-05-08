@@ -1,7 +1,7 @@
 {{{
   "title": "The perfect fit",
   "tags": ["World Trip", "Salvador", "Capao"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Sun, 08 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_perfect_fit.jpg",

@@ -1,7 +1,7 @@
 {{{
   "title": "Squares Conference",
   "tags": ["World Trip", "Texas", "Grapevine", "Squares Conference", "Web Development"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Thu, 26 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_squaresconference.jpg",

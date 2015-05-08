@@ -1,6 +1,8 @@
 module.exports = {
 
 	development : {
+		blogcategories:['travel','tech','lifestyle'],
+		featuredpost:'coming-home',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,

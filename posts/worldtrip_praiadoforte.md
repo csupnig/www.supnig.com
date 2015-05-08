@@ -1,7 +1,7 @@
 {{{
   "title": "Praia do forte",
   "tags": ["World Trip", "Praia do forte", "beach"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Fri, 27 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_praiadoforte.jpg",

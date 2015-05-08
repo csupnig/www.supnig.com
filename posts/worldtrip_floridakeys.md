@@ -1,7 +1,7 @@
 {{{
   "title": "Florida Keys",
   "tags": ["World Trip", "Miami", "Florida", "Keys", "Key West"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Mon, 23 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_floridakeys.jpg",

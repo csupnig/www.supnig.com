@@ -147,9 +147,10 @@ var renderIndexWithMessageCapcha = function(req, res, messagesuccess) {
     }
     res.render('index', {
         "portfolios":poet.helpers.postsWithCategory("portfolio"),
-        "worldtrip":poet.helpers.postsWithCategory("worldtrip").sort(function(a,b){
+        /*"worldtrip":poet.helpers.postsWithCategory("worldtrip").sort(function(a,b){
             return a.date.getTime() - b.date.getTime();
-        }),
+        }),*/
+        "post" : poet.helpers.getPost(config.featuredpost),
         "captchaValue":captchaValue,
         "captcha":req.session.captcha,
         "name1":field1,
@@ -213,6 +214,7 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                                 "captchaerror":captchaerror,
                                 "commenterror":commenterror,
                                 "prettydate":prettydate,
+                                "blogcategories":config.blogcategories,
                                 "isadmin":req.user && req.user.email == config.adminemail
                                 });
         } else {
@@ -281,6 +283,7 @@ poet.addRoute('/tags/:tag', function (req, res) {
     res.render('posts', {
         "posts": taggedPosts,
         "tag": req.params.tag,
+        "blogcategories":config.blogcategories,
         "prettydate":prettydate
     });
   }
@@ -292,6 +295,8 @@ poet.addRoute('/category/:category', function (req, res) {
     res.render('posts', {
         "posts": categorizedPosts,
         "category": req.params.category,
+
+        "blogcategories":config.blogcategories,
         "prettydate":prettydate
     });
   }
@@ -302,6 +307,7 @@ poet.addRoute('/pages/:page', function (req, res) {
       lastPost = page * 3;
   res.render('posts', {
     posts: poet.helpers.getPosts(lastPost - 3, lastPost),
+      "blogcategories":config.blogcategories,
     page: page
   });
 });
@@ -315,7 +321,9 @@ poet.addRoute('/overview', function (req, res) {
 });
 
 poet.addRoute('/blog', function (req, res) {
-    var posts = poet.helpers.postsWithCategory("blog");
+    var posts = poet.helpers.getPosts().filter(function(post){
+        return config.blogcategories.indexOf(post.category) > -1;
+    });
     var first = [], rest = [], count = 0;
     posts.forEach(function(post){
         if (count > 2) {
@@ -330,6 +338,7 @@ poet.addRoute('/blog', function (req, res) {
         "rest":rest,
         "posts": posts,
         "tags": poet.helpers.getTags(),
+        "blogcategories":config.blogcategories,
         "prettydate":prettydate
     });
 });

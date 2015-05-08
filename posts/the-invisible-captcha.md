@@ -1,7 +1,7 @@
 {{{
   "title": "The invisible captcha",
   "tags": ["Web", "Captcha", "UX"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sun, 03 Jul 2011 17:57:32 GMT",
   "color":"green"
 }}}

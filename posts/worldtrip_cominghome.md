@@ -1,7 +1,7 @@
 {{{
   "title": "Coming home",
   "tags": ["World Trip", "Vienna", "Austria", "Sun"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Sun, 26 Apr 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_cominghome.jpg",

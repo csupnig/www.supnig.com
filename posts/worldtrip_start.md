@@ -1,7 +1,7 @@
 {{{
   "title": "Starting out",
   "tags": ["World Trip", "Vienna"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Fri, 03 Jan 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/vienna.jpg",

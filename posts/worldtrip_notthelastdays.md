@@ -1,7 +1,7 @@
 {{{
   "title": "NOT the last days in Brazil",
   "tags": ["World Trip", "Rio", "not leaving brazil", "beach"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Sun, 08 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_notthelastdaysinbrazil.jpg",

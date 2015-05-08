@@ -1,7 +1,7 @@
 {{{
   "title": "Being a real Supnig",
   "tags": ["World Trip", "Semi Jungle", "Capao"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Mon, 09 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_being_a_real_supnig.jpg",

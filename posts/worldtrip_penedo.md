@@ -1,7 +1,7 @@
 {{{
   "title": "Penedo",
   "tags": ["World Trip", "Penedo", "beach"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Mon, 02 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_penedo.jpg",

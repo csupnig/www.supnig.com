@@ -1,7 +1,7 @@
 {{{
   "title": "Aloha Editor and jQueryUI",
   "tags": ["aloha", "technology", "jquery"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sat, 28 Jul 2012 16:04:41 GMT",
   "color":"darkyellow",
   "slug":"aloha-editor-and-jqueryui"

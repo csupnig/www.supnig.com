@@ -1,7 +1,7 @@
 {{{
   "title": "Welcome to Miami",
   "tags": ["World Trip", "Miami", "Miami Beach", "Beach", "Sun"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Sun, 22 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_welcometomiami.jpg",

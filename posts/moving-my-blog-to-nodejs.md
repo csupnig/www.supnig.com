@@ -1,7 +1,7 @@
 {{{
     "title": "Moving my blog to Node.js",
     "tags": ["JavaScript", "Node.js", "Blog"],
-    "category":"blog",
+    "category":"tech",
     "date": "Thu, 27 Nov 2014 09:31:35 GMT",
     "color":"green",
     "slug":"moving-my-blog-to-nodejs",

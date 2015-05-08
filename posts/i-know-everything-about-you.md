@@ -1,7 +1,7 @@
 {{{
   "title": "I know everything about you",
   "tags": ["privacy", "security", "social networks"],
-  "category":"blog",
+  "category":"tech",
   "date": "Mon, 23 Jul 2012 19:42:09 GMT",
   "color":"yellow"
 }}}

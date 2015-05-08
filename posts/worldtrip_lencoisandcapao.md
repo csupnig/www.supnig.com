@@ -1,7 +1,7 @@
 {{{
   "title": "Lencois and Capao",
   "tags": ["World Trip", "Lencois", "Capao"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Tue, 17 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_lencoisandcapao.jpg",

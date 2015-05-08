@@ -16,4 +16,5 @@ Appointmed is a cloud-based, full-service practice software solution for compreh
 - full-fletched electronic patient records
 - and many more
 
-[http://www.appointmed.com](http://www.appointmed.com/)
+Over the past year I have been working passionately together with my colleagues on building the best application for our client's needs.
+If you are interested in the project, pay us a visit at [http://www.appointmed.com](http://www.appointmed.com/).

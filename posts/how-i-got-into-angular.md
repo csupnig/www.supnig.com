@@ -1,7 +1,7 @@
 {{{
   "title": "How I got into Angular.JS",
   "tags": ["JavaScript", "Angular.JS", "Angular","Cointelligence","Bitcoin"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sat, 11 Nov 2014 17:31:35 GMT",
   "color":"lightblue",
   "slug":"how-i-got-into-angularjs",

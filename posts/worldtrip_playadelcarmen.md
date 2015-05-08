@@ -1,7 +1,7 @@
 {{{
   "title": "Playa del Carmen",
   "tags": ["World Trip", "Playa del Carmen", "Mexico", "Sun"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Sun, 07 Apr 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_playadelcarmen.jpg",

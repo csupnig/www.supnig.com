@@ -1,7 +1,7 @@
 {{{
   "title": "Aloha Editor Barcamp 2013",
   "tags": ["aloha", "technology", "barcamp"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sun, 19 May 2013 17:26:15 GMT",
   "color":"violet",
   "slug":"aloha-editor-barcamp-2013"

@@ -1,7 +1,7 @@
 {{{
   "title": "Salvador",
   "tags": ["World Trip", "Salvador"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Thur, 26 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_salvador.jpg",

@@ -1,7 +1,7 @@
 {{{
   "title": "Last days in Brazil",
   "tags": ["World Trip", "Maceio", "leaving brazil", "beach"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Fri, 06 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_lastdaysinbrazil.jpg",

@@ -1,7 +1,7 @@
 {{{
   "title": "Some like it rough",
   "tags": ["World Trip", "Inacio", "Capao"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Wed, 18 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_somelikeitrough.jpg",

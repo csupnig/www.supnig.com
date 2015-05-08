@@ -1,7 +1,7 @@
 {{{
   "title": "Marketing = Porn",
   "tags": ["Marketing", "Design", "Meshed3"],
-  "category":"blog",
+  "category":"lifestyle",
   "date": "Sun, 26 Jun 2011 12:48:09 GMT",
   "color":"lightblue",
    "slug":"marketing-equals-porn"

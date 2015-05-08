@@ -1,7 +1,7 @@
 {{{
   "title": "All hail the captain",
   "tags": ["World Trip", "Rio", "Ihla Grande", "boat", "storm"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Mon, 16 Mar 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_allhailthecaptain.jpg",

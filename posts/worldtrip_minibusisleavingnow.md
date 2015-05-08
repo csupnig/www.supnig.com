@@ -1,7 +1,7 @@
 {{{
   "title": "Minibus is leaving now",
   "tags": ["World Trip", "Rio de Janeiro", "Weaves"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Wed, 25 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_minibusisleavingnow.jpg",

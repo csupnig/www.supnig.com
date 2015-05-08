@@ -1,7 +1,7 @@
 {{{
   "title": "Having a relationship with Megan Fox",
   "tags": ["conference", "speaking", "search"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sat, 22 Sep 2012 20:00:51 GMT",
   "color":"orange"
 }}}

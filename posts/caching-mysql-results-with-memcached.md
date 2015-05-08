@@ -1,7 +1,7 @@
 {{{
   "title": "Caching MySQL results with memcached",
   "tags": ["MySQL", "PHP", "memcached", "cache"],
-  "category":"blog",
+  "category":"tech",
   "date": "Sun, 22 Apr 2012 23:14:09 GMT",
   "color":"pink"
 }}}

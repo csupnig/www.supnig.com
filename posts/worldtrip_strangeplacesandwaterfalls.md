@@ -1,7 +1,7 @@
 {{{
   "title": "Strange places and waterfalls",
   "tags": ["World Trip", "Jungle", "Capao"],
-  "category":"worldtrip",
+  "category":"travel",
   "date": "Mon, 16 Feb 2015 17:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/worldtrip_strangeplacesandwaterfalls.jpg",

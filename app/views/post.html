@@ -14,13 +14,13 @@
 </header>
 <section class="content blog container">
     <div class="row">
-        <ul class="col-lg-12 posts">
+        <ul class="col-md-12 posts">
             <li class="post {{post.color}} container">
                 <article class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 post">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 post">
                         <h2><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h2>
-                        <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }}</span></div>
+                        <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }} in {{post.category}}</span></div>
                         {% if post.picture %}
                         <div class="titleimage">
                             <img class="img-responsive" src="{{post.picture}}" alt="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}" title="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}">
@@ -32,8 +32,8 @@
                     </div>
                 </article>
                 <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 backlink">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 backlink">
                         {% if post.category=='worldtrip' %}
                         <a href="/#worldtrip" title="back to overview">&laquo; overview</a>
                         {% else %}
@@ -45,8 +45,8 @@
         </ul>
     </div>
     <div class="row">
-        <div class="col-lg-1"></div>
-        <section id="contact" class="col-lg-10 comments {{post.color}}">
+        <div class="col-md-1"></div>
+        <section id="contact" class="col-md-10 comments {{post.color}}">
             <form id="newcomment" method="POST" action="/comment/{{post.slug}}#newcomment">
                 <h3>Leave a comment</h3>
                 {% if commenterror %}
@@ -77,15 +77,15 @@
         </section>
     </div>
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <ul class="posts container">
                 {% for comment in comments %}
                 <li class="row">
-                    <div class="col-lg-2 avatar">
+                    <div class="col-md-2 avatar">
                         <img src="http://www.gravatar.com/avatar/{{comment.md5mail}}" alt="{{comment.name}}"/>
                     </div>
-                    <div class="col-lg-10">
+                    <div class="col-md-10">
                         <h3>{{comment.name}}</h3>
                         <span class="date">{{ prettydate(comment.date) }}</span>
 
