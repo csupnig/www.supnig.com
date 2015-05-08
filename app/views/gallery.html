@@ -1,6 +1,6 @@
 <div class="gallery">
 
 {% for image in images %}
-    <a href="{{image}}" target="_blank" class="colorbox"><img src="{{image}}"/></a>
+    <a href="{{image.filename}}" target="_blank" class="colorbox"><img src="{{image.thumbnail}}"/></a>
 {% endfor %}
 </div>

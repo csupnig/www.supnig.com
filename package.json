@@ -36,7 +36,8 @@
     "swig":"*",
     "nodemailer":"*",
     "nodemailer-sendmail-transport":"*",
-    "gulp": "^3.8.2"
+    "gulp": "^3.8.2",
+    "node-imagemagick":"*"
     },
     "devDependencies": {
       "gulp": "^3.8.2",

@@ -26,7 +26,8 @@ var express = require('express'),
     routes = require("./config/routes"),
     nodemailer = require("nodemailer"),
     q = require('q'),
-    sendmailTransport = require('nodemailer-sendmail-transport');
+    sendmailTransport = require('nodemailer-sendmail-transport'),
+    im = require('node-imagemagick');
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -80,15 +81,48 @@ var poet = Poet(app,{
 
 var sitemap = null;
 
+var generatePostThumbnail = function(posts, key){
+    var tnname, extname, basename;
+    if(typeof posts[key].picture != 'undefined') {
+        extname = path.extname(posts[key].picture);
+        basename = posts[key].picture.replace(extname, '_thumb' + extname);
+        if (!fs.existsSync(__dirname + '/public' + basename)) {
+            im.resize({
+                srcPath:__dirname + '/public' + posts[key].picture,
+                dstPath:__dirname + '/public' + basename,
+                width:360
+            }, function(err, stdout, stderr){
+                if (err) {
+                    console.log(__dirname + '/public'+ basename, err, stdout, stderr);
+                } else {
+                    posts[key].thumbnail = basename;
+                }
+            });
+        } else {
+            posts[key].thumbnail = basename;
+        }
+    }
+};
+
 var generateSitemap = function(){
     var urls = [];
     var posts = poet.helpers.getPosts();
+
     for(var key in posts) {
         urls.push({
             url:           posts[key].url,
             changefreq:'monthly',
             priority:0.5
         });
+
+        generatePostThumbnail(posts, key);
+
+        posts[key].getThumb = function(){
+            if (typeof this.thumbnail != 'undefined') {
+                return this.thumbnail;
+            }
+            return this.picture;
+        };
     }
     urls.push({
         url:           "http://www.supnig.com/about",
@@ -104,7 +138,8 @@ var generateSitemap = function(){
 
 var generateGalleries = function() {
     var re = /<!--gallery:(.*?)-->/g,
-        match,gpath,images,gallerytemplate=__dirname + '/app/views/gallery.html';
+        match,gpath,images,gallerytemplate=__dirname + '/app/views/gallery.html',
+        filename, extname, basename;
     poet.clearCache();
     Object.keys(poet.posts).map(function (title) {
         var post = poet.posts[title];
@@ -114,9 +149,27 @@ var generateGalleries = function() {
             gpath = __dirname + '/public/'+match[1];
             if (fs.existsSync(gpath)) {
                 fs.readdirSync(gpath).forEach(function (file) {
-                    images.push("/"+match[1]+"/"+file);
+                    if (file.indexOf('_thumb')<0) {
+                        filename = "/" + match[1] + "/" + file;
+                        extname = path.extname(file);
+                        basename = filename.replace(extname, '_thumb' + extname);
+                        if (!fs.existsSync(__dirname + '/public' + basename)) {
+                            im.resize({
+                                srcPath: __dirname + '/public' + filename,
+                                dstPath: __dirname + '/public' + basename,
+                                width: 360
+                            }, function (err, stdout, stderr) {
+                                if (err) {
+                                    console.log(__dirname + '/public' + basename, err, stdout, stderr);
+                                }
+                            });
+                        }
+                        images.push({"filename": filename, "thumbnail": basename});
+                    }
                 });
                 var needle = "<!--gallery:" + match[1] + "-->";
+
+
                 swig.renderFile(gallerytemplate,{"images":images, "rel":post.slug},function(err,result){
                     if (err) {
                         return;
