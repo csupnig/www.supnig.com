@@ -125,12 +125,12 @@ var generateSitemap = function(){
         };
     }
     urls.push({
-        url:           "http://www.supnig.com/about",
+        url:           "https://www.supnig.com/about",
         changefreq:'monthly',
         priority:0.7
     });
     sitemap = sm.createSitemap ({
-        hostname: 'http://www.supnig.com',
+        hostname: 'https://www.supnig.com',
         cacheTime: 600000,        // 600 sec - cache purge period
         urls: urls
     });
@@ -418,7 +418,7 @@ app.get('/rss', function (req, res) {
     var feed = new Feed({
         title:          'Christopher Supnig - Blog',
         description:    'This is the RSS feed to my blog!',
-        link:           'http://www.supnig.com/',
+        link:           'https://www.supnig.com/',
         copyright:      'Copyright © 2014 Christopher Supnig. All rights reserved',
 
         author: {
