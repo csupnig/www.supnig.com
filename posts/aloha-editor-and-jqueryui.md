@@ -11,7 +11,7 @@ This week a new Aloha Editor version has been released, containing the long awai
 <!--more-->
 Roughly three months ago I gave a short outline of the metaview plugin, that can be used to display the underlying structure of your text, by making paragraphs, annotations and other HTML tags visible to the editor. In this article I'll show you the new implementation for the jQueryUI version of Aloha Editor.
 
-Before you start developing your own plug-in, you should clone Aloha-Editor from github checkout the master branch that we will be using in this tutorial. Then go to Aloha-Editor/src/plugins/extra and create a new folder for your plug-in containing the files and folders on the picture. Our plugin is called "metaview".![Plug-in structure](http://images.supnig.com/media/pictures/alohapluginstructurenew.PNG)
+Before you start developing your own plug-in, you should clone Aloha-Editor from github checkout the master branch that we will be using in this tutorial. Then go to Aloha-Editor/src/plugins/extra and create a new folder for your plug-in containing the files and folders on the picture. Our plugin is called "metaview".![Plug-in structure](/media/pictures/alohapluginstructurenew.PNG)
 
 The lib directory will contain all the JavaScript files for your plugin so we are creating the main file there and call it metaview-plugin.js.
     

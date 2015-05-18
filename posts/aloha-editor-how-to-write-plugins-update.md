@@ -12,7 +12,7 @@ Since I wrote my last article about this topic there have been numerous improvem
 In this article I'm going to use the same plugin I used 9 months ago and show you what has changed. Our plugin will outline the structure of the content, so that the editor can see where a paragraph starts and what kinds of annotations he used in the content. 
 It'll be very easy to customize, so that new annotationsand elements can be added in a minute.
 
-Before you start developing your own plug-in, you should clone Aloha-Editor from github with all its submodules and checkout the master branch that we will be using in this tutorial.Then go to Aloha-Editor/src/plugins/extra and create a new folder for your plug-in containing the files and folders on the picture. We will call ours "metaview". ![Plug-in structure](http://images.supnig.com/media/pictures/alohapluginstructurenew.PNG)
+Before you start developing your own plug-in, you should clone Aloha-Editor from github with all its submodules and checkout the master branch that we will be using in this tutorial.Then go to Aloha-Editor/src/plugins/extra and create a new folder for your plug-in containing the files and folders on the picture. We will call ours "metaview". ![Plug-in structure](/media/pictures/alohapluginstructurenew.PNG)
 
 The lib directory will contain all the JavaScript files for your plugin so we are creating the main file there and call it metaview-plugin.js. 
 

@@ -14,7 +14,7 @@ So what do these two have in common? To answer this question I first have to tal
 A porno mainly consists of a sequence of quick numbers, each searching to be a highlight of the movie and this is exactly what we want to create for our brands. We want to tell stories each of which being a highlight on its own but still following a consistent pattern to create a high value of recognition and familiarity.
 
 [Christian Bluemelhuber](http://www.bluemelhuber.de/) also talked about the fact that marketing mainly consists of being on the right spot at the right time. 
-![Meshed#3 in Linz](http://images.supnig.com/media/pictures/meshed_small.jpg)As one cannot plan luck, the best way to go is again to copy nature and do it like sperm. Do lots of campaigns, try different ideas, iterate on the ones that work and cut off the ones that do not. This way you have a high probability of hitting the right spot.
+![Meshed#3 in Linz](/media/pictures/meshed_small.jpg)As one cannot plan luck, the best way to go is again to copy nature and do it like sperm. Do lots of campaigns, try different ideas, iterate on the ones that work and cut off the ones that do not. This way you have a high probability of hitting the right spot.
 
 There is a number of best practices to reach your customers:
 
