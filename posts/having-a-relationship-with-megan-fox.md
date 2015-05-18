@@ -10,7 +10,7 @@ So what is it like to have a relationship with Megan Fox? If this got your atten
 <!--more-->
 I was happy to be invited to the conference to give one of the 26 talks. I arrived on Sunday afternoon and amazed by the nice location, I had to make my way to the speakers meeting. So I hurried to the private brewery where the orga team welcomed us with drinks and a grilled pig. Yes, a whole pig.
 
-![Web Developer Conference](http://images.supnig.com/media/pictures/conf_small.jpg) On the first conference day the sessions started out with the keynote by Fabien Potencier, who introduced us to symphony. The framework creator also told the story how he got inspired by dependency injection and took parts of it to PHP. He was preaching to drink less beer and read more books instead, because that is where he finds all his ideas and knowledge.
+![Web Developer Conference](/media/pictures/conf_small.jpg) On the first conference day the sessions started out with the keynote by Fabien Potencier, who introduced us to symphony. The framework creator also told the story how he got inspired by dependency injection and took parts of it to PHP. He was preaching to drink less beer and read more books instead, because that is where he finds all his ideas and knowledge.
 
 I have to say that I cannot completely agree with that. Meeting with interesting people like on this conference and being able to talk to them is just as inspiring to me and opens my mind for new projects and solutions. But granted: You don't need beer for that. 
 
@@ -20,7 +20,7 @@ The first talk that got me really excited was held by Sasha Wolter, who let a ro
 
 Ido Flatow, a nice guy from Israel I had the chance to talk to on the day before, continued with a talk about how to use Fiddler to debug websites and client applications that are communicating via HTTP. I already used Fiddler in my daily work but I learned a lot of new ways and features.
 
-![Christopher Supnig - Enterprise Search Talk](http://images.supnig.com/media/pictures/csupnig_small.jpg)Next up was my presentation about the integration of enterprise search solutions in intranets and websites. I mainly focused on Apache Lucene and the Solr project that is based on it. You can find a simple example how to interact with Solr and PHP on my [Github](https://github.com/csupnig/Solr-PHP-Example).
+![Christopher Supnig - Enterprise Search Talk](/media/pictures/csupnig_small.jpg)Next up was my presentation about the integration of enterprise search solutions in intranets and websites. I mainly focused on Apache Lucene and the Solr project that is based on it. You can find a simple example how to interact with Solr and PHP on my [Github](https://github.com/csupnig/Solr-PHP-Example).
 
 Bastian Hofmann finished the first day with an awesome session about scale able web applications. Being part of the ResearchGate development team, he included code samples and explained how web applications can easily be divided into modules that are loaded separately and still perform great and how to write code that will run on the client and on the server using meteor.js.
 
@@ -38,6 +38,6 @@ Unfortunately this was the last talk for me because I had to catch my flight bac
 
 Thanks for the great conference and the nice discussions. I hope to see you all again soon!
 
-[The Slides to my talk about enterprise search engines.](http://files.supnig.com/wdc_enterprisesearch_slides.pptx)
+[The Slides to my talk about enterprise search engines.](/wdc_enterprisesearch_slides.pptx)
 
 [Web developer conference](http://www.web-developer-conference.de/)

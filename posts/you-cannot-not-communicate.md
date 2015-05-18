@@ -14,7 +14,7 @@ Petro and I flew in from Vienna and right after we arrived at the Erwin-Schroedi
 
 Evalottchen was introducing us to the world of painted foxes, Romeo &amp; Juliette and their affairs. She showed us how to draw things as we mean them and that small differences can have a deep impact. Sketches do a great job in letting customers understand complex topics and as humans are visual creatures, graphically outlining your concepts will keep them on your readers mind even longer. Right after the camp I had the chance to try to communicate to our customers using a lot of sketches and although I'm not really any good at drawing I loved to see how easy it was for non-technicals to understand my concepts and get an understanding of how the final product will look like. 
 
-![Aloha Session](http://images.supnig.com/media/pictures/aloha_session_small.jpg)
+![Aloha Session](/media/pictures/aloha_session_small.jpg)
 
 Petro's and my visit to the UXCamp 2011 also marked the return of the Aloha editor and its approach to easy content creation to where it was presented one year ago. "Taking your users on a holiday", as our presentation was titled this year, means that the user should not feel as if he was stuck in the process of writing an article when what he really wants is to get his job done. Enabling him to focus on the goal and not on the process of getting there is one of the main features of the light interface of the Aloha Editor. The context aware architecture makes it possible to guide the writer through his tasks by freeing him from the clutter of feature stuffed interfaces.
 

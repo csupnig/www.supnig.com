@@ -152,7 +152,7 @@ are triggered with a button.
 The
 resulting HTML is nice and neat!
 
-If you want to know how to load and use the Aloha Editor, read the [blog](http://www.supnig.com/blog/using-aloha-editor) post I wrote about it.
+If you want to know how to load and use the Aloha Editor, read the [blog](/blog/using-aloha-editor) post I wrote about it.
 
 I hope that
 I was able to save you from a lot of pain and agony!

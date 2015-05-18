@@ -56,7 +56,7 @@ compensation to my work in front of the computer and I felt better and better
 after every set. When I felt all those nice benefits I moved from the 2 day
 schedule to a daily one. As I said before, you have to find out what kind of
 sport fits for you and where you best can get your head free.
-*   **Hiking** ![Hiking in Norway](http://images.supnig.com/media/pictures/trekking.jpg)
+*   **Hiking** ![Hiking in Norway](/media/pictures/trekking.jpg)
 From all the travels I did so far, I found the trekking trips to be the most rewarding in
 terms of relaxing and recharging your mind. After one or two days of constant
 physical exhaustion I get to this point where there a no thoughts in my head

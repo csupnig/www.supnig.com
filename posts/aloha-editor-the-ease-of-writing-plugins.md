@@ -15,7 +15,7 @@ It'll be very easy to customize, so that new annotationsand elements can be adde
 
 Before you start developing your own plug-in, you should clone [Aloha-Editor from github](https://github.com/alohaeditor/Aloha-Editor) with all its submodules and checkout the **0.10 branch** that we will be using in this tutorial.
 Then go to Aloha-Editor/src/plugin and create a new folder for your plug-in containing the files and folders on the picture.
-![Plug-in structure](http://images.supnig.com/media/pictures/alohapluginstructure.png)
+![Plug-in structure](/media/pictures/alohapluginstructure.png)
 
 In the src directory of your plug-in, create a javascript file that will contain all the logic for your plug-in:
 
