@@ -242,6 +242,7 @@ var sendMail = function(frommail,name,message,phone) {
 
 var renderPostWithComments = function(postslug, req, res,captchaerror,commenterror) {
     var post = poet.helpers.getPost(postslug);
+    var relatedPosts = [], relatedCount = 3;
     Comment.find({"post":postslug}).sort('-date').exec(function(err,comments){
         if (err) {
             console.error(err);
@@ -258,6 +259,18 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                 req.session.empty = field2;
                 req.session.captcha = field1;
             }
+            relatedPosts = poet.helpers.getPosts().filter(function (p) {
+                if (!p.tags || !post.tags || relatedCount<=0 || p.url == post.url) {
+                    return false;
+                }
+                for (var k in post.tags) {
+                    if (p.tags.indexOf(post.tags[k])>-1) {
+                        relatedCount--;
+                        return true;
+                    }
+                }
+                return false;
+            });
             res.render('post', { "post": post,
                                 "comments":comments,
                                 "captchaValue":captchaValue,
@@ -267,6 +280,7 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                                 "captchaerror":captchaerror,
                                 "commenterror":commenterror,
                                 "prettydate":prettydate,
+                                "related":relatedPosts,
                                 "blogcategories":config.blogcategories,
                                 "isadmin":req.user && req.user.email == config.adminemail
                                 });

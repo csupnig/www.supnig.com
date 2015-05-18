@@ -242,7 +242,7 @@ section {
   }
 }
 
-#portfolio, #firstposts {
+#portfolio, #firstposts, #related {
     .portfolio-item {
 	    h4{
 		  a {
@@ -293,7 +293,7 @@ section {
     }
 }
 
-#firstposts {
+#firstposts, #related {
   .portfolio-item {
 	/*width:33%;*/
 	width:200px;
@@ -552,6 +552,12 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: @brand-primary;
+}
+
+@media(max-width:767px) {
+  .nomobile {
+	display: none;
+  }
 }
 @import "header";
 @import "timeline";

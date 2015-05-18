@@ -12,10 +12,39 @@
         </div>
     </div>
 </header>
-<section class="content blog container">
+<section class="content blog bg-light-gray">
     <div class="row">
-        <ul class="col-md-12 posts">
-            <li class="post {{post.color}} container">
+        <div class="col-md-2 sidebar nomobile">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="/blog">all</a></li>
+                {% for category in blogcategories %}
+                <li><a href="/category/{{category}}">{{category}}</a></li>
+                {% endfor %}
+            </ul>
+            <h2>Related</h2>
+            <div class="row" id="related">
+                {% for rp in related %}
+                <div class="portfolio-item item">
+                    {% if rp.picture %}
+                    <a href="{{rp.url}}" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{rp.getThumb()}}" class="img-responsive" alt="">
+                    </a>
+                    {% endif %}
+                    <div class="portfolio-caption">
+                        <h5><a href="{{rp.url}}">{{rp.title}}</a></h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <ul class="col-md-10 posts">
+            <li class="post {{post.color}}">
                 <article class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10 post">
