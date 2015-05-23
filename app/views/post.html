@@ -74,61 +74,71 @@
         </ul>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
         <section id="contact" class="col-md-10 comments {{post.color}}">
-            <form id="newcomment" method="POST" action="/comment/{{post.slug}}#newcomment">
-                <h3>Leave a comment</h3>
-                {% if commenterror %}
-                <span class="error">Your comment could not be saved!</span>
-                {% endif %}
-                {% if captchaerror %}
-                <span class="error">Your comment could not be saved! Not sure if human =.= please enable JavaScript!</span>
-                {% endif %}
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <form id="newcomment" method="POST" action="/comment/{{post.slug}}#newcomment">
+                        <h3>Leave a comment</h3>
+                        {% if commenterror %}
+                        <span class="error">Your comment could not be saved!</span>
+                        {% endif %}
+                        {% if captchaerror %}
+                        <span class="error">Your comment could not be saved! Not sure if human =.= please enable JavaScript!</span>
+                        {% endif %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                        <p>* Required (your email address will never be published)</p>
+                        <div class="form-group">
+                        <textarea class="form-control" name="comment" placeholder="Your Message *" id="comment" required data-validation-required-message="Please enter a message."></textarea>
+                        </div>
+                        <div class="hidden">
+                            <input type="text" name="{{name1}}" id="{{name1}}" value=""/>
+                            <input type="text" name="{{name2}}" id="{{name2}}" value=""/>
+                        </div>
+                        <script type="text/javascript">
+                            document.getElementById('{{captcha}}').value = '{{captchaValue}}';
+                        </script>
+                        <button type="submit" class="btn btn-xl">Submit Comment</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                </div>
-                <p>* Required (your email address will never be published)</p>
-                <div class="form-group">
-                <textarea class="form-control" name="comment" placeholder="Your Message *" id="comment" required data-validation-required-message="Please enter a message."></textarea>
-                </div>
-                <div class="hidden">
-                    <input type="text" name="{{name1}}" id="{{name1}}" value=""/>
-                    <input type="text" name="{{name2}}" id="{{name2}}" value=""/>
-                </div>
-                <script type="text/javascript">
-                    document.getElementById('{{captcha}}').value = '{{captchaValue}}';
-                </script>
-                <button type="submit" class="btn btn-xl">Submit Comment</button>
-            </form>
+            </div>
         </section>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
         <div class="col-md-10">
-            <ul class="posts container">
-                {% for comment in comments %}
-                <li class="row">
-                    <div class="col-md-2 avatar">
-                        <img src="http://www.gravatar.com/avatar/{{comment.md5mail}}" alt="{{comment.name}}"/>
-                    </div>
-                    <div class="col-md-10">
-                        <h3>{{comment.name}}</h3>
-                        <span class="date">{{ prettydate(comment.date) }}</span>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <ul class="posts container">
+                        {% for comment in comments %}
+                        <li class="row">
+                            <div class="col-md-2 avatar">
+                                <img src="http://www.gravatar.com/avatar/{{comment.md5mail}}" alt="{{comment.name}}"/>
+                            </div>
+                            <div class="col-md-10">
+                                <h3>{{comment.name}}</h3>
+                                <span class="date">{{ prettydate(comment.date) }}</span>
 
-                        {% if isadmin %}
-                        <span><a href="/comment/delete/{{post.slug}}/{{comment._id.valueOf()}}">delete</a></span>
-                        {% endif %}
-                        <p>
-                            {{comment.comment}}
-                        </p>
-                    </div>
-                    <div class="clear"></div>
-                </li>
-                {% endfor %}
-            </ul>
+                                {% if isadmin %}
+                                <span><a href="/comment/delete/{{post.slug}}/{{comment._id.valueOf()}}">delete</a></span>
+                                {% endif %}
+                                <p>
+                                    {{comment.comment}}
+                                </p>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>

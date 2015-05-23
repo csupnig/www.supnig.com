@@ -342,8 +342,69 @@ aside.clients {
 }
 
 // Contact Section
+section#featured {
+  padding: 0px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .imageitem {
+	overflow: hidden;
+	height:200px;
+	img {
+	  position: absolute;
+	  top: 50%;
+	  .transform(translateY(-50%));
+	}
+	.portfolio-hover {
+	  background: fade(@brand-primary, 70%);
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  opacity: 0;
+	  transition: all ease 0.5s;
+	  -webkit-transition: all ease 0.5s;
+	  -moz-transition: all ease 0.5s;
+	  &:hover {
+		opacity: 1;
+	  }
+	  .portfolio-hover-content {
+		position: absolute;
+		width: 100%;
+		height: 20px;
+		font-size: 20px;
+		text-align: center;
+		top: 50%;
+		margin-top: -12px;
+		color: white;
+		i {
+		  margin-top: -12px;
+		}
+		h3,
+		h4 {
+		  margin: 0;
 
-section#contact {
+		}
+	  }
+	}
+	.portfolio-caption {
+	  position: absolute;
+	  bottom: 10px;
+	  left:20px;
+	  h2, h4 {
+		a {
+		  color: @brand-secondary;
+		  background: @brand-primary;
+		  padding: 5px;
+		  &:hover {
+			text-decoration: none;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+section#contact, section#featured {
 	background-color: @gray-darkest;
 	background-position: center;
 	background-repeat: no-repeat;

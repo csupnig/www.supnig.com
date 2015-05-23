@@ -43,26 +43,24 @@
 </section>
 
 <section id="featured">
-    <div class="container">
+    <div class="">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Featured</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12 imageitem">
                 <div class="portfolio-item item">
                     {% if post.picture %}
                     <div class="titleimage">
                         <a href="{{post.url}}">
                             <img class="img-responsive" src="{{post.picture}}" alt="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}" title="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                </div>
+                            </div>
                         </a>
                     </div>
                     {% endif %}
                     <div class="portfolio-caption">
+                        <h2 class="section-heading"><a href="{{post.url}}">Featured blog post</a></h2>
                         <h4><a href="{{post.url}}">{{post.title}}</a></h4>
-                        <div class="infos"><span class="time text-muted">{{post.date|date('Y-m-d')}} in {{post.category}}</span></div>
-                        <div class="text-muted">{{post.preview|safe}}</div>
                     </div>
                 </div>
             </div>

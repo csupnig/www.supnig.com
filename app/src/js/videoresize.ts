@@ -55,6 +55,7 @@
                     fitToHeight($inner, $outer);
                 }
             }
+            $pagetop.css('padding',0);
             $pagetop.css('padding-top',$outer.height());
         }
         $(window).on('resize', function () {
