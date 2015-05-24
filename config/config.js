@@ -2,7 +2,7 @@ module.exports = {
 
 	development : {
 		blogcategories:['travel','tech','lifestyle'],
-		featuredpost:'why-you-should-learn-how-to-cook',
+		featuredpost:'why-are-you-storing-your-passwords-wrong',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
