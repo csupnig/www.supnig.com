@@ -2,7 +2,7 @@
   "title": "Get your metal tested: Test AngularJS and TypeScript with Karma and Jasmine",
   "tags": ["JavaScript", "TypeScript", "Angular","JS","frontend", "tutorial","unit","testing","jasmine","karma"],
   "category":"tech",
-  "date": "Sat, 13 June 2015 17:31:35 GMT",
+  "date": "Sat, 13 June 2015 14:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/labtest.jpg",
   "picturecapt":"Get your metal tested!"

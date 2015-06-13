@@ -2,7 +2,7 @@ module.exports = {
 
 	development : {
 		blogcategories:['travel','tech','lifestyle'],
-		featuredpost:'why-are-you-storing-your-passwords-wrong',
+		featuredpost:'get-your-metal-tested-test-angularjs-and-typescript-with-karma-and-jasmine',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
