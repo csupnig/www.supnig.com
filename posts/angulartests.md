@@ -8,7 +8,7 @@
   "picturecapt":"Get your metal tested!"
 }}}
 
-Now that you became a superhero yourself, I invite you to get your metal tested. We all now by now that unit tests are only the half
+Now that you became a superhero yourself, I invite you to get your metal tested. We all know by now that unit tests are only the half
 measure, but it is a start to provide the quality you want to ship your products with.
 <!--more-->
 ##About heroes and their quality
