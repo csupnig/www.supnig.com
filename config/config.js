@@ -2,7 +2,7 @@ module.exports = {
 
 	development : {
 		blogcategories:['travel','tech','lifestyle'],
-		featuredpost:'get-your-metal-tested-test-angularjs-and-typescript-with-karma-and-jasmine',
+		featuredpost:'harnessing-your-superpowers-creating-abstract-service-classes-for-angular-with-typescript',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
