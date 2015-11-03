@@ -4,7 +4,7 @@
   "category":"tech",
   "date": "Sun, 01 Nov 2015 14:31:35 GMT",
   "color":"blue",
-  "picture":"/media/pictures/thor.jpg",
+  "picture":"/media/pictures/thorcc.jpg",
   "picturecapt":"Harness your powers!"
 }}}
 
@@ -127,3 +127,6 @@ Lets look at how to use this abstract class to create our patient service:
 Be sure to inject the $http service into your service and pass it on to the constructor of the abstract class. You then can go ahead and override the method to specify the entity path.
 
 If you have any questions on how to use or implement abstract classes, let me know in the comments below.
+
+
+Image from [Flickr](https://www.flickr.com/photos/75818171@N02/6902632669/).
