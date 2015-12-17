@@ -5,6 +5,7 @@ var Q = require("q"),
     glob = require("glob"),
     gulp = require('gulp'),
     gutil = require('gulp-util'),
+    imagemin = require('gulp-imagemin'),
     less = require('gulp-less'),
     path = require('path'),
     bowerFiles = require('gulp-bower-files'),
@@ -52,6 +53,17 @@ var builddate = moment().format("YYYYMMDD_HHmm");
 // ----------------------------------------------------------------------------
 // COMPILE TASKS
 // ----------------------------------------------------------------------------
+
+gulp.task('images', () => {
+	return gulp.src('public/media/**/*')
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}],
+			use: []
+		}))
+		.pipe(gulp.dest('public/media/'));
+});
+
 
 /**
  * Merge vendor js files to a single minifed file
