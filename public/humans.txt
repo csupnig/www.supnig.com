@@ -19,15 +19,10 @@ Contact: blog@supnig.com, www.supnig.com
 Twitter: @csupnig
 Location: Vienna, Austria.
 
-/* THANKS */
-Aloha Editor Team - http://www.aloha-editor.org
-HTML5SHIV - http://html5shiv.googlecode.com
-
-
 /* SITE */
 URL: www.supnig.com
 Language: en
 Standards: HTML5, CSS3
-Style: fluid grid / responsive
-Components: jQuery, Google Analytics, html5shiv
-Software: Eclipse / Java / JSR-286 / Apache Tomcat / OrientDB / putty
+Style: bootstrap / responsive
+Components: jQuery, Google Analytics
+Software: Node.js, Express, mongodb, custom blog engine
