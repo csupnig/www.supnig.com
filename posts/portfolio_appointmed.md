@@ -9,6 +9,11 @@
 
 Appointmed is a cloud-based, full-service healthcare solution on an Angular.JS and Java stack.
 <!--more-->
+
+**Role:** Co-Founder and frontend developer
+
+**Technology:** AngularJS, TypeScript, Gulp, Java, PostgreSQL
+
 Appointmed is a cloud-based, full-service practice software solution for comprehensive administration of all tasks in an innovative healthcare provider's surgery:
 - appointment scheduling
 - resource management

@@ -9,6 +9,11 @@
 
 Aloha Editor is the WYSIWYG editor, that will let you seamlessly integrate a great editing experience in your web application.
 <!--more-->
+
+**Role:** JavaScript Developer
+
+**Technology:** JavaScript
+
 Aloha abstracts the browsers functionality away from the developer and lets you care about building great applications instead
 of fixing browser and contenteditable bugs. It uses a revolutionary data structure to work with the changes that are made to
 your content.
