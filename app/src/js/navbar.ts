@@ -60,3 +60,37 @@ var cbpAnimatedHeader = (function() {
     init();
 
 })();
+
+$(() => {
+    function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toDateString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    $('.accept-cookie').click(function () {
+       createCookie('cookie-accepted', true, 365);
+        $('.cookie-policy').hide();
+    });
+
+    var val = readCookie('cookie-accepted');
+    if (!val) {
+        $('.cookie-policy').show();
+    }
+
+});

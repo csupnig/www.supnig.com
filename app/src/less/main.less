@@ -620,6 +620,24 @@ body {
 	display: none;
   }
 }
+
+.cookie-policy {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 5000;
+	text-align: center;
+	background: #000;
+	color: @brand-primary;
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	.btn, a {
+		margin: 0 15px;
+	}
+}
+
 @import "header";
 @import "timeline";
 @import "blog";

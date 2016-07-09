@@ -58,6 +58,9 @@
 {% if blog %}
 {% set basepath = "/" %}
 {% endif %}
+<div class="cookie-policy">
+    This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy.  <a href="/cookie">Read more</a> <button class="btn btn-primary accept-cookie">I agree</button>
+</div>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top{% if blog %} navbar-shrink navbar-always{% endif %}">
     <div class="container">
@@ -70,7 +73,6 @@
             </button>
             <a class="navbar-brand page-scroll" href="/"></a>
         </div>
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
@@ -102,7 +104,8 @@ NO TEMPLATE FOUND
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Christopher Supnig 2015</span>
+                <div class="copyright">Copyright &copy; Christopher Supnig 2015</div>
+                <div class="copyright">Alserbachstrasse 11/21, 1090 Vienna</div>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -117,6 +120,10 @@ NO TEMPLATE FOUND
                     <li><a href="https://www.xing.com/profile/Christopher_Supnig"><i class="fa fa-xing"></i></a>
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="copyright">Tel: +4369917109905</div>
+                <div class="copyright">UID Nr. ATU70549908</div>
             </div>
         </div>
     </div>

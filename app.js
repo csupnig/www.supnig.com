@@ -428,6 +428,10 @@ app.get('/about', function (req, res) {
     res.render('about');
 });
 
+app.get('/cookie', function (req, res) {
+    res.render('cookie');
+});
+
 app.get('/rss', function (req, res) {
     var feed = new Feed({
         title:          'Christopher Supnig - Blog',
