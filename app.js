@@ -321,7 +321,7 @@ app.post('/comment/:post', function (req, res) {
             email: req.body.email,
             comment: req.body.comment,
             post: req.params.post,
-            ipaddress: JSON.stringify(req.headers['X-Forwarded-For']),
+            ipaddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
             date: new Date()
         }).then(function () {
             renderPostWithComments(req.params.post, req, res,false,false);
