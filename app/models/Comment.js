@@ -12,6 +12,7 @@ CommentSchema = mongoose.Schema({
     md5mail: String,
     post:    String,
     comment: String,
+    ipaddress : String,
     date:    Date
 });
 

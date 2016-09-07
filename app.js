@@ -321,6 +321,7 @@ app.post('/comment/:post', function (req, res) {
             email: req.body.email,
             comment: req.body.comment,
             post: req.params.post,
+            ipaddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
             date: new Date()
         }).then(function () {
             renderPostWithComments(req.params.post, req, res,false,false);
@@ -342,7 +343,7 @@ app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){
         //in case of error we render the thing anyway
         renderPostWithComments(req.params.post, req, res,false,true);
     });
-})
+});
 
 poet.addRoute('/tags/:tag', function (req, res) {
   var taggedPosts = poet.helpers.postsWithTag(req.params.tag);

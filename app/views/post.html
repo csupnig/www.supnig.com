@@ -127,7 +127,7 @@
                                 <span class="date">{{ prettydate(comment.date) }}</span>
 
                                 {% if isadmin %}
-                                <span><a href="/comment/delete/{{post.slug}}/{{comment._id.valueOf()}}">delete</a></span>
+                                <span>({{post.ip}}) <a href="/comment/delete/{{post.slug}}/{{comment._id.valueOf()}}">delete</a></span>
                                 {% endif %}
                                 <p>
                                     {{comment.comment}}
