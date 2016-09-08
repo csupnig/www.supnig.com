@@ -313,7 +313,8 @@ poet.addRoute('/blog/:post', function (req, res) {
 });
 
 app.post('/comment/:post', function (req, res) {
-    if (req.body[req.session.captcha] != req.session.capchaValue) {
+    var clientip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    if (req.body[req.session.captcha] != req.session.capchaValue || config.blockedips.indexOf(clientip) > -1) {
         renderPostWithComments(req.params.post, req, res,true,false);
     } else {
         var comment = Comment.createComment({
@@ -321,7 +322,7 @@ app.post('/comment/:post', function (req, res) {
             email: req.body.email,
             comment: req.body.comment,
             post: req.params.post,
-            ipaddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+            ipaddress: clientip,
             date: new Date()
         }).then(function () {
             renderPostWithComments(req.params.post, req, res,false,false);

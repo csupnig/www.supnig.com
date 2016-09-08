@@ -17,6 +17,7 @@ module.exports = {
 			clientID: "{{PLACEHOLDER}}",
 			clientSecret: "{{PLACEHOLDER}}",
 			callbackURL: "{{PLACEHOLDER}}"
-		}
+		},
+		blockedips : ["78.46.37.73"]
 	}
 };
