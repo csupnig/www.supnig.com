@@ -20,6 +20,7 @@ var express = require('express'),
     sm = require('sitemap'),
     Poet = require('poet'),
     Comment = require("./app/models/Comment"),
+    IPBlock = require("./app/models/IPBlock"),
     crypto = require("crypto"),
     moment = require("moment"),
     swig = require("swig"),
@@ -314,24 +315,29 @@ poet.addRoute('/blog/:post', function (req, res) {
 
 app.post('/comment/:post', function (req, res) {
     var clientip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    if (req.body[req.session.captcha] != req.session.capchaValue || config.blockedips.indexOf(clientip) > -1) {
+    IPBlock.isBlocked(clientip).then(function(blocked) {
+        if (req.body[req.session.captcha] != req.session.capchaValue || blocked || config.blockedips.indexOf(clientip) > -1) {
+            renderPostWithComments(req.params.post, req, res,true,false);
+        } else {
+            var comment = Comment.createComment({
+                name: req.body.name,
+                email: req.body.email,
+                comment: req.body.comment,
+                post: req.params.post,
+                ipaddress: clientip,
+                date: new Date()
+            }).then(function () {
+                renderPostWithComments(req.params.post, req, res,false,false);
+            }, function (err) {
+                console.error("Error while saving comment for ", req.params.post, err);
+                //in case of error we render the thing anyway
+                renderPostWithComments(req.params.post, req, res,false,true);
+            });
+        }
+    },function() {
         renderPostWithComments(req.params.post, req, res,true,false);
-    } else {
-        var comment = Comment.createComment({
-            name: req.body.name,
-            email: req.body.email,
-            comment: req.body.comment,
-            post: req.params.post,
-            ipaddress: clientip,
-            date: new Date()
-        }).then(function () {
-            renderPostWithComments(req.params.post, req, res,false,false);
-        }, function (err) {
-            console.error("Error while saving comment for ", req.params.post, err);
-            //in case of error we render the thing anyway
-            renderPostWithComments(req.params.post, req, res,false,true);
-        });
-    }
+    });
+
 });
 
 app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){

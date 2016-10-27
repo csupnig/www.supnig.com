@@ -79,3 +79,10 @@ When you're not accepting the input it is best to remind the user to not resend 
     //END CHECK CAPTCHA
 
 Now try the whole thing out and leave me a comment! I would be glad to discuss any suggestions or questions.
+
+**Update:**
+The idea of not forcing the user to fill out a complicated captcha string found wide adoption in the meantime. The
+most popular implementation is probably google's [reCAPTCHA](https://www.google.com/recaptcha/intro/index.html).
+I strongly urge you to use their implementation, as they are using a combination of multiple factors to determine
+if it is a human filling out the form. Some of these factors are the mouse movements prior to the click on the checkbox,
+browser signature, google accounts,...

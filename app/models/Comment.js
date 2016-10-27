@@ -52,7 +52,7 @@ CommentSchema.statics.createComment = function(comment){
                     subject: "New Post on your blog - "+comment.post, // Subject line
                     text: "New Post on your blog - " + comment.post + " Text: " + comment.comment + " - by "+comment.email, // plaintext body
                     html: "New Post on your blog - " + comment.post + " Text: " + comment.comment + " - by "+comment.email // html body
-                }
+                };
 
                 // send mail with defined transport object
                 transport.sendMail(mailOptions, function(error, response){
