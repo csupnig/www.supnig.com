@@ -436,6 +436,10 @@ app.get('/about', function (req, res) {
     res.render('about');
 });
 
+app.get('/amazon', function (req, res) {
+    res.render('amazon');
+});
+
 app.get('/cookie', function (req, res) {
     res.render('cookie');
 });
