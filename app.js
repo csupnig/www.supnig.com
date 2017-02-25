@@ -45,7 +45,7 @@ fs.readdirSync(models_dir).forEach(function (file) {
   require(models_dir+'/'+ file);
 });
 
-require('./config/passport')(passport, config)
+require('./config/passport')(passport, config);
 
 var app = express();
 app.set('views', __dirname + '/app/views');

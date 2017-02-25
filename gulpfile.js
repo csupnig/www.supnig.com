@@ -54,7 +54,7 @@ var builddate = moment().format("YYYYMMDD_HHmm");
 // COMPILE TASKS
 // ----------------------------------------------------------------------------
 
-gulp.task('images', () => {
+gulp.task('images', function() {
 	return gulp.src('public/media/**/*')
 		.pipe(imagemin({
 			progressive: true,
@@ -75,7 +75,7 @@ gulp.task('vendor:compile', function () {
         .pipe(jsFilter)
         .pipe(concat('vendor.js'))
         .pipe(uglify())
-        .pipe(rename({suffix: '.min.' + pkg.version+'-'+builddate}))
+        .pipe(rename({suffix: '.min.' + pkg.version}))
         .pipe(gulp.dest(destDir));
 });
 
@@ -117,7 +117,7 @@ gulp.task('app:ts:compile', function () {
     //tsResult.dts.pipe(gulp.dest('release/definitions'));
     return tsResult.js.pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(rename({suffix: '.min.' + pkg.version + '-' +builddate}))
+        .pipe(rename({suffix: '.min.' + pkg.version}))
         .pipe(gulp.dest(destDir));
 });
 

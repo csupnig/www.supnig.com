@@ -6,7 +6,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "gulp app:compile && node app.js"
   },
   "dependencies": {
     "express": "~4.x.x",
