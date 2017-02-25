@@ -6,7 +6,8 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "gulp app:compile && node app.js"
+    "start": "gulp app:compile && node app.js",
+    "deploy":"gulp app:compile && git add . && git commit -am 'deploy' && eb deploy"
   },
   "dependencies": {
     "express": "~4.x.x",

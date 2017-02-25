@@ -4,12 +4,10 @@
 
 var express = require('express'),
     fs = require('fs'),
-    port     = process.env.PORT || 8081,
+    port     = process.env.PORT || 3000,
     http = require('http'),
     path = require('path'),
     Feed = require('feed'),
-    mongoose = require('mongoose'),
-    passport = require("passport"),
     flash = require("connect-flash"),
     cons = require('consolidate'),
     morgan = require('morgan'),
@@ -19,8 +17,6 @@ var express = require('express'),
     expressCompression = require('compression'),
     sm = require('sitemap'),
     Poet = require('poet'),
-    Comment = require("./app/models/Comment"),
-    IPBlock = require("./app/models/IPBlock"),
     crypto = require("crypto"),
     moment = require("moment"),
     swig = require("swig"),
@@ -32,20 +28,6 @@ var express = require('express'),
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
-
-
-mongoose.connect(config.db);
-
-var Auth = require('./config/middlewares/authorization.js')(config);
-
-var models_dir = __dirname + '/app/models';
-
-fs.readdirSync(models_dir).forEach(function (file) {
-  if(file[0] === '.') return; 
-  require(models_dir+'/'+ file);
-});
-
-require('./config/passport')(passport, config);
 
 var app = express();
 app.set('views', __dirname + '/app/views');
@@ -61,12 +43,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // required for passport
 app.use(session({ secret: 'ilovewebdevelopmentandiamcrazyabouttechnology' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
 
-require("./config/routes")(app,passport,config);
 /**
  * Instantiate and hook Poet into express; no defaults defined
  */
@@ -227,7 +207,7 @@ var sendMail = function(frommail,name,message,phone) {
         subject: "New Message your blog", // Subject line
         text: "New Message blog - From: "+name+" Email: "+frommail+" Phone: "+phone+"  Text: " + message + " - by "+frommail, // plaintext body
         html: "New Message blog - From: "+name+" Email: "+frommail+" Phone: "+phone+"  Text: " + message + " - by "+frommail // html body
-    }
+    };
 
     // send mail with defined transport object
     transport.sendMail(mailOptions, function(error, response){
@@ -244,10 +224,7 @@ var sendMail = function(frommail,name,message,phone) {
 var renderPostWithComments = function(postslug, req, res,captchaerror,commenterror) {
     var post = poet.helpers.getPost(postslug);
     var relatedPosts = [], relatedCount = 3;
-    Comment.find({"post":postslug}).sort('-date').exec(function(err,comments){
-        if (err) {
-            console.error(err);
-        }
+
         if (post) {
             var captchaValue = crypto.randomBytes(64).toString('hex');
             req.session.capchaValue = captchaValue;
@@ -273,7 +250,6 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
                 return false;
             });
             res.render('post', { "post": post,
-                                "comments":comments,
                                 "captchaValue":captchaValue,
                                 "captcha":req.session.captcha,
                                 "name1":field1,
@@ -288,7 +264,6 @@ var renderPostWithComments = function(postslug, req, res,captchaerror,commenterr
         } else {
             res.sendStatus(404);
         }
-    });
 };
 /**
  * In this example, upon initialization, we can modify the posts,
@@ -312,7 +287,7 @@ poet.watch(function () {
 poet.addRoute('/blog/:post', function (req, res) {
     renderPostWithComments(req.params.post,req, res,false,false);
 });
-
+/*
 app.post('/comment/:post', function (req, res) {
     var clientip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     IPBlock.isBlocked(clientip).then(function(blocked) {
@@ -351,7 +326,7 @@ app.get('/comment/delete/:post/:comment',Auth.isAdmin, function(req, res){
         renderPostWithComments(req.params.post, req, res,false,true);
     });
 });
-
+*/
 poet.addRoute('/tags/:tag', function (req, res) {
   var taggedPosts = poet.helpers.postsWithTag(req.params.tag);
   if (taggedPosts.length) {
