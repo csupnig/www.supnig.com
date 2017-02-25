@@ -12,11 +12,11 @@ function doDir(dirname) {
         if (fs.lstatSync(fullpath).isDirectory()) {
             doDir(dirname + '/' + file);
         } else {
-            if (file.indexOf('thumb') < 0) {
+            if (file.indexOf('thumb') < 0 && file.indexOf('background') < 0) {
                 im.resize({
                     srcPath: fullpath,
                     dstPath: fullpath,
-                    width: 500
+                    width: 1300
                 }, function(err, stdout, stderr) {
                     if (err) {
                         console.log(__dirname + '/public' + basename, err, stdout, stderr);
