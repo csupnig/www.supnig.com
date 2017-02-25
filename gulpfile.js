@@ -61,7 +61,7 @@ gulp.task('images', function() {
 			svgoPlugins: [{removeViewBox: false}],
 			use: []
 		}))
-		.pipe(gulp.dest('public/media/'));
+		.pipe(gulp.dest('public/media_small/'));
 });
 
 
