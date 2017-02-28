@@ -3,6 +3,8 @@
 This will soon be my personal blog. I use Poet (http://jsantell.github.io/poet/) as a post engine
 and I extended the functionality a bit.
 
+Added custom aws monitoring.
+
 ## Additional features
 
 ### Comments
