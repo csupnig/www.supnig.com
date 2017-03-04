@@ -11,7 +11,7 @@
 In my work in web development, especially when helping out in projects where javascript is heavily involved, I often encountered strange async patterns. This is why I created
 this little article. It should give you an insight on promises in angularjs and how to use them properly.
 <!--more-->
-##The story
+## The story
 Close your eyes and imagine that every morning before work you are heading first to the bakery to fetch your favourite sandwich, then to the fruit truck to get your beloved smoothie
 and finally you head to the kiosk to get your newspaper. The baker tells you, that your sandwich is out of stock but because you have been a faithful customer, he will make one
 especially for you. You take a quick look at your watch and agree. 20 minutes later you are on the way to the fruit truck with your sandwich. You like it fresh and that is why you spend

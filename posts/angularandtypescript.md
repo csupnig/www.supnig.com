@@ -11,7 +11,8 @@
 When we at appointmed started out designing our application we were evaluating a few options for our technology stack.
 Find out why we stuck with a combination of Angular and TypeScript and got to love it.
 <!--more-->
-##Supercharge your frontend
+Supercharge your frontend
+---------------
 When we at [appointmed](http://www.appointmed.com/) started out designing our application it pretty soon became clear that we would be using
 AngularJS as our frontend framework. Since I am a rather lazy programmer, I like structure and maintainability wherever possible and
 I want to take advantage of tools that help me to produce clean and understandable code.
@@ -20,7 +21,8 @@ I've had a look at TypeScript before when it was still very beta and still had l
 members reintroduced me to TypeScript when it was at version 0.9.1.0. The idea of writing structured, object oriented code as I was used
 to it from other languages gave me goose bumps of excitement.
 
-##Getting started
+Getting started
+--------------
 If you come from a Java or .NET background, getting into TypeScript is pretty simple as it provides all the sugar candy you are used to.
 You can created classes, interfaces and even use generics. It basically is ES6 with a modern type system.
 
@@ -112,8 +114,8 @@ Registering the controller:
 
     }
 
-###Services
-
+Services
+---------------
 In angular, services are used to share objects across your app to hold or provide information. They are wired into your
 components using dependency injection. In our example we have a cart service, that will hold an array of the selected items.
 In a real world example you obviously would like to persist the cart somehow but for this playground app we are just going
@@ -154,8 +156,8 @@ Then we have to register the service in our application.
 
     }
 
-###Directives
-
+Directives
+---------------
 Directives provide a way of attaching specific behaviour to a DOM object in angular. This is great to create reusable
 components within your app.
 
@@ -199,8 +201,8 @@ Registering the directive makes it available in our app.
 
     }
 
-###Filters
-
+Filters
+---------------
 Filters are used to modify the way something is displayed. This could be something like reordering an array, rounding
 prices or simply using a certain date format to display a date object.
 
@@ -242,8 +244,8 @@ Then we have to register the filter to be able to use it.
             });
     }
 
-### Putting everything together
-
+Putting everything together
+---------------
 Finally we have to set up the routing in our app and register all our separate modules in order for them to be loaded.
 
 

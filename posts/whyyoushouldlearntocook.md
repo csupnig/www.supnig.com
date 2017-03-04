@@ -11,7 +11,7 @@
 Cooking is an awesome skill to have, there is nothing to argue about that. So let me give you a few more reasons, why
 you should spend more time in the kitchen.
 <!--more-->
-##Cooking is the secret sauce to your work life balance
+## Cooking is the secret sauce to your work life balance
 Being a software engineer working with clients, I am used to work at a high level of stress. Especially at times
 where problems are piling up and people rely on me to work out a solution for them. This is also a reason why I need
 something in my life that provides me with some time where I can get my head clear of work and calm down. Just like the
@@ -32,14 +32,14 @@ I try to make at least one home cooked meal per day and usually I do that when I
 secret that food has a great effect on our mood. Scientists found that an improper diet will often result in bad health
 and depression. So besides the relaxing effect described above, those tasty meals also make me happy.
 
-##Love goes through the stomach
+## Love goes through the stomach
 That is a saying that is not only used here in Austria but is well known in a multitude of cultures and it holds true
 for romantic relationships as well as friendships. If you are like me then you like inviting friends over and nothing
 is more inviting than one of your signature dishes that they crave so much. Also if you have a significant other,
 treat them with a nice meal once in a while and you will see that tasty food goes a long way.
 
 To all the men out there: **Girls love it when you cook for them!**
-##The recipe
+## The recipe
 For all you food lovers I am going to share my secret panna cotta recipe.
 
 Ingredients (for 2 portions)

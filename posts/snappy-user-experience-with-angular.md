@@ -12,16 +12,16 @@ The other day I was working on an angular application that has a big emphasis on
 snappy feeling for its users. When I set up my routes, I started to wonder about how one should set up resources, that need
 to be loaded for the page to be displayed.
 <!--more-->
-##The Problem
+## The Problem
 The other day I was working on an angular application that has a big emphasis on user experience and needs to deliver a
 snappy feeling for its users. As many other developers, I am relying on the [UI Router](https://github.com/angular-ui/ui-router) when it comes to 
 routing in the application. When I set up my routes, I started to wonder about how one should set up resources, that need
 to be loaded for the page to be displayed.
 
-##Two obvious solutions
+## Two obvious solutions
 There are two obvious solutions, that each have their own benefits and drawbacks.
 
-###Resolving all needed resources before initializing the controller
+### Resolving all needed resources before initializing the controller
 Setting up your routes to load all needed resources before you initialize the controller is technically the most clean
 solution in my opinion. You set up resolves in your route definition, that will load the resources and inject them into
 the loaded controller.
@@ -60,7 +60,7 @@ Cons:
  - Loading might take some time
  - The user experience is not snappy, because we need to wait for the resources to be loaded
 
-###Loading all needed resources when initializing the controller
+### Loading all needed resources when initializing the controller
 Loading the resources in the constructor of our controller is not so beautiful, but we have the possibility to show the user
 some things before all resources have been loaded.
 
@@ -107,7 +107,7 @@ Cons:
  - Some element might not be operational without the needed resources
  - The user might run into problems, when interacting with the incomplete page
 
-###Your solution?
+### Your solution?
 At this point I want your opinion on the matter! Tell us how you implement your applications and what you do, to provide a snappy user experience.
 
 

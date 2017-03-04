@@ -287,6 +287,18 @@ poet.watch(function () {
 poet.addRoute('/blog/:post', function (req, res) {
     renderPostWithComments(req.params.post,req, res,false,false);
 });
+
+app.post('/comment/:post', function (req, res) {
+    if (req.body[req.session.captcha] != req.session.capchaValue) {
+        renderPostWithComments(req.params.post,req,res,false, false);
+    } else {
+        sendMail(req.body.email, req.body.name, req.body.message, req.body.phone).then(function(){
+            renderPostWithComments(req.params.post,req,res,false, false);
+        });
+    }
+});
+
+
 /*
 app.post('/comment/:post', function (req, res) {
     var clientip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;

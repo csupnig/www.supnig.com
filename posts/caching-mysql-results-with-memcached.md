@@ -29,13 +29,10 @@ Now you can start using memcache in your application:
     $memcache->set($key, $value, false, 0);
     $cachedValue = $memcache->get($key);
 
-## 
 
 ## Database abstraction layer
 
 As many other frameworks, Prestashop uses a database abstraction layer to make access to the database a little bit more reliable and better to maintain. Those are the best conditions to implement caching for result sets as all the queries will be routed through the sameclasses. 
-
-## 
 
 ## The initial implementation
 

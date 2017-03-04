@@ -11,7 +11,7 @@
 Since you already proved that you are an awesome developer, let's see how you can make the world a better place by shipping your npm modules with TypeScript
 definitions. This will help your users and developers to write bautiful and maintainable code without worrying about the correct typings.
 <!--more-->
-##Making the world a better place
+## Making the world a better place
 [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) is an awesome repository, but it needs to die! I know this sounds harsh but bare with me,
 I am not here to bash the awesome work by these guys. I just believe that in a perfect world, we should not rely on external typings but rather have the definition
 files shipped in the packages we love so much and as of TypeScript 1.6 we are finally able to achieve that. This version of TypeScript introduced a new way
@@ -31,7 +31,7 @@ Your typings should
 * be an external module
 * not have triple-slash references
 
-##Using this in your module
+## Using this in your module
 The other day I wrote an npm package that extends Express to work as a frontend for [Mesh](http://getmesh.io). Since I wanted our customers
 to write awesome and maintainable code, I decided to ship the definition files with the module. You can find the module [here](https://www.npmjs.com/package/express-mesh).
 
@@ -64,7 +64,7 @@ I am then using a gulp build to compile my .ts files into javascript and place t
         return tsResult.js.pipe(gulp.dest('./'));
     });
 
-##Consuming your npm module
+## Consuming your npm module
 In order to consume your npm module with typings in your application, you simply need to install it using npm `npm install express-mesh`. If you have
 TypeScript 1.6 and above, your IDE should automatically pick up the typings of the installed module.
 

@@ -11,7 +11,7 @@
 Now that you became a superhero yourself, I invite you to get your metal tested. We all know by now that unit tests are only a half
 measure, but it is a start to provide the quality you want to ship your products with.
 <!--more-->
-##About heroes and their quality
+## About heroes and their quality 
 In my last [post](/blog/meet-the-frontend-superhero-angularjs-with-typescript) I introduced you to our superhero that we use at [appointmed](http://www.appointmed.com/)
 and if you played around a bit I am certain that you experienced the easy with which you can write proper frontend applications using AngularJS and TypeScript. As in
 any other programming environment writing pretty code does not entirely keep you from making mistakes, especially when the application grows to a certain size.
@@ -21,7 +21,10 @@ get you there but it is a step into the right direction. In order to walk the wh
 
 In this post I will show you, how you can add the unit testing part to your application using Karma and Jasmine in your gulp build.
 
-##Getting started
+## UPDATE! There is a part 2 online.
+Go to the [new post](/blog/get-your-metal-tested---part-2-test-angularjs-and-typescript-with-karma-and-tjangular).
+
+## Getting started
 First we want to get all our dependencies sorted and install Karma and jasmine. Therefore add the following items to your package.json and run the install command.
 
         "gulp-karma": "0.0.4",
@@ -103,8 +106,7 @@ Now that we have the karma configuration in place, we need to compile and trigge
 
 If you want to see the full code, I suggest you check out my [GitHub repository](https://github.com/csupnig/angularjs-tutorial-code) containing all the files that you need.
 
-###Services
-
+### Services
 Now we want to write the actual tests using TypeScript. We create a file for each component we want to test and add our test code there. The unit test for one of our services
 might look like this:
 
@@ -150,8 +152,7 @@ might look like this:
 We use the http backend provided by the angular-mocks module to create a mock backend for our tests and tell it what requests it should expect and
 what responses should be sent.
 
-###Directives
-
+### Directives
 Testing directives is quite easy, because we can simply check the resulting HTML and see if our directive rendered correctly.
 
 
@@ -188,8 +189,7 @@ Testing directives is quite easy, because we can simply check the resulting HTML
             });
         });
 
-###Filters
-
+### Filters
 The tests for the filters are quite similar. We feed our filter with some input and check the result.
 
 
@@ -221,8 +221,7 @@ The tests for the filters are quite similar. We feed our filter with some input 
             });
         });
 
-###Controllers
-
+### Controllers 
 Sometimes controller tests can be a bit more complicated, because we often use other components in our controllers. In this case we also use the service that we already
 tested in the unit test described above and then check if the $scope is initialized as we expect it.
 
@@ -275,8 +274,7 @@ tested in the unit test described above and then check if the $scope is initiali
         });
 
 
-### Putting everything together
-
+## Putting everything together
 Now that we know how to test all our components, we can simply call the gulp task to compile and execute the tests.
 
         > gulp app:test

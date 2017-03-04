@@ -12,13 +12,16 @@ You have already proven that you and your powers can withstand the harsh tests o
 it to learn how to harness your powers and be more effective. In this guide I will show you how to use abstract classes of typescript and create awesome service classes
 for your angular application.
 <!--more-->
-##Next step in your hero education
+Next step in your hero education
+--------------------------------
+
 In my last [post](/blog/get-your-metal-tested-test-angularjs-and-typescript-with-karma-and-jasmine) I showed you how to set up a productive test environment to ensure
 the kind of quality you want your enterprise web applications to have. We at [appointmed](http://www.appointmed.com/) put a lot of effort in making our code easily
 maintainable and that involves next to using TypeScript and a comprehensive coding style guide also the notion to reuse code as much as possible. This is why we use
 abstract TypeScript classes for our AngularJS services.
 
-##Getting started
+Getting started
+---------------
 The best starting point for abstract service classes is a well designed REST-API, that will provide you with the basic functionality for all your entities on their respective path.
 
 For example:
@@ -33,7 +36,8 @@ For example:
 All your other entities should have the same scheme, only the path should differ.
 
 
-###Avbstract service
+Avbstract service
+-----------------
 Let's look at a typical abstract service implementation
 
         
@@ -94,8 +98,8 @@ Let's look at a typical abstract service implementation
 
 This is how a basic implementation of an abstract service could look like. This provides you with a single point of contact where you can implement methods to use in all your services.
 
-###Using the abstract class
-
+Using the abstract class
+------------------------
 Lets look at how to use this abstract class to create our patient service:
 
 
