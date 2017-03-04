@@ -80,7 +80,7 @@ describe("DownloadCtrl", () => {
 In order to test a controller, we have to inject all the dependencies, set up the actual controller and then we can think about
 the actual test cases.
 
-What if it was a lot easier? What if we could hearness the power of TypeScript and make writing tests fun?
+What if it was a lot easier? What if we could harness the power of TypeScript and make writing tests fun?
 
 ```javascript
 "use strict";
@@ -116,10 +116,10 @@ class DownloadCtrlSpec {
 
 ## How does it work?
 TJAngular does all the `beforeEach` boilerplate behind the scenes and just injects the objects that you want to test into your
-test class.
+test class instance.
 
 ## How do I use it?
-Instead of writing complicated function `describe` constructs as you have known them from Jasmine, you simply write a
+Instead of writing complicated function `describe` constructs, as you have known them from Jasmine, you simply write a
 TypeScript class for each Test and annotate it properly.
 
 ## How do I provide mocks for Services, Providers,...
