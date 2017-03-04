@@ -28,11 +28,11 @@ It sets out to make unit testing much easier by reducing boiler plate code you h
 Mocking out dependencies in unit tests can be a huge pain. Angular makes testing "easy", but mocking out *every* dependecy isn't so slick. If you've ever written an Angular unit test (using Jasmine/Mocha), you've probably seen a ton of `beforeEach` boilerplate that looks something like this:
 
 ```javascript
-describe("StatementDownloadCtrl", () => {
-    var CTRL_ID : string = "dashboard_statement_download_ctrl";
+describe("DownloadCtrl", () => {
+    var CTRL_ID : string = "dashboard_download_ctrl";
 
-    var statementDownloadCtrl : myproj.IStatementDownloadCtrl;
-    var scope : myproj.IStatementDownloadScope;
+    var DownloadCtrl : myproj.IDownloadCtrl;
+    var scope : myproj.IDownloadScope;
     var downloadService : service.IDownloadService;
 
     beforeEach(angular.mock.module("app"));
@@ -49,30 +49,30 @@ describe("StatementDownloadCtrl", () => {
                 download_service : service.IDownloadService) => {
             scope = $rootScope.$new();
             $httpBackend.expectGET(ENV.LANGUAGE_SERVICE_URL + "?lang=de").respond(200);
-            downloadService = myprojspa_download_service;
+            downloadService = myproj_download_service;
 
-            statementDownloadCtrl = $controller(CTRL_ID,
+            DownloadCtrl = $controller(CTRL_ID,
                 {
                     $scope: scope,
                     $window: $window,
                     $log: $log,
                     downloadService: downloadService,
-                    accountId: 123,
-                    billId: "b1"
+                    itemid: 123,
+                    token: "b1"
                 });
         });
     });
 
     it("should be initialized", () => {
-        expect(statementDownloadCtrl).toBeDefined();
+        expect(DownloadCtrl).toBeDefined();
     });
 
     it("should call downloadservice with correct default parameters", () => {
-        spyOn(downloadService, "getDownloadAccountStatementUrl").and.returnValue("someurl");
+        spyOn(downloadService, "getDownloadUrl").and.returnValue("someurl");
 
-        statementDownloadCtrl.onDownload();
+        DownloadCtrl.onDownload();
 
-        expect(downloadService.getDownloadAccountStatementUrl).toHaveBeenCalledWith(123, "b1", "A4", false);
+        expect(downloadService.getDownloadUrl).toHaveBeenCalledWith(123, "b1", "A4", false);
     });
 });
 ```
@@ -88,17 +88,17 @@ What if it was a lot easier? What if we could hearness the power of TypeScript a
 import {Spec, Inject, Test, Mocks, Scope} from "TJAngular/index";
 
 @Spec()
-class StatementDownloadCtrlSpec {
+class DownloadCtrlSpec {
 
     @Scope({
         "scopemember":"1234"
     })
     @Mocks({
-        "accountId": "ownAccount1",
-        "billId": "2016001"
+        "itemid": "123",
+        "token": "ACBE123"
     })
-    @Inject("dashboard_statement_download_ctrl", "dashboard")
-    private controller : myproj.IStatementDownloadCtrl;
+    @Inject("dashboard_download_ctrl", "dashboard")
+    private controller : myproj.IDownloadCtrl;
 
     @Test()
     public testInit() : void {
@@ -107,9 +107,9 @@ class StatementDownloadCtrlSpec {
 
     @Test("should call downloadservice with correct default parameters")
     public testDownloadServiceCall() : void {
-        spyOn((<any> this.controller).$deps.myprojspa_download_service, "getDownloadAccountStatementUrl").and.callThrough();
+        spyOn((<any> this.controller).$deps.myproj_download_service, "getDownloadUrl").and.callThrough();
         this.controller.onDownload();
-        expect((<any> this.controller).$deps.myprojspa_download_service.getDownloadAccountStatementUrl).toHaveBeenCalledWith("ownAccount1", "2016001", "A4", false);
+        expect((<any> this.controller).$deps.myproj_download_service.getDownloadUrl).toHaveBeenCalledWith("123", "ACBE123", "A4", false);
     }
 }
 ```
@@ -129,10 +129,10 @@ TJAngular holds an internal angular module for all the mocks. You can register m
 import {ProvideMockService} from "TJAngular";
 "use strict";
 
-@ProvideMockService("myprojspa_download_service")
+@ProvideMockService("myproj_download_service")
 class AnyDownloadService implements service.IDownloadService {
 
-    public getDownloadAccountStatementUrl(account : string, id : string, format : string, sign : boolean) : string {
+    public getDownloadUrl(itemid : string, token : string, format : string, sign : boolean) : string {
         return undefined;
     }
 }    
@@ -150,7 +150,7 @@ Every injected resource has additional information attached to it, that you can 
 
 - `$deps` - All dependencies that have been injected into the requested resource. E.g.
     ```javascript
-        spyOn((<any> this.controller).$deps.download_service, "getDownloadAccountStatementUrl")
+        spyOn((<any> this.controller).$deps.download_service, "getDownloadUrl")
     ```
 
 Happy testing!
