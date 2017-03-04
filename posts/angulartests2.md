@@ -9,13 +9,13 @@
 }}}
 
 Maybe you remember my posts about how to become a frontend superhero and how to write resilient apps that are covered by unit tests with karma and jasmine. Some time
-passed by and I lerned a lot myself. This is why I want to share this update with you.
+passed by and I learned a lot myself. This is why I want to share this update with you.
 <!--more-->
 ## Proven in the field
 In my last [post](/blog/get-your-metal-tested-test-angularjs-and-typescript-with-karma-and-jasmine) I showed you how you can start writing unit tests for your frontend application.
 Since then some time passed, another version of angular came out and TypeScript got some fancy extensions. Since we still write a lot of bigger projects with angular 1.5, I also wanted
 some new spices in there. In the last post we have seen that writing unit tests for angular is not rocket science, but still requires some time and boiler plate code. At [appointmed](http://www.appointmed.com/)
-we wrtie a lot of unit tests and I pretty soon got bored with all that repetition in the code. 
+we write a lot of unit tests and I pretty soon got bored with all that repetition in the code. 
 Initializing all the needed modules, injecting the components we want to test, preparing mocks,... the list is endless. So I started to move these steps into some
 helper functions. This little library soon grew and after I found out about decorators and annotations in TypeScript I hooked it up and [TJAngular](https://www.npmjs.com/package/TJAngular) was born.
 
