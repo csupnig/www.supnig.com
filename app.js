@@ -88,7 +88,6 @@ var generatePostThumbnail = function(posts, key){
 var generateSitemap = function(){
     var urls = [];
     var posts = poet.helpers.getPosts();
-
     for(var key in posts) {
         urls.push({
             url:           posts[key].url,
@@ -467,7 +466,11 @@ app.get('/rss', function (req, res) {
 });
 
 app.get('/sitemap', function (req, res) {
-    sitemap.toXML( function (xml) {
+    sitemap.toXML( function (err, xml) {
+        if (err) {
+            console.log('ERROR', JSON.stringify(err, null, 4));
+            return res.status(500).end();
+        }
         res.header('Content-Type', 'application/xml');
         res.send( xml );
     });
