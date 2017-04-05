@@ -468,7 +468,7 @@ app.get('/rss', function (req, res) {
 app.get('/sitemap', function (req, res) {
     sitemap.toXML( function (err, xml) {
         if (err) {
-            console.log('ERROR', JSON.stringify(err, null, 4));
+            console.log('ERROR delivering sitemap', JSON.stringify(err, null, 4));
             return res.status(500).end();
         }
         res.header('Content-Type', 'application/xml');
