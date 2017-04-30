@@ -1,3 +1,4 @@
+
 module.exports = {
 
 	development : {
@@ -12,6 +13,12 @@ module.exports = {
 			clientSecret: "356f4c3d963cce5585c420e82e195671",
 			callbackURL: "http://www.supnig.com/auth/facebook/callback"
 		},
+
+        twitter: {
+            consumerKey: "fE1o4tiIEvuHnsrq8uLmIVddy",
+            consumerSecret: "JJfZdxVhrqgGSz3rvx2OBol2W2eDljIlrzOgOcXSuWsBAPGTTM",
+            callbackURL: "https://www.supnig.com/auth/twitter/callback"
+        },
 
 		google: {
 			clientID: "{{PLACEHOLDER}}",

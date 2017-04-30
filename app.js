@@ -19,8 +19,10 @@ var express = require('express'),
     Poet = require('poet'),
     crypto = require("crypto"),
     moment = require("moment"),
+    passport = require("passport"),
     swig = require("swig"),
     routes = require("./config/routes"),
+    passportInit = require("./config/passport"),
     nodemailer = require("nodemailer"),
     q = require('q'),
     sendmailTransport = require('nodemailer-sendmail-transport'),
@@ -43,9 +45,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // required for passport
 app.use(session({ secret: 'ilovewebdevelopmentandiamcrazyabouttechnology' })); // session secret
-
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
+
+passportInit(passport, config);
+routes(app, passport, config);
 
 /**
  * Instantiate and hook Poet into express; no defaults defined

@@ -1,0 +1,23 @@
+{% extends "./layout.html" %}
+
+{% block content %}
+
+<section>
+    <div class="twitter">
+        <h1>Sources for {{handle}}</h1>
+        <form action="/twitter" method="post">
+            <label>Source:</label>
+            <input name="source" class="tags" id="tags" value="{{source}}"/>
+            <button type="submit">SAVE</button>
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $('#tags').tagsInput();
+</script>
+{% endblock %}

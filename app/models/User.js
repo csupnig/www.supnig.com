@@ -1,85 +1,32 @@
-var mongoose = require('mongoose');
 
+var TwitterBotDBClient = require("./TwitterBotDBClient").TwitterBotDBClient;
 
-UserSchema = mongoose.Schema({
-	firstName:  String,
-	lastName:   String,
-	email:      String,
-	salt:       String,
-	hash:       String,
-	facebook:{
-		id:       String,
-		email:    String,
-		name:     String
-	},
-	google:{
-		id:       String,
-		email:    String,
-		name:     String
-	}
-});
+var User = function() {
+};
 
+User.prototype.findOrCreate = function (obj, callback){
+    console.log(JSON.stringify(obj, null, 4));
+    TwitterBotDBClient.loadUser(obj.twitter.username).then(function(user) {
+        console.log('Loaded user', JSON.stringify(user, null, 4));
+        if (!user || user === null) {
+            console.log('Need to create user');
+            TwitterBotDBClient.createUser({
+                user : obj.twitter.username,
+                accessToken : obj.token,
+                accessTokenSecret : obj.secret
+            }).then(function() {
+                callback(undefined, obj);
+            }).catch(function(err) {
+                console.log('Could not create user', JSON.stringify(err, null, 4));
+                callback(undefined, obj);
+            })
+        } else {
+            callback(undefined, obj);
+        }
+    }).catch(function(err) {
+        console.log('Could not load user', JSON.stringify(err, null, 4));
+        callback(undefined, obj);
+    });
+};
 
-
-// Create a new user given a profile
-UserSchema.statics.findOrCreateOAuthUser = function(profile, done){
-	var User = this;
-
-	// Build dynamic key query
-	var query = {};
-	query[profile.authOrigin + '.id'] = profile.id;
-
-	// Search for a profile from the given auth origin
-	User.findOne(query, function(err, user){
-		if(err) throw err;
-
-		// If a user is returned, load the given user
-		if(user){
-			done(null, user);
-		} else {
-			// Otherwise, store user, or update information for same e-mail
-			User.findOne({ 'email' : profile.emails[0].value }, function(err, user){
-				if(err) throw err;
-
-				if(user){
-					// Preexistent e-mail, update
-					user[''+profile.authOrigin] = {};
-					user[''+profile.authOrigin].id = profile.id;
-					user[''+profile.authOrigin].email = profile.emails[0].value;
-					user[''+profile.authOrigin].name = profile.displayName;
-
-					user.save(function(err, user){
-						if(err) throw err;
-						done(null, user);
-					});
-				} else {
-					// New e-mail, create
-					
-					// Fixed fields
-					user = {
-						email : profile.emails[0].value,
-						firstName : profile.displayName.split(" ")[0],
-						lastName : profile.displayName.replace(profile.displayName.split(" ")[0] + " ", "")
-					};
-
-					// Dynamic fields
-					user[''+profile.authOrigin] = {};
-					user[''+profile.authOrigin].id = profile.id;
-					user[''+profile.authOrigin].email = profile.emails[0].value;
-					user[''+profile.authOrigin].name = profile.displayName;
-
-					User.create(
-						user,
-						function(err, user){
-							if(err) throw err;
-							done(null, user);
-						}
-					);
-				}
-			});
-		}
-	});
-}
-
-var User = mongoose.model("User", UserSchema);
-module.exports = User;
+module.exports = new User();
