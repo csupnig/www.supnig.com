@@ -71,8 +71,7 @@ var TwitterBotDBClient = (function () {
                     Item: {
                         "user": user.user,
                         "access_token": tokeninfo.accessToken,
-                        "access_token_secret": tokeninfo.accessTokenSecret,
-                        "source":docClient.createSet([])
+                        "access_token_secret": tokeninfo.accessTokenSecret
                     }
                 }, function (err , data ) {
                     if (err) {
