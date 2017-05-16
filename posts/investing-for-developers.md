@@ -44,17 +44,19 @@ Some online brokers even have free ETF saving plans. They allow you to buy a cer
 The risk of your investments depends on which type you chose. Also how you structure your portfolio. If you are buying and index ETF you are safer as you would be going for a single company. Most stocks and ETFs have a risk rating that you can have a look at. In general: There is no investment without risk and not investing your money is probably the most risky choice.
 
 ## Resources
-- [https://www.degiro.at/kunden-werben-kunden/anlagekonto-eröffnen.html?id=8DA8D201&referral_name=Christopher%20Supnig](DeGiro): This is the broker I am currently using. Yes, this is an affiliate link where you will get € 20,-- in free transactions for you to try.
+- [DeGiro](https://www.degiro.at/kunden-werben-kunden/anlagekonto-eröffnen.html?id=8DA8D201&referral_name=Christopher%20Supnig): This is the broker I am currently using. Yes, this is an affiliate link where you will get € 20,-- in free transactions for you to try.
 
-- [https://seekingalpha.com](Seeking Alpha): This is a very useful site to track your desired portfolio and read up on news and analysis.
+- [Seeking Alpha](https://seekingalpha.com): This is a very useful site to track your desired portfolio and read up on news and analysis.
+
+- [SimplyWallSt](https://simplywall.st/r?ref=DF16E643): An interesting analysis tool where you have the key figures of a stock on one page.
 
 ## Books on investing
 There are a couple of good books which will put your mind on the track of investing. They will give you insights and the
 tools to evaluate and choose the best investment for you.
 
-- [http://amzn.to/2r81Nsy](Rich Dad Poor Dad): The classic by Robert Kiyosaki. This book is an entry level read and will introduce you to the idea of making money through investments.
-- [http://amzn.to/2rgMjyW](The intelligent investor): Written by Benjamin Graham, this book describes value investing. Benjamin Graham is the definitive mentor of Warren Buffett. This book is not the easiest read, but describes the concepts used by Buffett in great detail.
-- [http://amzn.to/2qIcZw8](The richest man in Babylon): This book by George S. Clason tells the story of a man finding his path to wealth. 
+- [Rich Dad Poor Dad](http://amzn.to/2r81Nsy): The classic by Robert Kiyosaki. This book is an entry level read and will introduce you to the idea of making money through investments.
+- [The intelligent investor](http://amzn.to/2rgMjyW): Written by Benjamin Graham, this book describes value investing. Benjamin Graham is the definitive mentor of Warren Buffett. This book is not the easiest read, but describes the concepts used by Buffett in great detail.
+- [The richest man in Babylon](http://amzn.to/2qIcZw8): This book by George S. Clason tells the story of a man finding his path to wealth. 
 
 ## Disclaimer
 I am not a professional financial adviser. Investing often involves risk and you have to take care that you are aware about
