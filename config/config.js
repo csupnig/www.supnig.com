@@ -3,7 +3,7 @@ module.exports = {
 
 	development : {
 		blogcategories:['travel','tech','lifestyle'],
-		featuredpost:'get-your-metal-tested---part-2-test-angularjs-and-typescript-with-karma-and-tjangular',
+		featuredpost:'investing-for-developers-how-to-build-your-wealth',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
