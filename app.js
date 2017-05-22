@@ -50,6 +50,16 @@ app.use(passport.session());
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+    console.log('Redirecting URL:', req.originalUrl, req.host, req.hostname);
+    if (req.host.indexOf('www') > -1) {
+        res.redirect('https://' + req.host.substring(4) + req.url);
+    } else {
+        next();
+    }
+});
+
+
 passportInit(passport, config);
 routes(app, passport, config);
 
