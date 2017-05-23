@@ -4,7 +4,7 @@
 
 var express = require('express'),
     fs = require('fs'),
-    port = process.env.PORT || 8081,
+    port = process.env.PORT || 3000,
     http = require('http'),
     path = require('path'),
     Feed = require('feed'),
@@ -49,16 +49,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
-/*
+
 app.use(function(req, res, next) {
-    if (req.hostname === 'supnig.com') {
-        console.log('Redirecting URL:', req.originalUrl, req.hostname);
-        res.redirect('https://www.' + req.hostname + req.url);
+    var host = req.header('host');
+    console.log('Probing URL:', req.originalUrl, host);
+    if (host === 'supnig.com') {
+        console.log('Redirecting URL:', req.originalUrl, host);
+        res.redirect('https://www.' + host + req.url);
     } else {
         next();
     }
 });
-*/
+
 
 passportInit(passport, config);
 routes(app, passport, config);
