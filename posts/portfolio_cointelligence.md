@@ -18,4 +18,4 @@ Cointelligence is a free Bitcoin and Altcoin market analyzing tool, that helps y
 
 We not only let traders test their strategies on past market data, but also support a live test, to verify the fitness of the selected strategy. The trader can then use the live trading feature to fully automate trades based on the selected strategy.
 
-[http://www.cointelligence.net](http://www.cointelligence.net/)
+The Project is currently offline.

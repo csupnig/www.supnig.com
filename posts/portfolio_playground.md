@@ -16,4 +16,4 @@ Me playing around with the HTML Canvas and the Web Audio API.
 
 A small mockup I was compelled to do after attending the smashingconf in Oxford, March 2014.
 
-[http://playground.supnig.com](http://playground.supnig.com/)
+The project is currently offline.
