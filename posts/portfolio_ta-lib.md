@@ -12,7 +12,7 @@ A little library that helps with technical analysis in JavaScript.
 
 **Role:** Project lead and developer
 
-**Technology:** NodeJS, TypeScript, Gulp
+**Technology:** NodeJS, TypeScript, Gulp, npm
 
 TA-Lib is a free library that helps with technical analysis in JavaScript. I used it mostly
 to implement trading strategies for my cointelligence platform.
