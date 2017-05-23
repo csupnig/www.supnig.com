@@ -18,10 +18,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="author" href="/humans.txt" />
     <meta name="robots" content="all" />
-    <meta name="description" content="{% if post.preview %}{{post.preview|striptags|safe}}{% else %}Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!){% endif %}"/>
-    <meta property="og:title" content="{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}" />
+    <meta name="description" content="{% if description %}{{description}}{% else %}{% if post.preview %}{{post.preview|striptags|safe}}{% else %}Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!){% endif %}{% endif %}"/>
+    <meta property="og:title" content="{% if title %}{{title}}{% else %}{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}{% endif %}" />
     <meta property="og:type" content="{% if post.title %}Post{{post.title}}{% else %}Website{% endif %}" />
-    <meta property="og:url" content="https://supnig.com/" />
+    <meta property="og:url" content="https://www.supnig.com/" />
     <meta property="og:image" content="{% if post.picture %}//supnig.com{{post.picture}}{% else %}//supnig.com/media/pictures/avatar.jpg{% endif %}" />
     <title>{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}</title>
 

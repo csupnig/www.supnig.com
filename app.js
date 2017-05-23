@@ -125,6 +125,11 @@ var generateSitemap = function(){
         changefreq:'monthly',
         priority:0.7
     });
+    urls.push({
+        url:           "https://www.supnig.com/blog",
+        changefreq:'monthly',
+        priority:0.7
+    });
     sitemap = sm.createSitemap ({
         hostname: 'https://www.supnig.com',
         cacheTime: 600000,        // 600 sec - cache purge period
@@ -205,7 +210,9 @@ var renderIndexWithMessageCapcha = function(req, res, messagesuccess) {
         "name1":field1,
         "name2":field2,
         "messagesuccess":messagesuccess,
-        "prettydate":prettydate
+        "prettydate":prettydate,
+        "title":"Christopher Supnig - Welcome to my website",
+        "description":"I am writing about technology, programming and life in general."
     });
 };
 
@@ -435,7 +442,10 @@ app.post('/message', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-    res.render('about');
+    res.render('about', {
+        "title":"Christopher Supnig - About me",
+        "description":"Find out more about Christopher Supnig."
+    });
 });
 
 app.get('/amazon', function (req, res) {
@@ -443,7 +453,10 @@ app.get('/amazon', function (req, res) {
 });
 
 app.get('/cookie', function (req, res) {
-    res.render('cookie');
+    res.render('cookie', {
+        "title":"Christopher Supnig - Cookie policy",
+        "description":"On this website I am using cookies to improve your experience."
+    });
 });
 
 app.get('/rss', function (req, res) {
