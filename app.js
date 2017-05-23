@@ -51,14 +51,12 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-    console.log('Redirecting URL:', req.originalUrl, req.hostname);
-    /*if (req.host.indexOf('www') < 0) {
+    if (req.hostname === 'supnig.com') {
+        console.log('Redirecting URL:', req.originalUrl, req.hostname);
         res.redirect('https://www.' + req.hostname + req.url);
     } else {
         next();
-    }*/
-    console.log(JSON.stringify(req.headers, null, 4));
-    next();
+    }
 });
 
 
