@@ -52,8 +52,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
     console.log('Redirecting URL:', req.originalUrl, req.host, req.hostname);
-    if (req.host.indexOf('www') > -1) {
-        res.redirect('https://' + req.host.substring(4) + req.url);
+    if (req.host.indexOf('www') < 0) {
+        res.redirect('https://www.' + req.host + req.url);
     } else {
         next();
     }
@@ -121,12 +121,12 @@ var generateSitemap = function(){
         };
     }
     urls.push({
-        url:           "https://supnig.com/about",
+        url:           "https://www.supnig.com/about",
         changefreq:'monthly',
         priority:0.7
     });
     sitemap = sm.createSitemap ({
-        hostname: 'https://supnig.com',
+        hostname: 'https://www.supnig.com',
         cacheTime: 600000,        // 600 sec - cache purge period
         urls: urls
     });
@@ -450,13 +450,13 @@ app.get('/rss', function (req, res) {
     var feed = new Feed({
         title:          'Christopher Supnig - Blog',
         description:    'This is the RSS feed to my blog!',
-        link:           'https://supnig.com/',
+        link:           'https://www.supnig.com/',
         copyright:      'Copyright © 2014 Christopher Supnig. All rights reserved',
 
         author: {
             name:       'Christopher Supnig',
             email:      'contact@supnig.com',
-            link:       'https://supnig.com'
+            link:       'https://www.supnig.com'
         }
     });
 
