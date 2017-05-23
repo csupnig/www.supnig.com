@@ -17,6 +17,6 @@ A little library that helps with technical analysis in JavaScript.
 TA-Lib is a free library that helps with technical analysis in JavaScript. I used it mostly
 to implement trading strategies for my cointelligence platform.
 
-It supports a multitude of technical analysis functions.
+It supports a multitude of technical analysis functions. Check out [http://www.investopedia.com/](http://www.investopedia.com/) for more information on technical analysis.
 
 Find it here on npmjs.org: [ta-lib](https://www.npmjs.com/package/ta-lib)
