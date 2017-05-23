@@ -57,6 +57,7 @@ app.use(function(req, res, next) {
     } else {
         next();
     }*/
+    console.log(JSON.stringify(req.headers, null, 4));
     next();
 });
 
