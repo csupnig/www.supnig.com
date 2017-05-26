@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
     var host = req.header('host');
-    console.log('Probing URL:', req.originalUrl, host);
+    console.log('Probing URL:', req.originalUrl, host, req.secure);
     if (host === 'supnig.com') {
         console.log('Redirecting URL:', req.originalUrl, host);
         res.redirect('https://www.' + host + req.url);
