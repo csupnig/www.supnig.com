@@ -53,11 +53,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
     var host = req.header('host');
     console.log('Probing URL:', req.originalUrl, host, req.secure, JSON.stringify(req.headers, null, 4));
-    /*if (host === 'www.supnig.com' && req.headers['X-Forwarded-Proto'] !== 'https') {
+    if (host === 'www.supnig.com' && req.headers['x-forwarded-proto'] !== 'https') {
         console.log('Redirecting URL:', req.originalUrl, host);
         res.redirect('https://www.supnig.com' + req.url);
-    } else */
-    if (host === 'supnig.com') {
+    } else if (host === 'supnig.com') {
         console.log('Redirecting URL:', req.originalUrl, host);
         res.redirect('https://www.' + host + req.url);
     } else {
