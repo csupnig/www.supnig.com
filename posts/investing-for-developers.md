@@ -14,7 +14,8 @@ to say that we live in a wealthy time for our trade. In this article I will talk
 make use of what I am earning and why it is important to invest a part of your earnings. I would have given a lot if I had known
 in my early 20s what I know now. Let me share this insights with you, so you might profit from it!
 <!--more-->
-Photo by CafeCredit under CC 2.0
+
+(Photo by CafeCredit under CC 2.0)
 
 ## Why investing?
 One of the most compelling reasons for investing is to not having to work your entire life. Doesn't this sound great? 
