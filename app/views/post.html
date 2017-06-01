@@ -54,9 +54,10 @@
                         <h1><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h1>
                         <div class="infos"><span class="time text-muted">{{ prettydate(post.date) }} in {{post.category}}</span></div>
                         {% if post.picture %}
-                        <div class="titleimage">
+                        <figure class="titleimage">
                             <img class="img-responsive" src="{{post.picture}}" alt="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}" title="{% if post.picturecapt %}{{post.picturecapt}}{% else %}{{post.title}}{% endif %}">
-                        </div>
+                            {% if post.picturecaption %}<figcaption>{{post.picturecaption|safe}}</figcaption>{% endif %}
+                        </figure>
                         {% endif %}
                         <div class="content">
                             {{post.content|safe}}

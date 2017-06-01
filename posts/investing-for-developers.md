@@ -5,7 +5,8 @@
   "date": "Mon, 15 May 2017 20:31:35 GMT",
   "color":"blue",
   "picture":"/media/pictures/investing.jpg",
-  "picturecapt":"Investing for developers!"
+  "picturecapt":"Investing for developers!",
+  "picturecaption":"<em><a href=\"https://www.flickr.com/photos/cafecredit/30994123601\">Photo</a> by <b><a href=\"https://www.cafecredit.com\">CafeCredit</a></b> under <a href=\"https://creativecommons.org/licenses/by/2.0\" rel=\"nofollow\">CC 2.0</a></em>"
 }}}
 
 
@@ -14,9 +15,6 @@ to say that we live in a wealthy time for our trade. In this article I will talk
 make use of what I am earning and why it is important to invest a part of your earnings. I would have given a lot if I had known
 in my early 20s what I know now. Let me share this insights with you, so you might profit from it!
 <!--more-->
-
-(Photo by CafeCredit under CC 2.0)
-
 ## Why investing?
 One of the most compelling reasons for investing is to not having to work your entire life. Doesn't this sound great? 
 I want to keep you down to earth though and I am not saying that you should save by eating only rice and potatoes. Far from that. You should be able to enjoy your life! If the question between saving and a glass of wine on your terrace arises, always go for the wine!
