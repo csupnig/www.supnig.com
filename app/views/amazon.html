@@ -4,22 +4,40 @@
 {% block content %}
 
 <section>
-    <script charset="utf-8" type="text/javascript">
-        amzn_assoc_ad_type = "responsive_search_widget";
-        amzn_assoc_tracking_id = "supnigcom-21";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "DE";
-        amzn_assoc_placement = "";
-        amzn_assoc_search_type = "search_widget";
-        amzn_assoc_width = 800;
-        amzn_assoc_height = 650;
-        amzn_assoc_default_search_category = "";
-        amzn_assoc_default_search_key = "";
-        amzn_assoc_theme = "light";
-        amzn_assoc_bg_color = "FFFFFF";
-    </script>
-    <script src="https://z-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=DE&internal=1"></script>
-
+    <form class="newsletter" action="/amazon" method="post" novalidate>
+        <div>
+            <h2 class="section-heading text-center">Amazon Search</h2>
+            <div class="form-group">
+                <input type="text" value="" name="keywords" class="form-control" placeholder="Searchterm">
+            </div>
+            <div class="clear submit">
+                <input type="submit" value="Search" name="search" class="btn btn-xl">
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" id="firstposts">
+                {% for item in results %}
+                <div class="portfolio-item item searchresult-amazon text-center">
+                    {% if item.image %}
+                    <a href="{{itemurl}}" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{item.image}}" class="img-responsive" alt="">
+                    </a>
+                    {% endif %}
+                    <div class="portfolio-caption">
+                        <h4><a href="{{item.url}}">{{item.title}}</a></h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
 
 {% endblock %}

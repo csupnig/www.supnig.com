@@ -26,7 +26,9 @@ var express = require('express'),
     nodemailer = require("nodemailer"),
     q = require('q'),
     sendmailTransport = require('nodemailer-sendmail-transport'),
-    im = require('node-imagemagick');
+    im = require('node-imagemagick'),
+    amazonProduct = require('amazon-product-api'),
+    _ = require('lodash');
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
@@ -414,6 +416,41 @@ app.get('/about', function (req, res) {
 
 app.get('/amazon', function (req, res) {
     res.render('amazon');
+});
+
+app.post('/amazon', function (req, res) {
+    var client = amazonProduct.createClient({
+        awsId: "AKIAJV7QEPT3U3F5U7ZA",
+        awsSecret: "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",
+        awsTag: "supnigcom-21"
+    });
+    console.log('keywords', req.body.keywords);
+    client.itemSearch({
+        keywords : req.body.keywords,
+        domain:'webservices.amazon.de',
+        responseGroup: 'Images,ItemAttributes'
+    }).then(function(results){
+        console.log(JSON.stringify(results[0], null, 4));
+        var items = [];
+        _.forEach(results, function(item) {
+            var x = {};
+            if (item['MediumImage'] && item['MediumImage'][0] && item['MediumImage'][0].URL) {
+                x.image = item['MediumImage'][0].URL;
+            }
+            if (item['DetailPageURL'] && item['DetailPageURL'][0]) {
+                x.url = item['DetailPageURL'][0];
+            }
+            if (item['ItemAttributes'] && item['ItemAttributes'][0] && item['ItemAttributes'][0]['Title'] && item['ItemAttributes'][0]['Title'][0]) {
+                x.title = item['ItemAttributes'][0]['Title'][0];
+            }
+            items.push(x);
+        });
+        res.render('amazon', {results : items});
+    }).catch(function(err){
+        console.log(err);
+        res.render('amazon', {error : true});
+    });
+
 });
 
 app.get('/cookie', function (req, res) {
