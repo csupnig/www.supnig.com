@@ -22,4 +22,8 @@ Appointmed is a cloud-based, full-service practice software solution for compreh
 - and many more
 
 Over the past year I have been working passionately together with my colleagues on building the best application for our client's needs.
-If you are interested in the project, pay us a visit at [http://www.appointmed.com](http://www.appointmed.com/).
+If you are interested in the project, pay us a visit at [https://www.appointmed.com](https://www.appointmed.com/).
+
+**Some more words in german**
+Mit appointmed hast du als Physiotherapeut alle Funktionen bei der Hand, die du für die Administration deiner Praxis brauchst. appointmed
+ist die [Praxissoftware für Physiotherapeuten](https://www.appointmed.com/praxis-software-fuer-physiotherapeuten).
