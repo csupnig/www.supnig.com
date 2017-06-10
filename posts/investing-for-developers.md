@@ -55,9 +55,9 @@ The risk of your investments depends on which type you chose. Also how you struc
 There are a couple of good books which will put your mind on the track of investing. They will give you insights and the
 tools to evaluate and choose the best investment for you.
 
-- [Rich Dad Poor Dad](http://amzn.to/2r81Nsy): The classic by Robert Kiyosaki. This book is an entry level read and will introduce you to the idea of making money through investments.
-- [The intelligent investor](http://amzn.to/2rgMjyW): Written by Benjamin Graham, this book describes value investing. Benjamin Graham is the definitive mentor of Warren Buffett. This book is not the easiest read, but describes the concepts used by Buffett in great detail.
-- [The richest man in Babylon](http://amzn.to/2qIcZw8): This book by George S. Clason tells the story of a man finding his path to wealth. 
+- [Rich Dad Poor Dad](https://www.amazon-global.io/p?asin_de=3898798828&asin_us=1612680011): The classic by Robert Kiyosaki. This book is an entry level read and will introduce you to the idea of making money through investments.
+- [The intelligent investor](https://www.amazon-global.io/p?asin_de=0060555661&asin_us=0060555661): Written by Benjamin Graham, this book describes value investing. Benjamin Graham is the definitive mentor of Warren Buffett. This book is not the easiest read, but describes the concepts used by Buffett in great detail.
+- [The richest man in Babylon](https://www.amazon-global.io/p?asin_de=B00OJNA536&asin_us=0451205367): This book by George S. Clason tells the story of a man finding his path to wealth. 
 
 ## Disclaimer
 I am not a professional financial adviser. Investing often involves risk and you have to take care that you are aware about
