@@ -28,7 +28,7 @@ var Q = require("q"),
     runSequence = require('run-sequence'),
     coffee = require('gulp-coffee'),
     print = require('gulp-print'),
-    ts = require('gulp-type'),
+    ts = require('gulp-typescript'),
     uncss = require('gulp-uncss'),
     cliArgs = require('yargs').argv,
     moment = require('moment');
@@ -109,9 +109,7 @@ gulp.task('app:ts:compile', function () {
     src.push('!' + cfg.src.assets);
     var tsResult = gulp.src(src)
         .pipe(ts({
-            declarationFiles: true,
-            noExternalResolve: true,
-            sortOutput:true
+            outFile: 'main.js'
         }));
 
     //tsResult.dts.pipe(gulp.dest('release/definitions'));

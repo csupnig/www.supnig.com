@@ -23,6 +23,7 @@
     "express-session": "~1.0.0",
     "feed": "*",
     "gulp": "^3.8.2",
+    "gulp-typescript": "^3.1.7",
     "lodash": "^4.17.4",
     "method-override": "~1.0.0",
     "moment": "*",
@@ -41,7 +42,8 @@
     "poet": "~2.x.x",
     "q": "*",
     "sitemap": "*",
-    "swig": "*"
+    "swig": "*",
+    "typescript": "^2.3.4"
   },
   "devDependencies": {
     "glob": "4.3.4",

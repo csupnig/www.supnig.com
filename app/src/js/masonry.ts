@@ -22,6 +22,7 @@ declare var Masonry:any;
         w = w - (10 * 2 * columnNum);
         columnWidth = Math.floor(w / columnNum);
         $container.find('.item').css({'width': columnWidth});
+        console.log('do layout');
         var msnry = new Masonry($container[0], {
             // options
             itemSelector: '.item'
