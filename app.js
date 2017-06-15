@@ -32,6 +32,7 @@ var express = require('express'),
 
 var env = process.env.NODE_ENV || 'development',
   config = require('./config/config')[env];
+console.log('Initiating APP');
 
 var app = express();
 app.set('views', __dirname + '/app/views');
