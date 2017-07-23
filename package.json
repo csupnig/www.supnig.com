@@ -1,6 +1,6 @@
 {
   "name": "www.supnig.com",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "engines": {
     "node": "0.10.x"
