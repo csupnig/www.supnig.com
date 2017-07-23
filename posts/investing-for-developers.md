@@ -61,5 +61,5 @@ tools to evaluate and choose the best investment for you.
 
 ## Disclaimer
 I am not a professional financial adviser. Investing often involves risk and you have to take care that you are aware about
-what risk you are getting yourself into. You have to acquire knowledge and make your own desicions based on it. I can and will not
+what risk you are getting yourself into. You have to acquire knowledge and make your own desicions based on it. I cannot and will not
 take responsibility for your investing endeavours.
