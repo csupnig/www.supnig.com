@@ -18,4 +18,4 @@ Website for marketing communication and brand distribution.
 
 **Some more words in german**
 appointmed ist die perfekte software für deine Physio Praxis. Wir helfen dir Zeit in der Administration zu sparen, die du mit der Behandlung deiner
-Patienten verbringen kannst. appointmed ist die [Praxissoftware für Physiotherapeuten](https://www.appointmed.com/praxis-software-fuer-physiotherapeuten).
+Patienten verbringen kannst. Erfahre mehr über die moderne Arztsoftware auf [der appointmed webseite](https://www.appointmed.com/praxis-software-fuer-physiotherapeuten).

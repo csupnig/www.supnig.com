@@ -26,4 +26,4 @@ If you are interested in the project, pay us a visit at [https://www.appointmed.
 
 **Some more words in german**
 Mit appointmed hast du als Physiotherapeut alle Funktionen bei der Hand, die du für die Administration deiner Praxis brauchst. appointmed
-ist die [Praxissoftware für Physiotherapeuten](https://www.appointmed.com/praxis-software-fuer-physiotherapeuten).
+ist die einfache Praxissoftware für Physiotherapeuten. Erfahre mehr auf [unserer webseite](https://www.appointmed.com/praxis-software-fuer-physiotherapeuten).
