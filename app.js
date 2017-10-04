@@ -10,7 +10,6 @@ var express = require('express'),
     Feed = require('feed'),
     flash = require("connect-flash"),
     cons = require('consolidate'),
-    morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
@@ -39,7 +38,6 @@ app.set('views', __dirname + '/app/views');
 app.engine('html', cons.swig);
 app.set('view engine', 'html');
 // set up our express application
-app.use(morgan('dev')); // log every request to the console
 app.use(expressCompression());
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
