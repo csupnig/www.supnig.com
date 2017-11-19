@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "gulp app:compile && node app.js",
-    "deploy": "gulp app:compile && git add . && git commit -am 'deploy' && eb deploy"
+    "deploy": "gulp app:package && scripts/update.sh"
   },
   "dependencies": {
     "MD5": "*",

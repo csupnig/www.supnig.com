@@ -31,7 +31,8 @@ var Q = require("q"),
     ts = require('gulp-typescript'),
     uncss = require('gulp-uncss'),
     cliArgs = require('yargs').argv,
-    moment = require('moment');
+    moment = require('moment'),
+    pageSource = require('./blogstream.js');
 
 /**
  * Load config files
@@ -173,6 +174,41 @@ gulp.task('watch', ['app:compile'], function () {
         console.log("File changed ", file.path);
         server.changed(file.path);
     });
+});
+
+gulp.task('cleandist', function () {
+    return gulp.src(['dist/*'], {read: false})
+        .pipe(clean());
+});
+
+gulp.task('assets', function () {
+    return gulp.src(['public/**/*.*'])
+        .pipe(gulp.dest("dist/"));
+});
+
+gulp.task('app:render', function () {
+
+    return pageSource().pipe(gulp.dest("dist/"));
+
+});
+
+gulp.task('app:package', function () {
+    var deferred = Q.defer();
+
+    runSequence(
+        'cleandist',
+        'clean',
+        'less:compile',
+        'vendor:compile',
+        'app:ts:compile',
+        'html:compile',
+        'assets',
+        'app:render',
+        function () {
+            deferred.resolve();
+        });
+
+    return deferred.promise;
 });
 
 

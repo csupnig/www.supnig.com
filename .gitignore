@@ -4,6 +4,7 @@ node_modules/*
 .idea/*
 .DS_Store
 .DS_Store/*
+dist
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
