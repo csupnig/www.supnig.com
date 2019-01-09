@@ -21,7 +21,7 @@
     <meta name="description" content="{% if description %}{{description}}{% else %}{% if post.preview %}{{post.preview|striptags|safe}}{% else %}Looks like you found me! As you surely can tell I'm in love with web development... just check out my blog (it is said that it makes you a better person!){% endif %}{% endif %}"/>
     <meta property="og:title" content="{% if title %}{{title}}{% else %}{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}{% endif %}" />
     <meta property="og:type" content="{% if post.title %}Post{{post.title}}{% else %}Website{% endif %}" />
-    <meta property="og:url" content="https://www.supnig.com/" />
+    <meta property="og:url" content="{% if post.url %}https://www.supnig.com{{post.url}}{% else %}https://www.supnig.com/{% endif %}" />
     <meta property="og:image" content="{% if post.picture %}//supnig.com{{post.picture}}{% else %}//supnig.com/media/pictures/avatar.jpg{% endif %}" />
     <title>{% if post.title %}Christopher Supnig - {{post.title}}{% else %}Christopher Supnig - My Blog{% endif %}</title>
 
@@ -44,7 +44,13 @@
         ga('send', 'pageview');
 
     </script>
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5791425017295781",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 
 <body class="index">
@@ -125,8 +131,8 @@ NO TEMPLATE FOUND
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="copyright">Copyright &copy; Christopher Supnig 2015</div>
-                <div class="copyright">Alserbachstrasse 11/21, 1090 Vienna</div>
+                <div class="copyright">Copyright &copy; Christopher Supnig 2019</div>
+                <div class="copyright">Kuefsteingasse 11/16, 1140 Wien</div>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">

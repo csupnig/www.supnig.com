@@ -413,6 +413,13 @@ app.get('/about', function (req, res) {
     });
 });
 
+app.get('/cv', function (req, res) {
+    res.render('cv', {
+        "title":"Christopher Supnig - CV",
+        "description":"Find out more about Christopher Supnig."
+    });
+});
+
 app.get('/amazon', function (req, res) {
     res.render('amazon');
 });
