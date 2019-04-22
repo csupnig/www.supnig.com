@@ -3,7 +3,7 @@ module.exports = {
 
 	development : {
 		blogcategories:['travel','tech','lifestyle'],
-		featuredpost:'investing-for-developers-how-to-build-your-wealth',
+		featuredpost:'inspire-young-people-into-tech',
 		adminemail:'christopher@supnig.com',
 		db: 'mongodb://localhost/blog',
 		postsperpage:5,
