@@ -17,9 +17,11 @@
 
 
             <ul class="list-inline social-buttons top">
-                <li><a href="https://github.com/csupnig"><i class="fa fa-github"></i></a>
-                </li>
                 <li><a href="https://twitter.com/csupnig"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li><a href="https://www.instagram.com/csupnig/"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li><a href="https://github.com/csupnig"><i class="fa fa-github"></i></a>
                 </li>
                 <li><a href="http://stackoverflow.com/users/694426/csupnig"><i class="fa fa-stack-overflow"></i></a>
                 </li>
@@ -111,36 +113,6 @@
     </div>
 </section>
 #}
-<!-- Portfolio Grid Section -->
-<section id="portfolio" class="bg-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Portfolio</h2>
-                <h3 class="section-subheading text-muted">These are some of my recent projects.</h3>
-            </div>
-        </div>
-        <div id="firstposts" class="row">
-            {% for post in portfolios %}
-            <div class="col-md-4 col-sm-6 portfolio-item item">
-                <a href="#portfolioModal{{post.slug}}" class="portfolio-link" data-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{post.picture}}" class="img-responsive" alt="{{post.title}}">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>{{post.title}}</h4>
-                    <div class="text-muted">{{post.preview|safe}}</div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
 <!-- Profession Section -->
 <section id="passion">
     <div class="container">

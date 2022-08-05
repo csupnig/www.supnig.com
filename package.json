@@ -9,6 +9,9 @@
     "start": "gulp app:compile && node app.js",
     "deploy": "gulp app:package && scripts/update.sh"
   },
+  "resolutions": {
+    "graceful-fs": "^4.2.9"
+  },
   "dependencies": {
     "MD5": "*",
     "amazon-product-api": "0.4.3",
@@ -22,7 +25,6 @@
     "express": "^4.16.4",
     "express-session": "~1.0.0",
     "feed": "^2.0.2",
-    "gulp": "^3.8.2",
     "gulp-typescript": "^3.2.4",
     "lodash": "^4.17.11",
     "method-override": "~1.0.0",
@@ -42,7 +44,7 @@
   },
   "devDependencies": {
     "glob": "4.3.4",
-    "gulp": "^3.8.2",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "0.0.6",
     "gulp-bower-files": "~0.1.12",
     "gulp-cache": "~0.1.3",
@@ -69,6 +71,7 @@
     "gulp-util": "~2.2.14",
     "gulp-watch": "^0.6.2",
     "jshint-stylish-ex": "~0.2.0",
+    "graceful-fs": "^4.2.9",
     "moment": "^2.23.0",
     "path": "~0.4.9",
     "q": "^1.5.1",
